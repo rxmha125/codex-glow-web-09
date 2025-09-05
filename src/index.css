@@ -1,0 +1,347 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 84% 3%;
+    --foreground: 220 15% 98%;
+
+    --card: 222 84% 4%;
+    --card-foreground: 220 15% 98%;
+
+    --popover: 222 84% 4%;
+    --popover-foreground: 220 15% 98%;
+
+    --primary: 200 100% 50%;
+    --primary-foreground: 220 15% 6%;
+
+    --secondary: 222 84% 5%;
+    --secondary-foreground: 220 15% 98%;
+
+    --muted: 222 84% 6%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 200 100% 50%;
+    --accent-foreground: 220 15% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 200 100% 50%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, 
+      hsl(222, 84%, 2%) 0%, 
+      hsl(222, 84%, 3%) 25%, 
+      hsl(217, 84%, 4%) 50%, 
+      hsl(222, 84%, 3%) 75%, 
+      hsl(222, 84%, 2%) 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Dark Scrollbar - No white backgrounds */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: hsl(222, 84%, 3%);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(222, 84%, 3%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(220, 15%, 25%);
+    border-radius: 3px;
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(220, 15%, 35%);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: hsl(222, 84%, 3%);
+  }
+
+  /* Firefox scrollbar - dark theme */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(220, 15%, 25%) hsl(222, 84%, 3%);
+  }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(220, 15%, 25%) hsl(222, 84%, 3%);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-glass border border-white/10 rounded-lg;
+  }
+  
+  .glass-navbar {
+    @apply bg-black/20 backdrop-blur-glass border-b border-white/10;
+  }
+
+  .glass-navbar-scrolled {
+    @apply bg-black/20 backdrop-blur-xl border-b border-white/10;
+  }
+
+  /* Responsive Card Shadows */
+  .card-shadow-responsive {
+    /* Mobile: Lighter, lower shadows */
+    box-shadow: 
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+      0 8px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  @screen sm {
+    .card-shadow-responsive {
+      /* Tablet: Medium shadows with perfect height */
+      box-shadow: 
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 10px 30px rgba(0, 0, 0, 0.30);
+    }
+  }
+
+  @screen lg {
+    .card-shadow-responsive {
+      /* Desktop: Stronger, more prominent shadows */
+      box-shadow: 
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  /* Responsive Side Fade Masks */
+  .fade-mask-left {
+    @apply absolute left-0 top-0 bottom-0 z-10 pointer-events-none;
+    width: 16px;
+    background: linear-gradient(to right, hsl(var(--background) / 0.85), transparent);
+  }
+
+  .fade-mask-right {
+    @apply absolute right-0 top-0 bottom-0 z-10 pointer-events-none;
+    width: 16px;
+    background: linear-gradient(to left, hsl(var(--background) / 0.85), transparent);
+  }
+
+  @screen sm {
+    .fade-mask-left, .fade-mask-right {
+      width: 24px;
+      background: linear-gradient(to right, hsl(var(--background) / 0.90), transparent);
+    }
+    .fade-mask-right {
+      background: linear-gradient(to left, hsl(var(--background) / 0.90), transparent);
+    }
+  }
+
+  @screen md {
+    .fade-mask-left, .fade-mask-right {
+      width: 32px;
+      background: linear-gradient(to right, hsl(var(--background) / 0.70), transparent);
+    }
+    .fade-mask-right {
+      background: linear-gradient(to left, hsl(var(--background) / 0.70), transparent);
+    }
+  }
+
+  @screen lg {
+    .fade-mask-left, .fade-mask-right {
+      width: 48px;
+      background: linear-gradient(to right, hsl(var(--background) / 0.95), transparent);
+    }
+    .fade-mask-right {
+      background: linear-gradient(to left, hsl(var(--background) / 0.95), transparent);
+    }
+  }
+
+  @screen xl {
+    .fade-mask-left, .fade-mask-right {
+      width: 64px;
+      background: linear-gradient(to right, hsl(var(--background) / 0.98), transparent);
+    }
+    .fade-mask-right {
+      background: linear-gradient(to left, hsl(var(--background) / 0.98), transparent);
+    }
+  }
+
+  @screen 2xl {
+    .fade-mask-left, .fade-mask-right {
+      width: 80px;
+      background: linear-gradient(to right, hsl(var(--background) / 1), transparent);
+    }
+    .fade-mask-right {
+      background: linear-gradient(to left, hsl(var(--background) / 1), transparent);
+    }
+  }
+
+  .nav-pill {
+    @apply relative backdrop-blur-md border border-white/20 rounded-full px-2 py-2 
+           flex items-center space-x-2 transition-all duration-300 overflow-hidden;
+    background: transparent;
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 4px 20px rgba(255, 255, 255, 0.03),
+      0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-pill::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .nav-pill:hover {
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      0 6px 30px rgba(255, 255, 255, 0.06),
+      0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-pill-button {
+    @apply px-4 py-2 rounded-full text-sm font-medium tracking-wider text-white/80 
+           hover:text-white hover:bg-white/10 transition-all duration-300 cursor-pointer;
+  }
+
+  .nav-pill-button.active {
+    @apply bg-white/20 text-white;
+  }
+
+  /* Responsive adjustments to prevent wrapping on tablets/phones */
+  @screen md {
+    .nav-pill { @apply px-1.5 py-1.5 space-x-1; }
+    .nav-pill-button { @apply px-3 text-xs; }
+  }
+
+  @screen lg {
+    .nav-pill { @apply px-2 py-2 space-x-2; }
+    .nav-pill-button { @apply px-4 text-sm; }
+  }
+
+  /* Mobile Transform Button */
+  .mobile-transform-button {
+    @apply relative overflow-hidden;
+  }
+
+  /* Mobile Menu Portal - Consistent Styling */
+  .mobile-menu-backdrop-portal {
+    @apply fixed inset-0 bg-black/50 z-[100] animate-fade-in;
+  }
+
+  .mobile-menu-portal {
+    @apply fixed top-0 left-0 right-0 w-full z-[101] animate-slide-down;
+  }
+
+  .mobile-menu-content-portal {
+    @apply bg-black/90 backdrop-blur-xl border-b border-white/20
+           p-8 pt-24 mx-4 mt-4 rounded-2xl shadow-2xl;
+  }
+
+  /* Mobile Nav Buttons */
+  .mobile-nav-button {
+    @apply w-full px-6 py-3 rounded-xl text-sm font-medium tracking-wider 
+           text-white/80 hover:text-white hover:bg-white/10 
+           transition-all duration-300 text-left;
+  }
+
+  .mobile-nav-button.active {
+    @apply bg-white/20 text-white;
+  }
+
+  .try-codex-button {
+    @apply bg-white/10 border border-white/20 hover:bg-white/20 
+           text-center font-semibold;
+  }
+
+  .glow-button {
+    @apply bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 
+           shadow-lg hover:shadow-cyan-500/25 transition-all duration-300;
+  }
+}
+
+@keyframes gradient-rotate {
+  0% { 
+    --gradient-angle: 0deg; 
+  }
+  100% { 
+    --gradient-angle: 360deg; 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(180deg); 
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-float {
+  animation: float ease-in-out infinite;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
