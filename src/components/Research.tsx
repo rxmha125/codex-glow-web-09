@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ResearchCard from "./ResearchCard";
 import ResearchModal from "./ResearchModal";
+import { Button } from "./ui/button";
 
 interface ResearchProps {
   isHomePage?: boolean;
@@ -10,6 +11,7 @@ interface ResearchProps {
 const Research = ({ isHomePage = false }: ResearchProps) => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSecondaryCardHovered, setIsSecondaryCardHovered] = useState(false);
 
   const researchData = {
     date: "AUGUST 24, 2025",
@@ -64,6 +66,10 @@ Rx Codex V1 Tiny represents a major breakthrough in our AI model development. Th
     navigate('/research-rx-codex-v1-tiny');
   };
 
+  const handleViewModels = () => {
+    navigate('/models');
+  };
+
   return (
     <>
       <section className="py-16 lg:py-24">
@@ -91,11 +97,56 @@ Rx Codex V1 Tiny represents a major breakthrough in our AI model development. Th
               />
             </div>
             
-            {/* Empty Secondary Card - Just showing bottom edge - Hidden on mobile */}
-            <div className="hidden sm:block relative -mt-28 md:-mt-32 lg:-mt-36 z-0 -mx-2 md:-mx-4 lg:-mx-6">
-              <div className="opacity-40 scale-90 pointer-events-none">
-                <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl h-32 md:h-40 lg:h-48">
-                  {/* Empty card - no content */}
+            {/* Interactive Secondary Card - Hidden on mobile */}
+            <div 
+              className="hidden sm:block relative -mt-28 md:-mt-32 lg:-mt-36 z-0 -mx-2 md:-mx-4 lg:-mx-6 cursor-pointer"
+              onMouseEnter={() => setIsSecondaryCardHovered(true)}
+              onMouseLeave={() => setIsSecondaryCardHovered(false)}
+              onClick={handleViewModels}
+            >
+              <div className={`
+                transition-all duration-500 ease-out transform
+                ${isSecondaryCardHovered 
+                  ? 'opacity-80 translate-y-4 scale-95' 
+                  : 'opacity-40 scale-90 translate-y-0'
+                }
+              `}>
+                <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl h-32 md:h-40 lg:h-48 relative overflow-hidden">
+                  {/* Gradient overlay that appears on hover */}
+                  <div className={`
+                    absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 
+                    transition-opacity duration-300
+                    ${isSecondaryCardHovered ? 'opacity-100' : 'opacity-0'}
+                  `} />
+                  
+                  {/* Content that slides in from bottom */}
+                  <div className={`
+                    absolute inset-0 flex items-center justify-center
+                    transition-all duration-500 ease-out transform
+                    ${isSecondaryCardHovered 
+                      ? 'translate-y-0 opacity-100' 
+                      : 'translate-y-8 opacity-0'
+                    }
+                  `}>
+                    <div className="text-center space-y-3">
+                      <h4 className="text-lg font-semibold text-foreground">
+                        Explore Our Models
+                      </h4>
+                      <Button 
+                        variant="ghost" 
+                        className="bg-transparent border border-white/30 text-foreground hover:bg-white/20 hover:border-white/50 hover:text-foreground px-6 py-2 rounded-full transition-all duration-300"
+                      >
+                        MORE
+                      </Button>
+                    </div>
+                  </div>
+                  
+                  {/* Subtle glow effect */}
+                  <div className={`
+                    absolute -inset-4 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-2xl blur-xl
+                    transition-opacity duration-500
+                    ${isSecondaryCardHovered ? 'opacity-100' : 'opacity-0'}
+                  `} />
                 </div>
               </div>
             </div>
