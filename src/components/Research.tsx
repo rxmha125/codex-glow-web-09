@@ -121,21 +121,19 @@ Rx Codex V1 Tiny represents a major breakthrough in our AI model development. Th
                   
                   {/* Content that slides in from bottom */}
                   <div className={`
-                    absolute inset-0 flex items-end justify-center pb-8
+                    absolute inset-x-0 bottom-0 flex justify-center pb-6
                     transition-all duration-500 ease-out transform
                     ${isSecondaryCardHovered 
                       ? 'translate-y-0 opacity-100' 
                       : 'translate-y-8 opacity-0'
                     }
                   `}>
-                    <div className="text-center">
-                      <Button 
-                        variant="ghost" 
-                        className="bg-transparent border border-white/20 text-foreground hover:bg-white/10 hover:border-white/40 hover:text-foreground px-8 py-2 rounded-full transition-all duration-300"
-                      >
-                        MORE
-                      </Button>
-                    </div>
+                    <Button 
+                      variant="ghost" 
+                      className="bg-transparent border border-white/20 text-foreground hover:bg-white/10 hover:border-white/40 hover:text-foreground px-8 py-2 rounded-full transition-all duration-300"
+                    >
+                      MORE
+                    </Button>
                   </div>
                   
                   {/* Subtle glow effect */}
