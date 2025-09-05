@@ -112,16 +112,9 @@ Rx Codex V1 Tiny represents a major breakthrough in our AI model development. Th
                 }
               `}>
                 <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl h-32 md:h-40 lg:h-48 relative overflow-hidden">
-                  {/* Gradient overlay that appears on hover */}
-                  <div className={`
-                    absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 
-                    transition-opacity duration-300
-                    ${isSecondaryCardHovered ? 'opacity-100' : 'opacity-0'}
-                  `} />
-                  
                   {/* Content that slides in from bottom */}
                   <div className={`
-                    absolute inset-x-0 bottom-0 flex justify-center pb-6
+                    absolute inset-x-0 bottom-0 flex justify-center pb-2
                     transition-all duration-500 ease-out transform
                     ${isSecondaryCardHovered 
                       ? 'translate-y-0 opacity-100' 
@@ -135,13 +128,6 @@ Rx Codex V1 Tiny represents a major breakthrough in our AI model development. Th
                       MORE
                     </Button>
                   </div>
-                  
-                  {/* Subtle glow effect */}
-                  <div className={`
-                    absolute -inset-4 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-2xl blur-xl
-                    transition-opacity duration-500
-                    ${isSecondaryCardHovered ? 'opacity-100' : 'opacity-0'}
-                  `} />
                 </div>
               </div>
             </div>
