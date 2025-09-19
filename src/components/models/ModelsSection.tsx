@@ -92,8 +92,8 @@ const ModelsSection = () => {
               Rx Codex AI
             </span>
           </div>
-          <Button variant="outline" size="sm" className="text-xs px-3 py-1 h-auto bg-transparent border-white/20 text-white/80 hover:bg-white/10 hover:border-white/40 transition-all duration-200">
-            Learn More
+          <Button variant="outline" size="sm" className="text-xs px-3 py-1 h-auto bg-transparent border-white/20 text-white/80 hover:bg-white/10 hover:border-white/40 hover:text-white/80 transition-all duration-200">
+            See More
           </Button>
         </div>
       </CardFooter>

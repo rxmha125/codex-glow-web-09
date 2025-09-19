@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ModelsSection from '@/components/models/ModelsSection';
 import ModelsTable from '@/components/models/ModelsTable';
 
 const Models = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-dark-gradient overflow-x-hidden">
       <Navbar />
