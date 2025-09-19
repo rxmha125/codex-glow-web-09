@@ -49,7 +49,7 @@ const ModelsSection = () => {
 
   // Create model cards with individual data
   const modelCards = modelsData.map((model, index) => (
-    <Card key={index} className="h-96 w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden relative">
+    <Card key={index} className="h-96 w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden relative transition-transform duration-300 hover:scale-105 hover:z-10">
       <CardHeader className="text-center pb-4">
         <CardTitle className="text-white text-lg font-semibold">
           {model.name}
