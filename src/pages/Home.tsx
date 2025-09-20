@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Models from '@/components/Models';
 import Research from '@/components/Research';
+import Responsive from '@/components/Responsive';
 import Footer from '@/components/Footer';
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <Models />
       <Research isHomePage={true} />
+      <Responsive />
       <Footer />
     </div>
   );
