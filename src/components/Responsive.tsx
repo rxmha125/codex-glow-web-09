@@ -13,7 +13,7 @@ const Responsive = () => {
         <div className="w-full h-px bg-white/10 mb-2"></div>
         
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left Content */}
           <div className="space-y-6">
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
