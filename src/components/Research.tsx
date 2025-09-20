@@ -72,7 +72,7 @@ Rx Codex V1 Tiny represents a major breakthrough in our AI model development. Th
 
   return (
     <>
-      <section className="py-16 lg:py-24">
+      <section className="pt-16 lg:pt-24 pb-8 lg:pb-12">
         <div className="container mx-auto px-4">
           {/* Section Title */}
           <h2 className="text-xs sm:text-sm tracking-[0.25em] uppercase text-muted-foreground max-w-fit mb-12">

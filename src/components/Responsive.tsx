@@ -1,6 +1,6 @@
 const Responsive = () => {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="pt-8 lg:pt-12 pb-16 lg:pb-24">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <h2 className="text-xs sm:text-sm tracking-[0.25em] uppercase text-muted-foreground max-w-fit mb-12">
