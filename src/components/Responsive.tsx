@@ -10,7 +10,7 @@ const Responsive = () => {
         </h2>
         
         {/* Separator line */}
-        <div className="w-full h-px bg-white/10 mb-8 md:mb-12"></div>
+        <div className="w-full h-px bg-white/10 mb-6"></div>
         
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
