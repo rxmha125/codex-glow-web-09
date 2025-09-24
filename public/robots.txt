@@ -1,9 +1,17 @@
+# Rx Codex AI - Robots.txt
+# Advanced AI Models from Bangladesh
 
+User-agent: *
+Allow: /
+
+# Specific bot configurations
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
-User-agent: Bingbot
+User-agent: Bingbot  
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -11,7 +19,18 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
 
+# Block common crawlers that don't add value
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Sitemap location
 Sitemap: https://www.rxcodexai.com/sitemap.xml

@@ -5,6 +5,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useSEO } from '@/hooks/useSEO';
 
 const ResearchPaper = () => {
   const navigate = useNavigate();
@@ -13,6 +14,30 @@ const ResearchPaper = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useSEO({
+    title: "Rx Codex V1-Tiny Research Paper | AI Model Development from Bangladesh",
+    description: "Read the comprehensive research paper on Rx Codex V1-Tiny, a foundational AI model developed in Bangladesh. Technical details, methodology, and results.",
+    keywords: "Rx Codex V1-Tiny, AI Research Paper, Machine Learning Research, Foundational AI Model, Bangladesh AI Research, Neural Networks",
+    canonicalUrl: "https://www.rxcodexai.com/research-rx-codex-v1-tiny",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Development of the Rx_Codex_V1_Tiny Foundational Model",
+      "author": {
+        "@type": "Person",
+        "name": "Rx MHA"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rx Codex AI"
+      },
+      "datePublished": "2024-12-24",
+      "description": "Research paper on the development of Rx Codex V1-Tiny foundational AI model",
+      "url": "https://www.rxcodexai.com/research-rx-codex-v1-tiny",
+      "mainEntityOfPage": "https://www.rxcodexai.com/research-rx-codex-v1-tiny"
+    }
+  });
 
   const researchContent = (
     <div className="space-y-8">
