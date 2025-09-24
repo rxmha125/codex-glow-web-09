@@ -29,16 +29,14 @@ const Models = () => {
     }
   });
 
-  return (
-    <div className="min-h-screen bg-dark-gradient overflow-x-hidden">
+  return <main className="min-h-screen bg-dark-gradient overflow-x-hidden">
       <Navbar />
       <div className="pt-20">
         <ModelsSection />
         <ModelsTable />
       </div>
       <Footer />
-    </div>
-  );
+    </main>;
 };
 
 export default Models;

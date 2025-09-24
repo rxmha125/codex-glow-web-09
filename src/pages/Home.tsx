@@ -26,16 +26,14 @@ const Home = () => {
     }
   });
 
-  return (
-    <div className="min-h-screen bg-dark-gradient overflow-x-hidden">
+  return <main className="min-h-screen bg-dark-gradient overflow-x-hidden">
       <Navbar />
       <Hero />
       <Models />
       <Research isHomePage={true} />
       <Responsive />
       <Footer />
-    </div>
-  );
+    </main>;
 };
 
 export default Home;

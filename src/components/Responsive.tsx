@@ -28,8 +28,9 @@ const Responsive = () => {
           <div className="flex justify-center lg:justify-end">
             <img 
               src={responsiveMockup} 
-              alt="Responsive chat interface mockup showing laptop and mobile devices"
+              alt="Responsive AI chat interface mockup showing modern dark theme UI on laptop and mobile devices with interactive animations"
               className="max-w-full h-auto"
+              loading="lazy"
             />
           </div>
         </div>

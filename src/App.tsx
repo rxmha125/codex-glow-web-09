@@ -9,6 +9,7 @@ import Teams from "./pages/Teams";
 import ModelsPage from "./pages/Models";
 import News from "./pages/News";
 import ResearchPaper from "./pages/ResearchPaper";
+import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/teams" element={<Teams />} />
           <Route path="/news" element={<News />} />
           <Route path="/research-rx-codex-v1-tiny" element={<ResearchPaper />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

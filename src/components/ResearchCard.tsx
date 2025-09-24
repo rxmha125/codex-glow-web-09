@@ -30,8 +30,9 @@ const ResearchCard = ({
             {image ? (
               <img 
                 src={image} 
-                alt={title}
+                alt={`${title} - AI research paper thumbnail`}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
@@ -123,8 +124,9 @@ const ResearchCard = ({
                 {image ? (
                   <img 
                     src={image} 
-                    alt={title}
+                    alt={`${title} - Comprehensive research documentation`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">

@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* Logo and Brand Name - Left Side */}
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-              <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex Logo" className="w-10 h-10 object-contain" />
+              <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex AI company logo" className="w-10 h-10 object-contain" loading="lazy" />
             </div>
             <span className="text-lg sm:text-xl font-semibold text-white">Rx Codex AI</span>
           </div>
@@ -165,7 +165,7 @@ const Navbar = () => {
             >
               {/* Logo and Brand in Menu */}
               <div className="flex items-center justify-center space-x-2 mb-8 pb-6 border-b border-white/20">
-                <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex Logo" className="w-10 h-10 object-contain" />
+                <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex AI logo - Leading AI innovation from Bangladesh" className="w-10 h-10 object-contain" loading="lazy" />
                 <span className="text-xl font-semibold text-white">Rx Codex AI</span>
               </div>
 
