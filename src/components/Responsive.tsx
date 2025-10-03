@@ -5,7 +5,11 @@ import { Button } from '@/components/ui/button';
 const Responsive = () => {
   return (
     <section className="relative pt-8 lg:pt-12 pb-16 lg:pb-24 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[hsl(222,84%,3%)] to-transparent pointer-events-none z-20"></div>
+
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5 pointer-events-none"></div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[hsl(222,84%,3%)] to-transparent pointer-events-none z-20"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-xs sm:text-sm tracking-[0.25em] uppercase text-muted-foreground max-w-fit mb-12">
@@ -30,16 +34,16 @@ const Responsive = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
-                className="group relative bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-semibold px-6 py-6 text-base shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 overflow-hidden"
+                className="group relative bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-6 text-base border border-white/20 hover:border-white/30 shadow-lg transition-all duration-300 overflow-hidden rounded-2xl"
                 size="lg"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-white/20 to-cyan-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                 <Monitor className="w-5 h-5 mr-2" />
                 <span className="relative z-10">Rx Codex WEB</span>
               </Button>
 
               <Button
-                className="group relative bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-6 text-base border border-white/20 hover:border-white/30 shadow-lg transition-all duration-300 overflow-hidden"
+                className="group relative bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-6 text-base border border-white/20 hover:border-white/30 shadow-lg transition-all duration-300 overflow-hidden rounded-2xl"
                 size="lg"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
