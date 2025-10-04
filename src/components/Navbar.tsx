@@ -113,7 +113,11 @@ const Navbar = () => {
 
           {/* Desktop Button */}
           {!isMobile && (
-            <Button onClick={() => window.open('https://www.chat.rxcodexai.com', '_blank')} className="bg-white/5 backdrop-blur-md border border-white/20 text-white hover:bg-white/10 hover:border-white/30 px-4 md:px-4 lg:px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_4px_16px_rgba(0,0,0,0.3)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_4px_20px_rgba(255,255,255,0.1)]">
+            <Button 
+              onClick={() => window.open('https://www.chat.rxcodexai.com', '_blank')} 
+              variant="glass"
+              className="px-4 md:px-4 lg:px-6 py-3 rounded-full font-medium"
+            >
               Try Rx Codex
             </Button>
           )}
@@ -123,7 +127,8 @@ const Navbar = () => {
             <div className="relative" ref={dropdownRef}>
               <Button
                 onClick={handleMobileButtonClick}
-                className={`bg-white/5 backdrop-blur-md border border-white/20 text-white hover:bg-white/10 hover:border-white/30 px-6 py-3 rounded-full font-medium transition-all duration-500 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_4px_16px_rgba(0,0,0,0.3)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_4px_20px_rgba(255,255,255,0.1)] mobile-transform-button ${
+                variant="glass"
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-500 mobile-transform-button ${
                   showChevron ? 'show-chevron' : 'show-text'
                 }`}
               >

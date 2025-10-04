@@ -145,7 +145,14 @@ const Hero = () => {
           Advanced AI Models from Bangladesh
         </p>
 
-        <Button onClick={handleButtonClick} className="bg-white/5 backdrop-blur-md border border-white/20 text-white hover:bg-white/10 hover:border-white/30 px-8 py-5 text-lg rounded-full font-medium transition-all duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_24px_rgba(0,0,0,0.4)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(255,255,255,0.1)] pointer-events-auto cursor-pointer">Try Rx Codex</Button>
+        <Button 
+          onClick={handleButtonClick} 
+          variant="glass"
+          size="lg"
+          className="px-8 py-6 text-lg rounded-full font-medium pointer-events-auto cursor-pointer"
+        >
+          Try Rx Codex
+        </Button>
       </div>
     </section>;
 };
