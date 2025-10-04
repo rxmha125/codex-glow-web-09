@@ -4,22 +4,13 @@ import { Button } from '@/components/ui/button';
 
 const Responsive = () => {
   return (
-    <section className="relative pt-8 lg:pt-12 pb-16 lg:pb-24 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[hsl(222,84%,3%)] to-transparent pointer-events-none z-20"></div>
-
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5 pointer-events-none"></div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[hsl(222,84%,3%)] to-transparent pointer-events-none z-20"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="pt-8 lg:pt-12 pb-16 lg:pb-24">
+      <div className="container mx-auto px-4">
         <h2 className="text-xs sm:text-sm tracking-[0.25em] uppercase text-muted-foreground max-w-fit mb-12">
           [ RESPONSIVE ]
         </h2>
 
-        <div className="relative w-full h-px mb-8">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-cyan-500/30 to-blue-500/20 blur-sm"></div>
-        </div>
+        <div className="w-full h-px bg-white/10 mb-8"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-8">
@@ -53,12 +44,11 @@ const Responsive = () => {
             </div>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end group">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="flex justify-center lg:justify-end">
             <img
               src={responsiveMockup}
               alt="Responsive AI chat interface mockup showing modern dark theme UI on laptop and mobile devices with interactive animations"
-              className="relative max-w-full h-auto transform transition-transform duration-500 group-hover:scale-[1.02] drop-shadow-2xl"
+              className="max-w-full h-auto"
               loading="lazy"
             />
           </div>
