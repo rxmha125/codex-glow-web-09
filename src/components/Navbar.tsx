@@ -113,7 +113,7 @@ const Navbar = () => {
 
           {/* Desktop Button */}
           {!isMobile && (
-            <Button onClick={() => window.open('https://www.chat.rxcodexai.com', '_blank')} className="bg-transparent border border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-4 md:px-4 lg:px-6 py-2 rounded-lg font-medium transition-all duration-300">
+            <Button onClick={() => window.open('https://www.chat.rxcodexai.com', '_blank')} className="bg-white/5 backdrop-blur-md border border-white/20 text-white hover:bg-white/10 hover:border-white/30 px-4 md:px-4 lg:px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-white/10">
               Try Rx Codex
             </Button>
           )}
@@ -123,7 +123,7 @@ const Navbar = () => {
             <div className="relative" ref={dropdownRef}>
               <Button
                 onClick={handleMobileButtonClick}
-                className={`bg-transparent border border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-6 py-2 rounded-lg font-medium transition-all duration-500 mobile-transform-button ${
+                className={`bg-white/5 backdrop-blur-md border border-white/20 text-white hover:bg-white/10 hover:border-white/30 px-6 py-2 rounded-full font-medium transition-all duration-500 shadow-lg hover:shadow-white/10 mobile-transform-button ${
                   showChevron ? 'show-chevron' : 'show-text'
                 }`}
               >
