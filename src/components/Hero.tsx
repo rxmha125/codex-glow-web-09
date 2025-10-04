@@ -123,7 +123,7 @@ const Hero = () => {
   return <section id="home" ref={containerRef} className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-dark-gradient"></div>
-      
+
       {/* Interactive particles effect */}
       <div className="absolute inset-0 pointer-events-none">
         {particles.map(particle => <div key={particle.id} className="absolute bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 rounded-full" style={{
@@ -140,12 +140,12 @@ const Hero = () => {
 
       <div className={`relative z-10 text-center px-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 bg-gradient-to-r from-orange-300 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient-shift bg-300%">Rx Codex AI</h1>
-        
+
         <p className="text-2xl md:text-4xl text-gray-300 mb-12 font-light">
           Advanced AI Models from Bangladesh
         </p>
-        
-        <Button onClick={handleButtonClick} className="glow-button text-white px-8 py-4 text-lg rounded-lg font-medium animate-glow-pulse pointer-events-auto cursor-pointer">Try Rx Codex</Button>
+
+        <Button onClick={handleButtonClick} className="bg-white/5 backdrop-blur-md border border-white/20 text-white hover:bg-white/10 hover:border-white/30 px-8 py-5 text-lg rounded-full font-medium transition-all duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_24px_rgba(0,0,0,0.4)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(255,255,255,0.1)] pointer-events-auto cursor-pointer">Try Rx Codex</Button>
       </div>
     </section>;
 };
