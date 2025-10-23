@@ -13,7 +13,7 @@ const Responsive = () => {
         <div className="w-full h-px bg-white/10 mb-8"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 lg:space-y-8">
             <div className="space-y-6">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight bg-gradient-to-r from-white via-white to-blue-200 bg-clip-text text-transparent">
                 Responsive chat interface
@@ -23,28 +23,40 @@ const Responsive = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            {/* Image - shown after text on mobile, in original position on desktop */}
+            <div className="flex justify-center lg:hidden mb-8">
+              <img
+                src={responsiveMockup}
+                alt="Responsive AI chat interface mockup showing modern dark theme UI on laptop and mobile devices with interactive animations"
+                className="max-w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Buttons - always in a row, adjusted sizing for mobile */}
+            <div className="flex flex-row gap-3 sm:gap-4 pt-4">
               <Button
                 variant="glass"
                 size="lg"
-                className="px-8 py-6 text-lg rounded-full font-medium"
+                className="flex-1 px-4 sm:px-8 py-6 text-sm sm:text-lg rounded-full font-medium"
               >
-                <Monitor className="w-5 h-5 mr-2" />
-                Rx Codex WEB
+                <Monitor className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
+                <span className="whitespace-nowrap">Rx Codex WEB</span>
               </Button>
 
               <Button
                 variant="glass"
                 size="lg"
-                className="px-8 py-6 text-lg rounded-full font-medium"
+                className="flex-1 px-4 sm:px-8 py-6 text-sm sm:text-lg rounded-full font-medium"
               >
-                <Smartphone className="w-5 h-5 mr-2" />
-                ANDROID
+                <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
+                <span className="whitespace-nowrap">ANDROID</span>
               </Button>
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
+          {/* Image - hidden on mobile, shown on desktop */}
+          <div className="hidden lg:flex justify-center lg:justify-end">
             <img
               src={responsiveMockup}
               alt="Responsive AI chat interface mockup showing modern dark theme UI on laptop and mobile devices with interactive animations"
