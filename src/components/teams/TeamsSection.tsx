@@ -4,34 +4,66 @@ import teamMemberImage from "@/assets/team-member.jpg";
 const TeamsSection = () => {
   // Team member positions
   const teamsData = [
-    { position: "Founder & CEO" },
-    { position: "Web Development" },
-    { position: "Management" },
-    { position: "Researcher" },
-    { position: "AI Architect" },
-    { position: "Designing" }
+    { 
+      position: "Founder & CEO", 
+      name: "Rx MHA", 
+      description: "I'm Rx, the Founder & CEO of Rx Codex AI. We're dedicated to advancing AI development right here in Bangladesh—pushing boundaries and making waves in the tech scene." 
+    },
+    { 
+      position: "Web Development", 
+      name: "Rx MHA", 
+      description: "I'm also the web developer, crafting and refining the interfaces for all Rx Codex AI sites. Yep, including this one you're on right now—making sure it's smooth and user-friendly." 
+    },
+    { 
+      position: "Management", 
+      name: "Rx MHA", 
+      description: "I handle all the management too. Guess what? Same guy pulling the strings behind the scenes to keep everything running like clockwork." 
+    },
+    { 
+      position: "Researcher", 
+      name: "Rx MHA", 
+      description: "As the researcher, I dive deep into AI architectures, designing innovative models and chasing those groundbreaking inventions that could change the game." 
+    },
+    { 
+      position: "AI Architect", 
+      name: "Rx MHA", 
+      description: "I'm the core AI architect—the one who builds the final models, writes the code, handles training, and assembles everything needed. Basically, I turn ideas into reality. Haha, yep, same guy again." 
+    },
+    { 
+      position: "Designing", 
+      name: "Rx MHA", 
+      description: "I take care of the designs too - graphics, web UIs, and whatever else pops up. Keeping things visually sharp and on-brand, all by yours truly." 
+    }
   ];
 
   // Create team member cards
   const teamCards = teamsData.map((member, index) => (
-    <Card key={index} className="h-96 w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden relative">
-      <CardHeader className="text-center pb-4">
+    <Card key={index} className="h-[580px] w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden relative flex flex-col">
+      <CardHeader className="text-center pb-3">
         <CardTitle className="text-white text-lg font-semibold">
           {member.position}
         </CardTitle>
       </CardHeader>
       
-      <CardContent className="px-6 pb-16 flex flex-col items-center justify-center">
-        <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-white/20">
+      <CardContent className="px-6 pb-4 flex flex-col items-center flex-1">
+        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-white/20 mb-4">
           <img 
             src={teamMemberImage} 
             alt={`${member.position} team member`}
             className="w-full h-full object-cover"
           />
         </div>
+        
+        <h4 className="text-white text-base font-semibold mb-3">
+          {member.name}
+        </h4>
+        
+        <p className="text-white/70 text-sm text-center leading-relaxed">
+          {member.description}
+        </p>
       </CardContent>
       
-      <CardFooter className="absolute bottom-4 left-6 right-6">
+      <CardFooter className="pb-4 px-6">
         <div className="flex flex-col items-center w-full space-y-2">
           <div className="flex items-center text-white/60 text-xs">
             <span className="flex items-center">
