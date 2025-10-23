@@ -25,21 +25,21 @@ const Responsive = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
-                className="group relative bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-6 text-base border border-white/20 hover:border-white/30 shadow-lg transition-all duration-300 overflow-hidden rounded-2xl"
+                variant="glass"
                 size="lg"
+                className="px-8 py-6 text-lg rounded-full font-medium"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                 <Monitor className="w-5 h-5 mr-2" />
-                <span className="relative z-10">Rx Codex WEB</span>
+                Rx Codex WEB
               </Button>
 
               <Button
-                className="group relative bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-6 text-base border border-white/20 hover:border-white/30 shadow-lg transition-all duration-300 overflow-hidden rounded-2xl"
+                variant="glass"
                 size="lg"
+                className="px-8 py-6 text-lg rounded-full font-medium"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                 <Smartphone className="w-5 h-5 mr-2" />
-                <span className="relative z-10">ANDROID</span>
+                ANDROID
               </Button>
             </div>
           </div>
