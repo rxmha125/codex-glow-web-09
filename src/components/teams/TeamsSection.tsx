@@ -38,15 +38,15 @@ const TeamsSection = () => {
 
   // Create team member cards
   const teamCards = teamsData.map((member, index) => (
-    <Card key={index} className="h-[580px] w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden relative flex flex-col">
-      <CardHeader className="text-center pb-3">
+    <Card key={index} className="h-auto w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden flex flex-col">
+      <CardHeader className="text-center pb-2 pt-4">
         <CardTitle className="text-white text-lg font-semibold">
           {member.position}
         </CardTitle>
       </CardHeader>
       
-      <CardContent className="px-6 pb-4 flex flex-col items-center flex-1">
-        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-white/20 mb-4">
+      <CardContent className="px-6 py-3 flex flex-col items-center">
+        <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-white/20 mb-3">
           <img 
             src={teamMemberImage} 
             alt={`${member.position} team member`}
@@ -54,17 +54,17 @@ const TeamsSection = () => {
           />
         </div>
         
-        <h4 className="text-white text-base font-semibold mb-3">
+        <h4 className="text-white text-base font-semibold mb-2">
           {member.name}
         </h4>
         
-        <p className="text-white/70 text-sm text-center leading-relaxed">
+        <p className="text-white/70 text-xs text-center leading-relaxed mb-3">
           {member.description}
         </p>
       </CardContent>
       
-      <CardFooter className="pb-4 px-6">
-        <div className="flex flex-col items-center w-full space-y-2">
+      <CardFooter className="pb-3 px-6 pt-0">
+        <div className="flex flex-col items-center w-full">
           <div className="flex items-center text-white/60 text-xs">
             <span className="flex items-center">
               Team Card |
