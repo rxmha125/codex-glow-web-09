@@ -37,19 +37,19 @@ const Responsive = () => {
             <div className="flex flex-row gap-3 sm:gap-4 pt-4">
               <Button
                 variant="glass"
-                size="lg"
-                className="flex-1 px-4 sm:px-8 py-6 text-sm sm:text-lg rounded-full font-medium"
+                size="default"
+                className="px-6 sm:px-8 py-2.5 text-sm sm:text-base rounded-full font-medium"
               >
-                <Monitor className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
+                <Monitor className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 <span className="whitespace-nowrap">Rx Codex WEB</span>
               </Button>
 
               <Button
                 variant="glass"
-                size="lg"
-                className="flex-1 px-4 sm:px-8 py-6 text-sm sm:text-lg rounded-full font-medium"
+                size="default"
+                className="px-6 sm:px-8 py-2.5 text-sm sm:text-base rounded-full font-medium"
               >
-                <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
+                <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 <span className="whitespace-nowrap">ANDROID</span>
               </Button>
             </div>
