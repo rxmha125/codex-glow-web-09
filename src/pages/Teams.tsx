@@ -7,13 +7,13 @@ const Teams = () => {
     title: "Our Team - Rx Codex AI | Meet the AI Experts from Bangladesh",
     description: "Meet the talented team behind Rx Codex AI. Our experts in artificial intelligence and machine learning are building the future of AI technology.",
     keywords: "Rx Codex AI Team, AI Experts, Machine Learning Team, Bangladesh AI Developers, Tech Team",
-    canonicalUrl: "https://www.rxcodexai.com/teams",
+    canonicalUrl: "https://rxcodexai.com/teams",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Rx Codex AI Team",
       "description": "Meet our team of AI experts and developers",
-      "url": "https://www.rxcodexai.com/teams"
+      "url": "https://rxcodexai.com/teams"
     }
   });
 

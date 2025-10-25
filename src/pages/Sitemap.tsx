@@ -13,13 +13,13 @@ const Sitemap = () => {
     title: "Site Map - Rx Codex AI | Navigate Our Website",
     description: "Complete site map of Rx Codex AI website. Find all pages, AI models, research papers, and company information easily.",
     keywords: "Sitemap, Site Navigation, Rx Codex AI Pages, Website Map",
-    canonicalUrl: "https://www.rxcodexai.com/sitemap",
+    canonicalUrl: "https://rxcodexai.com/sitemap",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Sitemap - Rx Codex AI",
       "description": "Complete navigation map of Rx Codex AI website",
-      "url": "https://www.rxcodexai.com/sitemap"
+      "url": "https://rxcodexai.com/sitemap"
     }
   });
 
@@ -98,7 +98,7 @@ const Sitemap = () => {
                 <ul className="space-y-3">
                   <li>
                     <Link 
-                      to="/research-rx-codex-v1-tiny" 
+                      to="/research/rx-codex-v1-tiny" 
                       className="text-white/80 hover:text-white transition-colors duration-200 block py-1"
                     >
                       📄 Rx Codex V1 Tiny Research Paper

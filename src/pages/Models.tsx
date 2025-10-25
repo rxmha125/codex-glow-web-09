@@ -14,13 +14,13 @@ const Models = () => {
     title: "AI Models - Rx Codex AI | Advanced ML Models from Bangladesh",
     description: "Explore Rx Codex AI's cutting-edge AI models including Rx Codex V1-mini. Advanced machine learning models developed in Bangladesh for global applications.",
     keywords: "AI Models, Machine Learning Models, Rx Codex V1-mini, AI Bangladesh, Neural Networks, Deep Learning Models",
-    canonicalUrl: "https://www.rxcodexai.com/models",
+    canonicalUrl: "https://rxcodexai.com/models",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "AI Models - Rx Codex AI",
       "description": "Advanced AI models and machine learning solutions from Bangladesh",
-      "url": "https://www.rxcodexai.com/models",
+      "url": "https://rxcodexai.com/models",
       "mainEntity": {
         "@type": "Product",
         "name": "Rx Codex V1-mini",

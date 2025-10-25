@@ -27,7 +27,9 @@ const App = () => (
           <Route path="/models" element={<ModelsPage />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/news" element={<News />} />
-          <Route path="/research-rx-codex-v1-tiny" element={<ResearchPaper />} />
+          <Route path="/research/rx-codex-v1-tiny" element={<ResearchPaper />} />
+          {/* Redirect old research URL to new structure */}
+          <Route path="/research-rx-codex-v1-tiny" element={<Navigate to="/research/rx-codex-v1-tiny" replace />} />
           <Route path="/sitemap" element={<Sitemap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

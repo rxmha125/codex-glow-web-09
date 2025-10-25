@@ -33,4 +33,4 @@ User-agent: SemrushBot
 Disallow: /
 
 # Sitemap location
-Sitemap: https://www.rxcodexai.com/sitemap.xml
+Sitemap: https://rxcodexai.com/sitemap.xml

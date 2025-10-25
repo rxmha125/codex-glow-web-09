@@ -7,13 +7,13 @@ const News = () => {
     title: "AI News & Updates - Rx Codex AI | Latest in AI Technology",
     description: "Stay updated with the latest news and developments from Rx Codex AI. Get insights into AI research, model releases, and technology innovations from Bangladesh.",
     keywords: "AI News, Machine Learning Updates, Rx Codex AI News, AI Research, Technology News, Bangladesh AI",
-    canonicalUrl: "https://www.rxcodexai.com/news",
+    canonicalUrl: "https://rxcodexai.com/news",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "AI News & Updates - Rx Codex AI",
       "description": "Latest news and updates from Rx Codex AI",
-      "url": "https://www.rxcodexai.com/news"
+      "url": "https://rxcodexai.com/news"
     }
   });
 

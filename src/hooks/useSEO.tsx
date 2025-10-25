@@ -14,7 +14,7 @@ export const useSEO = ({
   title = "Rx Codex AI - Advanced AI Models from Bangladesh",
   description = "Building the future of AI technology with cutting-edge models from Bangladesh. Discover Rx Codex V1-mini and our innovative AI solutions.",
   keywords = "AI, Artificial Intelligence, Bangladesh, AI Models, Machine Learning, Deep Learning, Rx Codex, AI Technology, AI Innovation",
-  ogImage = "https://www.rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png",
+  ogImage = "https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png",
   ogType = "website",
   canonicalUrl,
   structuredData

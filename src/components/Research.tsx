@@ -63,7 +63,7 @@ Rx Codex V1 Tiny represents a major breakthrough in our AI model development. Th
 *This research paper is part of the Rx Codex AI research initiative.*`;
 
   const handleReadMore = () => {
-    navigate('/research-rx-codex-v1-tiny');
+    navigate('/research/rx-codex-v1-tiny');
   };
 
   const handleViewModels = () => {
