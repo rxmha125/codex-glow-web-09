@@ -38,7 +38,7 @@ const Responsive = () => {
               <Button
                 variant="glass"
                 size="default"
-                className="px-6 sm:px-8 py-2.5 text-sm sm:text-base rounded-full font-medium"
+                className="px-6 sm:px-8 py-4 text-sm sm:text-base rounded-full font-medium"
               >
                 <Monitor className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 <span className="whitespace-nowrap">Rx Codex WEB</span>
@@ -47,7 +47,7 @@ const Responsive = () => {
               <Button
                 variant="glass"
                 size="default"
-                className="px-6 sm:px-8 py-2.5 text-sm sm:text-base rounded-full font-medium"
+                className="px-6 sm:px-8 py-4 text-sm sm:text-base rounded-full font-medium"
               >
                 <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 <span className="whitespace-nowrap">ANDROID</span>
