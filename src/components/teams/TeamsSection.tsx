@@ -36,45 +36,49 @@ const TeamsSection = () => {
     }
   ];
 
-  // Create team member cards
+  // Create team member cards with semantic HTML
   const teamCards = teamsData.map((member, index) => (
-    <Card key={index} className="h-auto w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden flex flex-col">
-      <CardHeader className="text-center pb-2 pt-4">
-        <CardTitle className="text-white text-lg font-semibold">
-          {member.position}
-        </CardTitle>
-      </CardHeader>
-      
-      <CardContent className="px-6 py-3 flex flex-col items-center">
-        <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-white/20 mb-3">
-          <img 
-            src={teamMemberImage} 
-            alt={`${member.position} team member`}
-            className="w-full h-full object-cover"
-          />
-        </div>
+    <article key={index} itemScope itemType="https://schema.org/Person">
+      <Card className="h-auto w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden flex flex-col">
+        <CardHeader className="text-center pb-2 pt-4">
+          <CardTitle className="text-white text-lg font-semibold" itemProp="jobTitle">
+            {member.position}
+          </CardTitle>
+        </CardHeader>
         
-        <h4 className="text-white text-base font-semibold mb-2">
-          {member.name}
-        </h4>
-        
-        <p className="text-white/70 text-xs text-center leading-relaxed mb-3">
-          {member.description}
-        </p>
-      </CardContent>
-      
-      <CardFooter className="pb-3 px-6 pt-0">
-        <div className="flex flex-col items-center w-full">
-          <div className="flex items-center text-white/60 text-xs">
-            <span className="flex items-center">
-              Team Card |
-              <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex Logo" className="w-5 h-5 object-contain mx-1" />
-              Rx Codex AI
-            </span>
+        <CardContent className="px-6 py-3 flex flex-col items-center">
+          <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-white/20 mb-3">
+            <img 
+              src={teamMemberImage} 
+              alt={`Rx MHA - ${member.position} at Rx Codex AI`}
+              className="w-full h-full object-cover"
+              itemProp="image"
+            />
           </div>
-        </div>
-      </CardFooter>
-    </Card>
+          
+          <h4 className="text-white text-base font-semibold mb-2" itemProp="name">
+            {member.name}
+          </h4>
+          
+          <p className="text-white/70 text-xs text-center leading-relaxed mb-3" itemProp="description">
+            {member.description}
+          </p>
+          <meta itemProp="worksFor" content="Rx Codex AI" />
+        </CardContent>
+        
+        <CardFooter className="pb-3 px-6 pt-0">
+          <div className="flex flex-col items-center w-full">
+            <div className="flex items-center text-white/60 text-xs">
+              <span className="flex items-center">
+                Team Card |
+                <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex Logo" className="w-5 h-5 object-contain mx-1" />
+                Rx Codex AI
+              </span>
+            </div>
+          </div>
+        </CardFooter>
+      </Card>
+    </article>
   ));
 
   return (
