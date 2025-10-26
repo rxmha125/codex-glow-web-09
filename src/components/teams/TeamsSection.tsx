@@ -39,14 +39,14 @@ const TeamsSection = () => {
   // Create team member cards with semantic HTML
   const teamCards = teamsData.map((member, index) => (
     <article key={index} itemScope itemType="https://schema.org/Person">
-      <Card className="h-auto w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden flex flex-col">
+      <Card className="h-96 w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden relative">
         <CardHeader className="text-center pb-2 pt-4">
           <CardTitle className="text-white text-lg font-semibold" itemProp="jobTitle">
             {member.position}
           </CardTitle>
         </CardHeader>
         
-        <CardContent className="px-6 py-3 flex flex-col items-center">
+        <CardContent className="px-6 py-3 pb-16 flex flex-col items-center">
           <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-white/20 mb-3">
             <img 
               src={teamMemberImage} 
@@ -66,7 +66,7 @@ const TeamsSection = () => {
           <meta itemProp="worksFor" content="Rx Codex AI" />
         </CardContent>
         
-        <CardFooter className="pb-3 px-6 pt-0">
+        <CardFooter className="absolute bottom-4 left-6 right-6">
           <div className="flex flex-col items-center w-full">
             <div className="flex items-center text-white/60 text-xs">
               <span className="flex items-center">
