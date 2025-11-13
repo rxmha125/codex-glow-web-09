@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Models from '@/components/Models';
 import Research from '@/components/Research';
 import Responsive from '@/components/Responsive';
+import Benchmarks from '@/components/Benchmarks';
 import Footer from '@/components/Footer';
 import { useSEO } from '@/hooks/useSEO';
 
@@ -32,6 +33,7 @@ const Home = () => {
       <Models />
       <Research isHomePage={true} />
       <Responsive />
+      <Benchmarks />
       <Footer />
     </main>;
 };
