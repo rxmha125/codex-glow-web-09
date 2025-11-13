@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TeamsSection from '@/components/teams/TeamsSection';
+import GoalSection from '@/components/company/GoalSection';
 import { useSEO } from '@/hooks/useSEO';
 
 const Company = () => {
@@ -90,6 +91,7 @@ const Company = () => {
       <Navbar />
       <div className="pt-20">
         <TeamsSection />
+        <GoalSection />
       </div>
       <Footer />
     </div>
