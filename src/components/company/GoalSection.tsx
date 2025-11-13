@@ -1,17 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const GoalSection = () => {
   return (
     <section className="py-16 lg:py-24 border-t border-white/10">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-8">
-          <ChevronDown className="w-4 h-4 text-white/40" />
-          <h2 className="text-xs sm:text-sm tracking-[0.25em] uppercase text-white/40">
-            [ OUR GOAL ]
-          </h2>
-        </div>
+        <h2 className="text-xs sm:text-sm tracking-[0.25em] uppercase text-white/70 max-w-fit mb-12">
+          [ OUR GOAL ]
+        </h2>
 
         {/* Large Title */}
         <h3 className="text-5xl sm:text-6xl lg:text-7xl font-light text-white/70 mb-16">
@@ -25,8 +22,9 @@ const GoalSection = () => {
           </p>
           
           <Button 
-            variant="outline" 
-            className="self-start lg:self-auto shrink-0 border-white/20 hover:bg-white/10 text-white"
+            variant="glass" 
+            size="lg"
+            className="self-start lg:self-auto shrink-0"
           >
             More
             <ArrowRight className="ml-2 h-4 w-4" />
