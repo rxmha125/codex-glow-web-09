@@ -24,7 +24,7 @@ const GoalSection = () => {
           <Button 
             variant="glass" 
             size="lg"
-            className="self-start lg:self-auto shrink-0"
+            className="self-start lg:self-auto shrink-0 rounded-full"
           >
             More
             <ArrowRight className="ml-2 h-4 w-4" />
