@@ -87,118 +87,141 @@ const Benchmarks = () => {
 
           {/* Content Sections */}
           <div className="prose prose-invert prose-lg max-w-none space-y-12">
-            {/* Overview */}
-            <section>
-              <h2 className="text-3xl font-bold text-white mb-6">Benchmark Overview</h2>
-              <p className="text-white/80 leading-relaxed mb-4">
-                Our comprehensive benchmark analysis demonstrates the superior performance of the Rx Codex tokenizer 
-                compared to industry-standard tokenizers like GPT2 and DeepSeek. The evaluation covers multiple critical 
-                dimensions including compression efficiency, processing speed, token accuracy, and specialized capabilities.
-              </p>
-            </section>
+        {/* Overview */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-foreground">Benchmark Overview</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Our comprehensive benchmark analysis demonstrates the superior performance of the Rx Codex tokenizer 
+            compared to industry-standard tokenizers like GPT2 and DeepSeek. The evaluation covers multiple critical 
+            dimensions including compression efficiency, processing speed, token accuracy, and specialized capabilities.
+          </p>
+        </section>
 
-            {/* Tokenizer Capabilities */}
-            <section>
-              <h2 className="text-3xl font-bold text-white mb-6">Tokenizer Capabilities Analysis</h2>
-              <p className="text-white/80 leading-relaxed mb-4">
-                The radar chart visualization reveals Rx Codex's dominance across five key capability areas:
-              </p>
-              <ul className="list-disc list-inside text-white/80 space-y-3 mb-4">
-                <li><strong className="text-white">Compression:</strong> Rx Codex achieves exceptional compression ratios, significantly outperforming both GPT2 and DeepSeek, resulting in more efficient token utilization.</li>
-                <li><strong className="text-white">Speed:</strong> Processing speeds are competitive with DeepSeek while maintaining superior accuracy and compression.</li>
-                <li><strong className="text-white">Special Tokens:</strong> Industry-leading support for special tokens enables better handling of structured data and code.</li>
-                <li><strong className="text-white">Chat Support:</strong> Optimized for conversational AI applications with specialized chat tokens and formatting.</li>
-                <li><strong className="text-white">Error Free:</strong> Near-perfect accuracy in tokenization with minimal error rates across diverse test cases.</li>
-              </ul>
-            </section>
+        {/* Tokenizer Capabilities */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-foreground">Tokenizer Capabilities Analysis</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            The radar chart visualization reveals Rx Codex's dominance across five key capability areas:
+          </p>
+          <ul className="list-disc list-inside text-muted-foreground space-y-3">
+            <li><strong className="text-foreground">Compression:</strong> Rx Codex achieves exceptional compression ratios, significantly outperforming both GPT2 and DeepSeek, resulting in more efficient token utilization.</li>
+            <li><strong className="text-foreground">Speed:</strong> Processing speeds are competitive with DeepSeek while maintaining superior accuracy and compression.</li>
+            <li><strong className="text-foreground">Special Tokens:</strong> Industry-leading support for special tokens enables better handling of structured data and code.</li>
+            <li><strong className="text-foreground">Chat Support:</strong> Optimized for conversational AI applications with specialized chat tokens and formatting.</li>
+            <li><strong className="text-foreground">Error Free:</strong> Near-perfect accuracy in tokenization with minimal error rates across diverse test cases.</li>
+          </ul>
+        </section>
 
-            {/* Final Scores */}
-            <section>
-              <h2 className="text-3xl font-bold text-white mb-6">Overall Performance Score</h2>
-              <p className="text-white/80 leading-relaxed mb-4">
-                The Tokenizer Battle final scores clearly demonstrate Rx Codex's superiority:
-              </p>
-              <ul className="list-disc list-inside text-white/80 space-y-3 mb-4">
-                <li><strong className="text-primary">Rx Codex: 84.39/100</strong> - Leading performance across all metrics</li>
-                <li>GPT2: 67.74/100 - Strong baseline performance</li>
-                <li>DeepSeek: 67.70/100 - Competitive but lacks optimization</li>
-              </ul>
-              <p className="text-white/80 leading-relaxed">
-                This represents a <strong className="text-primary">24.5% performance advantage</strong> over competing tokenizers, 
-                translating to significant cost savings and improved inference speeds in production environments.
-              </p>
-            </section>
+        {/* Final Scores */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-foreground">Overall Performance Score</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            The Tokenizer Battle final scores clearly demonstrate Rx Codex's superiority:
+          </p>
+          <ul className="list-disc list-inside text-muted-foreground space-y-3">
+            <li><strong className="text-primary">Rx Codex: 84.39/100</strong> - Leading performance across all metrics</li>
+            <li>GPT2: 67.74/100 - Strong baseline performance</li>
+            <li>DeepSeek: 67.70/100 - Competitive but lacks optimization</li>
+          </ul>
+          <p className="text-muted-foreground leading-relaxed">
+            This represents a <strong className="text-primary">24.5% performance advantage</strong> over competing tokenizers, 
+            translating to significant cost savings and improved inference speeds in production environments.
+          </p>
+        </section>
 
-            {/* Compression Analysis */}
-            <section>
-              <h2 className="text-3xl font-bold text-white mb-6">Compression Ratio Comparison</h2>
-              <p className="text-white/80 leading-relaxed mb-4">
-                Across diverse test categories, Rx Codex consistently achieves superior compression ratios:
-              </p>
-              <ul className="list-disc list-inside text-white/80 space-y-3 mb-4">
-                <li><strong className="text-white">English Complex:</strong> Peak compression performance at 7.0+ chars/token ratio</li>
-                <li><strong className="text-white">Code Python:</strong> Maintains high compression even for programming languages</li>
-                <li><strong className="text-white">Chat Conversation:</strong> Optimized for natural dialogue with 6.3+ ratio</li>
-                <li><strong className="text-white">Long Text:</strong> Exceptional performance on extended content at 6.9+ ratio</li>
-              </ul>
-              <p className="text-white/80 leading-relaxed">
-                Higher compression ratios translate directly to reduced API costs, faster inference, and lower memory requirements 
-                in production deployments.
-              </p>
-            </section>
+        {/* Compression Analysis */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-foreground">Compression Ratio Comparison</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Across diverse test categories, Rx Codex consistently achieves superior compression ratios:
+          </p>
+          <ul className="list-disc list-inside text-muted-foreground space-y-3">
+            <li><strong className="text-foreground">English Complex:</strong> Peak compression performance at 7.0+ chars/token ratio</li>
+            <li><strong className="text-foreground">Code Python:</strong> Maintains high compression even for programming languages</li>
+            <li><strong className="text-foreground">Chat Conversation:</strong> Optimized for natural dialogue with 6.3+ ratio</li>
+            <li><strong className="text-foreground">Long Text:</strong> Exceptional performance on extended content at 6.9+ ratio</li>
+          </ul>
+          <p className="text-muted-foreground leading-relaxed">
+            Higher compression ratios translate directly to reduced API costs, faster inference, and lower memory requirements 
+            in production deployments.
+          </p>
+        </section>
 
-            {/* Speed Analysis */}
-            <section>
-              <h2 className="text-3xl font-bold text-white mb-6">Tokenization Speed Performance</h2>
-              <p className="text-white/80 leading-relaxed mb-4">
-                Processing speed measurements across test cases show Rx Codex maintains competitive performance while 
-                delivering superior compression:
-              </p>
-              <ul className="list-disc list-inside text-white/80 space-y-3 mb-4">
-                <li><strong className="text-white">Simple Text:</strong> 0.48ms - Fastest tokenization for basic content</li>
-                <li><strong className="text-white">Complex English:</strong> 0.92ms - Efficient handling of sophisticated language</li>
-                <li><strong className="text-white">Code Processing:</strong> 0.96-1.01ms - Optimized for programming languages</li>
-                <li><strong className="text-white">Long Text:</strong> 4.2ms - Excellent performance on extended content</li>
-              </ul>
-              <p className="text-white/80 leading-relaxed">
-                The balanced speed-compression profile makes Rx Codex ideal for real-time applications where both 
-                latency and cost efficiency matter.
-              </p>
-            </section>
+        {/* Speed Analysis */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-foreground">Tokenization Speed Performance</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Processing speed measurements across test cases show Rx Codex maintains competitive performance while 
+            delivering superior compression:
+          </p>
+          <ul className="list-disc list-inside text-muted-foreground space-y-3">
+            <li><strong className="text-foreground">Simple Text:</strong> 0.48ms - Fastest tokenization for basic content</li>
+            <li><strong className="text-foreground">Complex English:</strong> 0.92ms - Efficient handling of sophisticated language</li>
+            <li><strong className="text-foreground">Code Processing:</strong> 0.96-1.01ms - Optimized for programming languages</li>
+            <li><strong className="text-foreground">Long Text:</strong> 4.2ms - Excellent performance on extended content</li>
+          </ul>
+          <p className="text-muted-foreground leading-relaxed">
+            The balanced speed-compression profile makes Rx Codex ideal for real-time applications where both 
+            latency and cost efficiency matter.
+          </p>
+        </section>
 
-            {/* Token Count Analysis */}
-            <section>
-              <h2 className="text-3xl font-bold text-white mb-6">Token Efficiency Metrics</h2>
-              <p className="text-white/80 leading-relaxed mb-4">
-                Token count comparisons reveal significant efficiency gains:
-              </p>
-              <ul className="list-disc list-inside text-white/80 space-y-3 mb-4">
-                <li><strong className="text-white">Lower Token Counts:</strong> Rx Codex consistently uses fewer tokens across all test categories</li>
-                <li><strong className="text-white">Cost Reduction:</strong> 15-25% fewer tokens means proportional savings in API costs</li>
-                <li><strong className="text-white">Memory Efficiency:</strong> Reduced token counts enable larger context windows with the same memory footprint</li>
-                <li><strong className="text-white">Normalized Performance:</strong> Maintains advantages even when normalized for text length</li>
-              </ul>
-            </section>
+        {/* Token Count Analysis */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-foreground">Token Efficiency Metrics</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Token count comparisons reveal significant efficiency gains:
+          </p>
+          <ul className="list-disc list-inside text-muted-foreground space-y-3">
+            <li><strong className="text-foreground">Lower Token Counts:</strong> Rx Codex consistently uses fewer tokens across all test categories</li>
+            <li><strong className="text-foreground">Cost Reduction:</strong> 15-25% fewer tokens means proportional savings in API costs</li>
+            <li><strong className="text-foreground">Memory Efficiency:</strong> Reduced token counts enable larger context windows with the same memory footprint</li>
+            <li><strong className="text-foreground">Normalized Performance:</strong> Maintains advantages even when normalized for text length</li>
+          </ul>
+        </section>
 
-            {/* Conclusion */}
-            <section>
-              <h2 className="text-3xl font-bold text-white mb-6">Conclusion</h2>
-              <p className="text-white/80 leading-relaxed mb-4">
-                The benchmark results conclusively demonstrate that Rx Codex tokenizer represents a significant advancement 
-                in tokenization technology. With an overall score of 84.39/100 and superior performance across compression, 
-                speed, and accuracy metrics, Rx Codex is positioned as the optimal choice for cost-efficient, high-performance 
-                AI applications.
-              </p>
-              <p className="text-white/80 leading-relaxed">
-                These efficiency gains are not just theoretical—they translate to real-world benefits including reduced inference 
-                costs, faster response times, and the ability to process larger contexts within the same resource constraints. 
-                As AI models continue to scale, efficient tokenization becomes increasingly critical for sustainable and 
-                cost-effective deployment.
-              </p>
-            </section>
-          </div>
+        {/* Conclusion */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-foreground">Conclusion</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            The benchmark results conclusively demonstrate that Rx Codex tokenizer represents a significant advancement 
+            in tokenization technology. With an overall score of 84.39/100 and superior performance across compression, 
+            speed, and accuracy metrics, Rx Codex is positioned as the optimal choice for cost-efficient, high-performance 
+            AI applications.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            These efficiency gains are not just theoretical—they translate to real-world benefits including reduced inference 
+            costs, faster response times, and the ability to process larger contexts within the same resource constraints. 
+            As AI models continue to scale, efficient tokenization becomes increasingly critical for sustainable and 
+            cost-effective deployment.
+          </p>
+        </section>
+      </div>
+    </div>
+  );
+
+  return (
+    <main className="min-h-screen bg-dark-gradient overflow-x-hidden">
+      <Navbar />
+      
+      <div className="pt-24 pb-12 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <Button
+            variant="ghost"
+            onClick={() => navigate(-1)}
+            className="mb-8 hover:bg-primary/10"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back
+          </Button>
+
+          <ScrollArea className="h-[calc(100vh-12rem)] rounded-lg border border-border bg-card/50 backdrop-blur-sm">
+            <div className="p-8 lg:p-12">
+              {benchmarkContent}
+            </div>
+          </ScrollArea>
         </div>
-      </article>
+      </div>
 
       <Footer />
     </main>
