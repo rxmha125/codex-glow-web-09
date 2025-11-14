@@ -10,38 +10,39 @@ const Benchmarks = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 px-4 relative">
-      <div className="container mx-auto">
-        <div className="flex items-center gap-4 mb-12">
-          <div className="h-px bg-white/20 flex-1" />
-          <h2 className="text-white/70 text-sm tracking-[0.2em] font-mono">
-            [ BENCHMARKS ]
-          </h2>
-          <div className="h-px bg-white/20 flex-1" />
-        </div>
+    <section className="pt-8 lg:pt-12 pb-16 lg:pb-24">
+      <div className="container mx-auto px-4">
+        <h2 className="text-xs sm:text-sm tracking-[0.25em] uppercase text-muted-foreground max-w-fit mb-12">
+          [ BENCHMARKS ]
+        </h2>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          <div className="space-y-8 order-2 lg:order-1">
-            <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-              Models and Tokenizer Benchmarks
-            </h3>
-            
-            <p className="text-lg text-white/70 leading-relaxed">
-              Our models Benchmark comparison graphs with others models and tokenizer benchmarks comparison with others tokenizers
-            </p>
+        <div className="w-full h-px bg-white/10 mb-8"></div>
 
-            <Button 
-              variant="glass" 
-              size="lg"
-              onClick={() => navigate('/benchmarks')}
-              className="rounded-full"
-            >
-              See ALL
-            </Button>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="space-y-8 lg:space-y-8">
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight bg-gradient-to-r from-white via-white to-blue-200 bg-clip-text text-transparent">
+                Models and Tokenizer Benchmarks
+              </h3>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed tracking-wide">
+                Our models Benchmark comparison graphs with others models and tokenizer benchmarks comparison with others tokenizers
+              </p>
+            </div>
+
+            <div className="pt-4">
+              <Button 
+                variant="glass" 
+                size="default"
+                onClick={() => navigate('/benchmarks')}
+                className="h-11 sm:h-12 px-6 sm:px-8 text-sm sm:text-base rounded-full font-medium"
+              >
+                See ALL
+              </Button>
+            </div>
           </div>
 
           <div className="order-1 lg:order-2">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 max-w-md mx-auto">
               <div className="col-span-2">
                 <img 
                   src={capabilitiesRadar} 
@@ -60,13 +61,6 @@ const Benchmarks = () => {
                 <img 
                   src={compressionComparison} 
                   alt="Compression Ratio Comparison" 
-                  className="w-full h-auto rounded-lg border border-white/10"
-                />
-              </div>
-              <div className="col-span-2">
-                <img 
-                  src={speedComparison} 
-                  alt="Tokenization Speed Comparison" 
                   className="w-full h-auto rounded-lg border border-white/10"
                 />
               </div>
