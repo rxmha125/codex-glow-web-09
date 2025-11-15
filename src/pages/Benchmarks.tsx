@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -29,67 +28,6 @@ const Benchmarks = () => {
 
   const benchmarkContent = (
     <div className="space-y-8">
-      {/* Title */}
-      <div className="space-y-4">
-        <h1 className="text-3xl lg:text-4xl font-bold text-foreground">
-          Models and Tokenizer Benchmarks
-        </h1>
-        <div className="space-y-2 text-muted-foreground">
-          <p><strong>Date:</strong> October 12, 2025</p>
-        </div>
-      </div>
-
-      {/* Description */}
-      <section className="space-y-4">
-        <p className="text-muted-foreground leading-relaxed">
-          Our models Benchmark comparison graphs with others models and tokenizer benchmarks comparison with others tokenizers
-        </p>
-      </section>
-
-      {/* Benchmark Images Grid */}
-      <div className="space-y-6">
-        <div className="rounded-lg overflow-hidden border border-border">
-          <img 
-            src={capabilitiesRadar} 
-            alt="Tokenizer Capabilities Radar Chart" 
-            className="w-full h-auto"
-          />
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="rounded-lg overflow-hidden border border-border">
-            <img 
-              src={finalScores} 
-              alt="Final Scores Comparison" 
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="rounded-lg overflow-hidden border border-border">
-            <img 
-              src={compressionComparison} 
-              alt="Compression Ratio Comparison" 
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-
-        <div className="rounded-lg overflow-hidden border border-border">
-          <img 
-            src={speedComparison} 
-            alt="Tokenization Speed Comparison" 
-            className="w-full h-auto"
-          />
-        </div>
-
-        <div className="rounded-lg overflow-hidden border border-border">
-          <img 
-            src={tokenCount} 
-            alt="Token Count Comparison" 
-            className="w-full h-auto"
-          />
-        </div>
-      </div>
-
       {/* Overview */}
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Benchmark Overview</h2>
@@ -203,30 +141,100 @@ const Benchmarks = () => {
   );
 
   return (
-    <main className="min-h-screen bg-dark-gradient overflow-x-hidden">
+    <div className="min-h-screen bg-dark-gradient overflow-x-hidden">
       <Navbar />
       
-      <div className="pt-24 pb-12 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <Button
-            variant="ghost"
-            onClick={() => navigate(-1)}
-            className="mb-8 hover:bg-primary/10"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back
-          </Button>
+      <div className="pt-20">
+        <div className="container mx-auto px-4 py-8 max-w-6xl">
+          {/* Header with Back Button */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => navigate('/home')}
+              className="text-muted-foreground hover:bg-transparent mb-8 group"
+            >
+              <ArrowLeft className="w-5 h-5 group-hover:text-foreground transition-colors" />
+            </Button>
+            
+            {/* Date */}
+            <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">
+              OCTOBER 12, 2025
+            </p>
+            
+            {/* Title */}
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
+              Models and Tokenizer Benchmarks
+            </h1>
+            
+            {/* Description */}
+            <p className="text-lg text-muted-foreground mb-0 max-w-2xl leading-relaxed">
+              Our models Benchmark comparison graphs with others models and tokenizer benchmarks comparison with others tokenizers
+            </p>
+          </div>
 
-          <ScrollArea className="h-[calc(100vh-12rem)] rounded-lg border border-border bg-card/50 backdrop-blur-sm">
-            <div className="p-8 lg:p-12">
-              {benchmarkContent}
+          {/* Smart 5-Image Grid in 16:9 Hero Section */}
+          <div className="mb-12">
+            <div className="relative aspect-[16/9] max-w-4xl mx-auto rounded-2xl overflow-hidden">
+              <div className="grid grid-cols-3 grid-rows-2 gap-2 h-full p-2 bg-card/50 backdrop-blur-sm">
+                {/* Capabilities Radar - spans 2 columns, 2 rows (left side, large focal point) */}
+                <div className="col-span-2 row-span-2 rounded-lg overflow-hidden border border-border">
+                  <img 
+                    src={capabilitiesRadar} 
+                    alt="Tokenizer Capabilities Radar Chart" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Final Scores - top right */}
+                <div className="rounded-lg overflow-hidden border border-border">
+                  <img 
+                    src={finalScores} 
+                    alt="Final Scores Comparison" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Compression - second row right */}
+                <div className="rounded-lg overflow-hidden border border-border">
+                  <img 
+                    src={compressionComparison} 
+                    alt="Compression Ratio Comparison" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Bottom row with Speed and Token Count - positioned absolutely */}
+              <div className="absolute bottom-2 left-2 right-2 grid grid-cols-2 gap-2">
+                <div className="rounded-lg overflow-hidden border border-border bg-card/50 backdrop-blur-sm">
+                  <img 
+                    src={speedComparison} 
+                    alt="Tokenization Speed Comparison" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="rounded-lg overflow-hidden border border-border bg-card/50 backdrop-blur-sm">
+                  <img 
+                    src={tokenCount} 
+                    alt="Token Count Comparison" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
-          </ScrollArea>
+          </div>
+
+          {/* Content */}
+          <div className="max-w-4xl mx-auto">
+            {benchmarkContent}
+          </div>
         </div>
       </div>
-
+      
       <Footer />
-    </main>
+    </div>
   );
 };
 
