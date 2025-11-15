@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useSEO } from '@/hooks/useSEO';
 import capabilitiesRadar from '@/assets/capabilities_radar.png';
@@ -13,11 +13,52 @@ import tokenCount from '@/assets/token_count_comparison.png';
 
 const Benchmarks = () => {
   const navigate = useNavigate();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const benchmarkImages = [
+    { src: capabilitiesRadar, alt: "Tokenizer Capabilities Radar Chart" },
+    { src: finalScores, alt: "Final Scores Comparison" },
+    { src: compressionComparison, alt: "Compression Ratio Comparison" },
+    { src: speedComparison, alt: "Tokenization Speed Comparison" },
+    { src: tokenCount, alt: "Token Count Comparison" },
+  ];
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    if (!lightboxOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : benchmarkImages.length - 1));
+      } else if (e.key === 'ArrowRight') {
+        setCurrentImageIndex((prev) => (prev < benchmarkImages.length - 1 ? prev + 1 : 0));
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, benchmarkImages.length]);
 
   useSEO({
     title: "Models and Tokenizer Benchmarks - Rx Codex AI",
@@ -178,7 +219,10 @@ const Benchmarks = () => {
             <div className="relative aspect-[16/9] max-w-4xl mx-auto rounded-2xl overflow-hidden">
               <div className="grid grid-cols-3 grid-rows-2 gap-2 h-full p-2 bg-card/50 backdrop-blur-sm">
                 {/* Capabilities Radar - spans 2 columns, 2 rows (left side, large focal point) */}
-                <div className="col-span-2 row-span-2 rounded-lg overflow-hidden border border-border">
+                <div 
+                  className="col-span-2 row-span-2 rounded-lg overflow-hidden border border-border cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => openLightbox(0)}
+                >
                   <img 
                     src={capabilitiesRadar} 
                     alt="Tokenizer Capabilities Radar Chart" 
@@ -187,7 +231,10 @@ const Benchmarks = () => {
                 </div>
                 
                 {/* Final Scores - top right */}
-                <div className="rounded-lg overflow-hidden border border-border">
+                <div 
+                  className="rounded-lg overflow-hidden border border-border cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => openLightbox(1)}
+                >
                   <img 
                     src={finalScores} 
                     alt="Final Scores Comparison" 
@@ -196,7 +243,10 @@ const Benchmarks = () => {
                 </div>
                 
                 {/* Compression - second row right */}
-                <div className="rounded-lg overflow-hidden border border-border">
+                <div 
+                  className="rounded-lg overflow-hidden border border-border cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => openLightbox(2)}
+                >
                   <img 
                     src={compressionComparison} 
                     alt="Compression Ratio Comparison" 
@@ -207,7 +257,10 @@ const Benchmarks = () => {
               
               {/* Bottom row with Speed and Token Count - positioned absolutely */}
               <div className="absolute bottom-2 left-2 right-2 grid grid-cols-2 gap-2">
-                <div className="rounded-lg overflow-hidden border border-border bg-card/50 backdrop-blur-sm">
+                <div 
+                  className="rounded-lg overflow-hidden border border-border bg-card/50 backdrop-blur-sm cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => openLightbox(3)}
+                >
                   <img 
                     src={speedComparison} 
                     alt="Tokenization Speed Comparison" 
@@ -215,7 +268,10 @@ const Benchmarks = () => {
                   />
                 </div>
                 
-                <div className="rounded-lg overflow-hidden border border-border bg-card/50 backdrop-blur-sm">
+                <div 
+                  className="rounded-lg overflow-hidden border border-border bg-card/50 backdrop-blur-sm cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => openLightbox(4)}
+                >
                   <img 
                     src={tokenCount} 
                     alt="Token Count Comparison" 
@@ -234,6 +290,60 @@ const Benchmarks = () => {
       </div>
       
       <Footer />
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
+          onClick={closeLightbox}
+        >
+          {/* Close Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white hover:bg-white/10 z-50"
+          >
+            <X className="w-6 h-6" />
+          </Button>
+
+          {/* Main Image */}
+          <div 
+            className="max-w-7xl max-h-[80vh] px-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={benchmarkImages[currentImageIndex].src}
+              alt={benchmarkImages[currentImageIndex].alt}
+              className="max-w-full max-h-[80vh] object-contain rounded-lg"
+            />
+          </div>
+
+          {/* Thumbnail Navigation */}
+          <div 
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 bg-black/60 backdrop-blur-sm p-3 rounded-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {benchmarkImages.map((image, index) => (
+              <button
+                key={index}
+                onClick={() => goToImage(index)}
+                className={`relative rounded-lg overflow-hidden border-2 transition-all hover:scale-105 ${
+                  currentImageIndex === index 
+                    ? 'border-primary ring-2 ring-primary/50' 
+                    : 'border-border hover:border-primary/50'
+                }`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-20 h-20 object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
