@@ -1,10 +1,16 @@
 import { useSEO } from '@/hooks/useSEO';
+import Navbar from '@/components/Navbar';
 import ProfileHeader from '@/components/profile/ProfileHeader';
 import ProfileBanner from '@/components/profile/ProfileBanner';
 import ProfileInfo from '@/components/profile/ProfileInfo';
 import ProfileTabs from '@/components/profile/ProfileTabs';
+import PostComposer from '@/components/profile/PostComposer';
+import PostsList from '@/components/profile/PostsList';
+import { useAdmin } from '@/contexts/AdminContext';
 
 const Profile = () => {
+  const { isAdmin } = useAdmin();
+
   useSEO({
     title: "Rx MHA - Founder & CEO | Rx Codex AI",
     description: "AI Developer and Founder of Rx Codex AI. Building the future of AI technology in Bangladesh.",
@@ -24,19 +30,16 @@ const Profile = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-[600px] mx-auto border-x border-border">
+    <div className="min-h-screen bg-dark-gradient">
+      <Navbar />
+      <div className="max-w-[600px] mx-auto border-x border-border bg-background/50">
         <ProfileHeader />
         <ProfileBanner />
         <ProfileInfo />
         <ProfileTabs />
         
-        {/* Posts content area - placeholder for future phase */}
-        <div className="p-4 min-h-[400px] border-t border-border">
-          <p className="text-center text-muted-foreground py-20">
-            Posts will appear here
-          </p>
-        </div>
+        {isAdmin && <PostComposer />}
+        <PostsList />
       </div>
     </div>
   );
