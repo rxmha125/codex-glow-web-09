@@ -1,5 +1,6 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import teamMemberImage from "@/assets/team-member.jpg";
+import { Link } from "react-router-dom";
 
 const TeamsSection = () => {
   // Team member positions
@@ -39,7 +40,8 @@ const TeamsSection = () => {
   // Create team member cards with semantic HTML
   const teamCards = teamsData.map((member, index) => (
     <article key={index} itemScope itemType="https://schema.org/Person">
-      <Card className="h-96 w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden relative">
+      <Link to="/company/teams/profiles/rxmha" className="block">
+        <Card className="h-96 w-80 shrink-0 rounded-2xl border border-white/10 bg-white/5 card-shadow-responsive overflow-hidden relative hover:bg-white/10 transition-colors cursor-pointer">
         <CardHeader className="text-center pb-2 pt-4">
           <CardTitle className="text-white text-lg font-semibold" itemProp="jobTitle">
             {member.position}
@@ -78,6 +80,7 @@ const TeamsSection = () => {
           </div>
         </CardFooter>
       </Card>
+      </Link>
     </article>
   ));
 
