@@ -1,9 +1,11 @@
 import { ArrowLeft, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { usePostCount } from '@/hooks/usePostCount';
 
 const ProfileHeader = () => {
   const navigate = useNavigate();
+  const postCount = usePostCount();
 
   return (
     <header className="sticky top-0 z-10 backdrop-blur-md bg-background/80 border-b border-border">
@@ -20,7 +22,9 @@ const ProfileHeader = () => {
           </Button>
           <div>
             <h1 className="font-bold text-foreground">Rx MHA</h1>
-            <p className="text-xs text-muted-foreground">17 posts</p>
+            <p className="text-xs text-muted-foreground">
+              {postCount} {postCount === 1 ? 'post' : 'posts'}
+            </p>
           </div>
         </div>
         
