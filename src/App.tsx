@@ -12,6 +12,7 @@ import ResearchPaper from "./pages/ResearchPaper";
 import Benchmarks from "./pages/Benchmarks";
 import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
+import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/company" element={<Company />} />
           <Route path="/models" element={<ModelsPage />} />
           <Route path="/teams" element={<Teams />} />
+          <Route path="/company/teams/profiles/:username" element={<Profile />} />
           <Route path="/news" element={<News />} />
           <Route path="/research/rx-codex-v1-tiny" element={<ResearchPaper />} />
           {/* Redirect old research URL to new structure */}
