@@ -47,7 +47,7 @@ const PostItem = ({ post }: PostItemProps) => {
   };
 
   return (
-    <div className="border-b border-border p-4 hover:bg-muted/30 transition-colors">
+    <div className="border-b border-border/50 p-4 hover:bg-muted/20 transition-all duration-200">
       <div className="flex gap-3">
         <Avatar className="w-10 h-10">
           <AvatarImage src={teamMemberImage} />
@@ -87,7 +87,7 @@ const PostItem = ({ post }: PostItemProps) => {
           </p>
           
           {post.imageUrl && (
-            <div className="mt-3 rounded-lg overflow-hidden border border-border">
+            <div className="mt-3 rounded-2xl overflow-hidden border border-border/50 shadow-lg">
               <img
                 src={post.imageUrl}
                 alt="Post image"

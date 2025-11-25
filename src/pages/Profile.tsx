@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import ProfileHeader from '@/components/profile/ProfileHeader';
 import ProfileBanner from '@/components/profile/ProfileBanner';
 import ProfileInfo from '@/components/profile/ProfileInfo';
-import ProfileTabs from '@/components/profile/ProfileTabs';
+
 import PostComposer from '@/components/profile/PostComposer';
 import PostsList from '@/components/profile/PostsList';
 import { useAdmin } from '@/contexts/AdminContext';
@@ -32,11 +32,10 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-dark-gradient">
       <Navbar />
-      <div className="max-w-[600px] mx-auto border-x border-border bg-background/50">
+      <div className="max-w-[600px] mx-auto border-x border-border bg-background/50 pt-20">
         <ProfileHeader />
         <ProfileBanner />
         <ProfileInfo />
-        <ProfileTabs />
         
         {isAdmin && <PostComposer />}
         <PostsList />

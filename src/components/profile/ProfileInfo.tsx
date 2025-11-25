@@ -30,13 +30,13 @@ const ProfileInfo = () => {
       </div>
       
       {/* Bio */}
-      <p className="mt-3 text-foreground">
+      <p className="mt-3 text-foreground leading-relaxed">
         AI Developer | Founder of Rx Codex AI |{' '}
         <a 
           href="https://rxcodexai.com" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-primary hover:underline"
+          className="text-primary hover:underline transition-all"
         >
           https://www.rxcodexai.com
         </a>
@@ -45,13 +45,13 @@ const ProfileInfo = () => {
       
       {/* Info Row */}
       <div className="flex flex-wrap gap-4 mt-3 text-sm text-muted-foreground">
-        <span className="flex items-center gap-1">
+        <span className="flex items-center gap-1 transition-colors">
           <Link2 className="w-4 h-4" />
           <a 
             href="https://rxcodexai.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-primary hover:underline"
+            className="text-primary hover:underline transition-all"
           >
             rxcodexai.com
           </a>
@@ -68,11 +68,11 @@ const ProfileInfo = () => {
       
       {/* Following/Followers */}
       <div className="flex gap-4 mt-3 text-sm">
-        <button className="hover:underline">
+        <button className="hover:underline transition-all hover-scale">
           <strong className="text-foreground">2</strong>{' '}
           <span className="text-muted-foreground">Following</span>
         </button>
-        <button className="hover:underline">
+        <button className="hover:underline transition-all hover-scale">
           <strong className="text-foreground">2</strong>{' '}
           <span className="text-muted-foreground">Followers</span>
         </button>

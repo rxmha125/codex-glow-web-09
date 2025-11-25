@@ -41,7 +41,7 @@ const PostComposer = () => {
 
   return (
     <>
-      <div className="border-b border-border p-4">
+      <div className="border-b border-border p-4 bg-background/50 backdrop-blur-sm">
         <div className="flex gap-3">
           <Avatar className="w-10 h-10">
             <AvatarImage src={teamMemberImage} />
@@ -53,7 +53,7 @@ const PostComposer = () => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="What's happening?"
-              className="min-h-[100px] resize-none border-0 p-0 focus-visible:ring-0 text-base"
+              className="min-h-[100px] resize-none border-0 p-0 focus-visible:ring-0 text-base placeholder:text-muted-foreground/60"
             />
             
             {imagePreview && (

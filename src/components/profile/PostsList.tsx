@@ -17,16 +17,23 @@ const PostsList = () => {
 
   if (posts.length === 0) {
     return (
-      <div className="p-8 text-center">
-        <p className="text-muted-foreground">No posts yet</p>
+      <div className="p-12 text-center animate-fade-in">
+        <p className="text-muted-foreground text-lg">No posts yet</p>
+        <p className="text-muted-foreground/60 text-sm mt-2">Share your thoughts to get started</p>
       </div>
     );
   }
 
   return (
-    <div>
-      {posts.map((post) => (
-        <PostItem key={post.id} post={post} />
+    <div className="animate-fade-in">
+      {posts.map((post, index) => (
+        <div 
+          key={post.id}
+          style={{ animationDelay: `${index * 50}ms` }}
+          className="animate-fade-in"
+        >
+          <PostItem post={post} />
+        </div>
       ))}
     </div>
   );
