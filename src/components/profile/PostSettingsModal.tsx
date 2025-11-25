@@ -30,30 +30,40 @@ const PostSettingsModal = ({ open, onClose, onDateSelect, selectedDate }: PostSe
         
         <div className="py-4">
           <p className="text-sm text-muted-foreground mb-4">
-            Select a custom display date for this post. The date will advance in real-time.
+            Select a custom display date for this post. The date will advance in real-time automatically.
           </p>
           
           <Calendar
             mode="single"
             selected={date}
             onSelect={setDate}
-            className="rounded-md border"
+            className="rounded-md border mx-auto"
           />
           
           {date && (
-            <p className="text-sm text-muted-foreground mt-4">
-              Selected: {format(date, 'PPP')}
-            </p>
+            <div className="mt-4 p-3 bg-muted/50 rounded-lg">
+              <p className="text-sm font-medium">Selected date: {format(date, 'PPP')}</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                This date will advance daily to stay current
+              </p>
+            </div>
           )}
         </div>
         
-        <div className="flex justify-end gap-2">
-          <Button variant="outline" onClick={onClose}>
-            Cancel
-          </Button>
-          <Button onClick={handleConfirm} disabled={!date}>
-            Confirm
-          </Button>
+        <div className="flex justify-between gap-2">
+          {date && (
+            <Button variant="ghost" onClick={() => setDate(undefined)}>
+              Clear
+            </Button>
+          )}
+          <div className="flex gap-2 ml-auto">
+            <Button variant="outline" onClick={onClose}>
+              Cancel
+            </Button>
+            <Button onClick={handleConfirm} disabled={!date}>
+              Confirm
+            </Button>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
