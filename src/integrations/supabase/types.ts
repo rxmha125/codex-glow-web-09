@@ -14,7 +14,120 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      fingerprints: {
+        Row: {
+          canvas_hash: string | null
+          created_at: string
+          hardware_concurrency: number | null
+          id: string
+          ip_address: string | null
+          language: string | null
+          last_seen: string
+          platform: string | null
+          screen_resolution: string | null
+          timezone: string | null
+          user_agent: string | null
+          user_hash: string
+          webgl_renderer: string | null
+        }
+        Insert: {
+          canvas_hash?: string | null
+          created_at?: string
+          hardware_concurrency?: number | null
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          last_seen?: string
+          platform?: string | null
+          screen_resolution?: string | null
+          timezone?: string | null
+          user_agent?: string | null
+          user_hash: string
+          webgl_renderer?: string | null
+        }
+        Update: {
+          canvas_hash?: string | null
+          created_at?: string
+          hardware_concurrency?: number | null
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          last_seen?: string
+          platform?: string | null
+          screen_resolution?: string | null
+          timezone?: string | null
+          user_agent?: string | null
+          user_hash?: string
+          webgl_renderer?: string | null
+        }
+        Relationships: []
+      }
+      post_interactions: {
+        Row: {
+          created_at: string
+          fingerprint_id: string
+          id: string
+          interaction_type: string
+          post_id: string
+        }
+        Insert: {
+          created_at?: string
+          fingerprint_id: string
+          id?: string
+          interaction_type: string
+          post_id: string
+        }
+        Update: {
+          created_at?: string
+          fingerprint_id?: string
+          id?: string
+          interaction_type?: string
+          post_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "post_interactions_fingerprint_id_fkey"
+            columns: ["fingerprint_id"]
+            isOneToOne: false
+            referencedRelation: "fingerprints"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "post_interactions_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      posts: {
+        Row: {
+          content: string
+          created_at: string
+          date_offset: number
+          display_date: string
+          id: string
+          image_url: string | null
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          date_offset?: number
+          display_date: string
+          id: string
+          image_url?: string | null
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          date_offset?: number
+          display_date?: string
+          id?: string
+          image_url?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
