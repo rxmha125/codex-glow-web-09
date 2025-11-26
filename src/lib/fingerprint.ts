@@ -1,4 +1,4 @@
-import { supabase } from '@/integrations/supabase/client';
+import { supabase, checkSupabaseAvailable } from './supabaseClient';
 
 export interface DeviceFingerprint {
   ipAddress?: string;
@@ -111,6 +111,11 @@ export const getLocalFingerprint = (): string | null => {
 
 // Identify or create user based on fingerprint
 export const identifyUser = async (): Promise<string | null> => {
+  if (!checkSupabaseAvailable() || !supabase) {
+    console.log('Supabase not ready, fingerprinting disabled');
+    return null;
+  }
+
   try {
     const fingerprint = await generateFingerprint();
     const fingerprintHash = createFingerprintHash(fingerprint);
