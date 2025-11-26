@@ -32,7 +32,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-dark-gradient">
       <Navbar />
-      <div className="max-w-[600px] mx-auto border-x border-border bg-background/50 pt-20">
+      <div className="max-w-[600px] mx-auto border-x border-border/30 pt-20">
         <ProfileHeader />
         <ProfileBanner />
         <ProfileInfo />

@@ -8,7 +8,7 @@ const ProfileHeader = () => {
   const postCount = usePostCount();
 
   return (
-    <header className="sticky top-20 z-10 backdrop-blur-xl bg-background/30 border-b border-border/50">
+    <header className="sticky top-20 z-20 backdrop-blur-xl bg-background/10 border-b border-border/30">
       <div className="flex items-center justify-between px-4 py-3">
         {/* Left: Back button + Name/Posts */}
         <div className="flex items-center gap-4">
