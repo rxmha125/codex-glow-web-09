@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { getPosts, Post } from '@/lib/postStorage';
+import { getPosts, Post } from '@/lib/postStorageDB';
 import PostItem from './PostItem';
 
 const PostsList = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    const loadPosts = () => {
-      setPosts(getPosts());
+    const loadPosts = async () => {
+      const posts = await getPosts();
+      setPosts(posts);
     };
 
     loadPosts();
