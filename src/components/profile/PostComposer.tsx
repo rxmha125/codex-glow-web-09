@@ -2,11 +2,12 @@ import { useState, useRef } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Image, Settings } from 'lucide-react';
+import { Image, Settings, Calendar } from 'lucide-react';
 import { createPost } from '@/lib/postStorage';
 import { toast } from 'sonner';
 import PostSettingsModal from './PostSettingsModal';
 import teamMemberImage from '@/assets/team-member.jpg';
+import { format } from 'date-fns';
 
 const PostComposer = () => {
   const [content, setContent] = useState('');
@@ -41,7 +42,7 @@ const PostComposer = () => {
 
   return (
     <>
-      <div className="border-b border-border p-4 bg-background/50 backdrop-blur-sm">
+      <div className="border-b border-border/30 p-4 bg-background/30 backdrop-blur-md rounded-t-lg">
         <div className="flex gap-3">
           <Avatar className="w-10 h-10">
             <AvatarImage src={teamMemberImage} />
@@ -53,7 +54,7 @@ const PostComposer = () => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="What's happening?"
-              className="min-h-[100px] resize-none border-0 p-0 focus-visible:ring-0 text-base placeholder:text-muted-foreground/60"
+              className="min-h-[100px] resize-none border-0 p-0 focus-visible:ring-0 text-base placeholder:text-muted-foreground/50 bg-transparent"
             />
             
             {imagePreview && (
@@ -61,7 +62,7 @@ const PostComposer = () => {
                 <img
                   src={imagePreview}
                   alt="Upload preview"
-                  className="rounded-lg max-h-[300px] w-full object-cover"
+                  className="rounded-xl max-h-[300px] w-full object-cover border border-border/50"
                 />
                 <Button
                   variant="destructive"
@@ -73,8 +74,15 @@ const PostComposer = () => {
                 </Button>
               </div>
             )}
+
+            {customDate && (
+              <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground bg-muted/30 rounded-lg px-3 py-2 border border-border/30">
+                <Calendar className="w-4 h-4" />
+                <span>Will display: {format(customDate, 'PPP')}</span>
+              </div>
+            )}
             
-            <div className="flex items-center justify-between mt-3 pt-3 border-t border-border">
+            <div className="flex items-center justify-between mt-3 pt-3 border-t border-border/30">
               <div className="flex gap-1">
                 <input
                   type="file"
@@ -87,21 +95,24 @@ const PostComposer = () => {
                   variant="ghost"
                   size="icon"
                   onClick={() => fileInputRef.current?.click()}
+                  className="hover:bg-primary/10 hover:scale-105 transition-all"
                 >
                   <Image className="w-5 h-5 text-primary" />
                 </Button>
-                <Button variant="ghost" size="icon">
-                  <Settings 
-                    className="w-5 h-5 text-primary"
-                    onClick={() => setShowSettings(true)}
-                  />
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  onClick={() => setShowSettings(true)}
+                  className="hover:bg-primary/10 hover:scale-105 transition-all"
+                >
+                  <Settings className="w-5 h-5 text-primary" />
                 </Button>
               </div>
               
               <Button
                 onClick={handlePost}
                 disabled={!content.trim()}
-                className="rounded-full px-6"
+                className="rounded-full px-6 hover:scale-105 transition-all"
               >
                 Post
               </Button>

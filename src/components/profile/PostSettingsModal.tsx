@@ -23,7 +23,7 @@ const PostSettingsModal = ({ open, onClose, onDateSelect, selectedDate }: PostSe
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] bg-background/95 backdrop-blur-xl border-border/50">
         <DialogHeader>
           <DialogTitle>Post Settings</DialogTitle>
         </DialogHeader>
@@ -37,11 +37,11 @@ const PostSettingsModal = ({ open, onClose, onDateSelect, selectedDate }: PostSe
             mode="single"
             selected={date}
             onSelect={setDate}
-            className="rounded-md border mx-auto"
+            className="rounded-md border border-border/50 mx-auto bg-background/30"
           />
           
           {date && (
-            <div className="mt-4 p-3 bg-muted/50 rounded-lg">
+            <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border/30">
               <p className="text-sm font-medium">Selected date: {format(date, 'PPP')}</p>
               <p className="text-xs text-muted-foreground mt-1">
                 This date will advance daily to stay current
