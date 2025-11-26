@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 
 interface AdminContextType {
   isAdmin: boolean;
-  login: (password: string) => boolean;
+  setIsAdmin: (value: boolean) => void;
   logout: () => void;
 }
 
@@ -12,28 +12,22 @@ export const AdminProvider = ({ children }: { children: ReactNode }) => {
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
   useEffect(() => {
-    const adminSession = localStorage.getItem('rxcodex_admin_session');
-    if (adminSession === 'true') {
+    // Check if user is admin from localStorage
+    const adminStatus = localStorage.getItem('is_admin');
+    if (adminStatus === 'true') {
       setIsAdmin(true);
     }
   }, []);
 
-  const login = (password: string): boolean => {
-    if (password === 'Mimi mithila') {
-      setIsAdmin(true);
-      localStorage.setItem('rxcodex_admin_session', 'true');
-      return true;
-    }
-    return false;
-  };
-
   const logout = () => {
     setIsAdmin(false);
-    localStorage.removeItem('rxcodex_admin_session');
+    localStorage.removeItem('is_admin');
+    // Reload to reset fingerprint
+    window.location.href = '/';
   };
 
   return (
-    <AdminContext.Provider value={{ isAdmin, login, logout }}>
+    <AdminContext.Provider value={{ isAdmin, setIsAdmin, logout }}>
       {children}
     </AdminContext.Provider>
   );

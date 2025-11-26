@@ -14,6 +14,38 @@ export type Database = {
   }
   public: {
     Tables: {
+      comments: {
+        Row: {
+          content: string
+          created_at: string
+          fingerprint_id: string
+          id: string
+          post_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          fingerprint_id: string
+          id?: string
+          post_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          fingerprint_id?: string
+          id?: string
+          post_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "comments_fingerprint_id_fkey"
+            columns: ["fingerprint_id"]
+            isOneToOne: false
+            referencedRelation: "fingerprints"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       fingerprints: {
         Row: {
           canvas_hash: string | null
@@ -21,8 +53,11 @@ export type Database = {
           hardware_concurrency: number | null
           id: string
           ip_address: string | null
+          is_admin: boolean | null
           language: string | null
           last_seen: string
+          login_count: number | null
+          login_history: Json | null
           platform: string | null
           screen_resolution: string | null
           timezone: string | null
@@ -36,8 +71,11 @@ export type Database = {
           hardware_concurrency?: number | null
           id?: string
           ip_address?: string | null
+          is_admin?: boolean | null
           language?: string | null
           last_seen?: string
+          login_count?: number | null
+          login_history?: Json | null
           platform?: string | null
           screen_resolution?: string | null
           timezone?: string | null
@@ -51,8 +89,11 @@ export type Database = {
           hardware_concurrency?: number | null
           id?: string
           ip_address?: string | null
+          is_admin?: boolean | null
           language?: string | null
           last_seen?: string
+          login_count?: number | null
+          login_history?: Json | null
           platform?: string | null
           screen_resolution?: string | null
           timezone?: string | null
@@ -97,6 +138,35 @@ export type Database = {
             columns: ["post_id"]
             isOneToOne: false
             referencedRelation: "posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      post_views: {
+        Row: {
+          fingerprint_id: string
+          id: string
+          post_id: string
+          viewed_at: string
+        }
+        Insert: {
+          fingerprint_id: string
+          id?: string
+          post_id: string
+          viewed_at?: string
+        }
+        Update: {
+          fingerprint_id?: string
+          id?: string
+          post_id?: string
+          viewed_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "post_views_fingerprint_id_fkey"
+            columns: ["fingerprint_id"]
+            isOneToOne: false
+            referencedRelation: "fingerprints"
             referencedColumns: ["id"]
           },
         ]

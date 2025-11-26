@@ -4,7 +4,9 @@ import { Button } from '@/components/ui/button';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useAdmin } from '@/contexts/AdminContext';
 const Navbar = () => {
+  const { isAdmin } = useAdmin();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showChevron, setShowChevron] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -108,6 +110,14 @@ const Navbar = () => {
             >
               NEWS
             </button>
+            {isAdmin && (
+              <button 
+                onClick={() => navigateToPage('/admin')} 
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/admin' ? 'active' : ''}`}
+              >
+                ADMIN
+              </button>
+            )}
           </div>
           </div>
 
@@ -200,6 +210,14 @@ const Navbar = () => {
                 >
                   NEWS
                 </button>
+                {isAdmin && (
+                  <button 
+                    onClick={() => navigateToPage('/admin')} 
+                    className={`mobile-nav-button ${location.pathname === '/admin' ? 'active' : ''}`}
+                  >
+                    ADMIN
+                  </button>
+                )}
                 
                 {/* Separator */}
                 <div className="border-t border-white/20 my-6"></div>

@@ -15,6 +15,7 @@ import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
 import AdminAccess from "./pages/AdminAccess";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -32,7 +33,8 @@ const App = () => (
             <Route path="/models" element={<ModelsPage />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/company/teams/profiles/:username" element={<Profile />} />
-            <Route path="/company/teams/rxmha/admin/access" element={<AdminAccess />} />
+            <Route path="/admin-access" element={<AdminAccess />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/news" element={<News />} />
             <Route path="/research/rx-codex-v1-tiny" element={<ResearchPaper />} />
             {/* Redirect old research URL to new structure */}

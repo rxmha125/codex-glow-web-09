@@ -110,10 +110,10 @@ export const getLocalFingerprint = (): string | null => {
 };
 
 // Identify or create user based on fingerprint
-export const identifyUser = async (): Promise<string | null> => {
+export const identifyUser = async (isAdminLogin: boolean = false): Promise<{ fingerprintId: string | null; isAdmin: boolean; loginCount: number }> => {
   if (!checkSupabaseAvailable() || !supabase) {
     console.log('Supabase not ready, fingerprinting disabled');
-    return null;
+    return { fingerprintId: null, isAdmin: false, loginCount: 0 };
   }
 
   try {
@@ -125,17 +125,26 @@ export const identifyUser = async (): Promise<string | null> => {
     
     // Call edge function to identify/create user
     const { data, error } = await supabase.functions.invoke('identify-user', {
-      body: { fingerprint, fingerprintHash }
+      body: { fingerprint, fingerprintHash, isAdminLogin }
     });
     
     if (error) {
       console.error('Error identifying user:', error);
-      return null;
+      return { fingerprintId: null, isAdmin: false, loginCount: 0 };
     }
     
-    return data?.fingerprintId || null;
+    // Store admin status in localStorage
+    if (data?.isAdmin) {
+      localStorage.setItem('is_admin', 'true');
+    }
+    
+    return {
+      fingerprintId: data?.fingerprintId || null,
+      isAdmin: data?.isAdmin || false,
+      loginCount: data?.loginCount || 0
+    };
   } catch (e) {
     console.error('Failed to identify user:', e);
-    return null;
+    return { fingerprintId: null, isAdmin: false, loginCount: 0 };
   }
 };
