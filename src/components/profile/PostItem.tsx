@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Repeat2, Heart, BarChart3, Bookmark, Share, MoreHorizontal, Trash2 } from 'lucide-react';
-import { Post, deletePost, getDisplayDate } from '@/lib/postStorage';
+import { Post, deletePost, getDisplayDate } from '@/lib/postStorageDB';
 import { format } from 'date-fns';
 import { useAdmin } from '@/contexts/AdminContext';
 import { toast } from 'sonner';
 import teamMemberImage from '@/assets/team-member.jpg';
 import ShareModal from './ShareModal';
+import { usePostInteractions } from '@/hooks/usePostInteractions';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,16 +24,20 @@ const PostItem = ({ post }: PostItemProps) => {
   const { isAdmin } = useAdmin();
   const displayDate = getDisplayDate(post);
   const [showShareModal, setShowShareModal] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
+  const { likeCount, userLiked, loading, toggleLike } = usePostInteractions(post.id);
 
-  const handleDelete = () => {
-    deletePost(post.id);
-    toast.success('Post deleted');
+  const handleDelete = async () => {
+    const success = await deletePost(post.id);
+    if (success) {
+      toast.success('Post deleted');
+      window.dispatchEvent(new Event('posts-updated'));
+    } else {
+      toast.error('Failed to delete post');
+    }
   };
 
-  const handleLike = () => {
-    setIsLiked(!isLiked);
-    toast.success(isLiked ? 'Removed like' : 'Liked!');
+  const handleLike = async () => {
+    await toggleLike();
   };
 
   const renderContent = (text: string) => {
@@ -127,15 +132,17 @@ const PostItem = ({ post }: PostItemProps) => {
               variant="ghost" 
               size="sm" 
               onClick={handleLike}
+              disabled={loading}
               className={`hover:scale-110 transition-all group/btn ${
-                isLiked ? 'text-red-500' : 'hover:text-red-500 hover:bg-red-500/10'
+                userLiked ? 'text-red-500' : 'hover:text-red-500 hover:bg-red-500/10'
               }`}
             >
               <Heart 
                 className={`w-4 h-4 group-hover/btn:scale-110 transition-all ${
-                  isLiked ? 'fill-red-500' : ''
+                  userLiked ? 'fill-red-500' : ''
                 }`} 
               />
+              {likeCount > 0 && <span className="text-xs ml-1">{likeCount}</span>}
             </Button>
             
             <Button 

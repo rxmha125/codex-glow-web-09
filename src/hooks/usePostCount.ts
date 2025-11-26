@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
-import { getPostCount } from '@/lib/postStorage';
+import { getPostCount } from '@/lib/postStorageDB';
 
 export const usePostCount = () => {
-  const [count, setCount] = useState(getPostCount());
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const updateCount = () => {
-      setCount(getPostCount());
+    const updateCount = async () => {
+      const postCount = await getPostCount();
+      setCount(postCount);
     };
 
+    updateCount();
     window.addEventListener('posts-updated', updateCount);
     return () => window.removeEventListener('posts-updated', updateCount);
   }, []);

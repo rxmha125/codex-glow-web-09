@@ -3,8 +3,9 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Image, Settings, Calendar } from 'lucide-react';
-import { createPost } from '@/lib/postStorage';
+import { createPost, migrateLocalStoragePosts } from '@/lib/postStorageDB';
 import { toast } from 'sonner';
+import { useEffect } from 'react';
 import PostSettingsModal from './PostSettingsModal';
 import teamMemberImage from '@/assets/team-member.jpg';
 import { format } from 'date-fns';
@@ -15,6 +16,11 @@ const PostComposer = () => {
   const [customDate, setCustomDate] = useState<Date>();
   const [showSettings, setShowSettings] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Migrate localStorage posts on mount
+  useEffect(() => {
+    migrateLocalStoragePosts();
+  }, []);
 
   const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -27,17 +33,25 @@ const PostComposer = () => {
     }
   };
 
-  const handlePost = () => {
+  const handlePost = async () => {
     if (!content.trim()) {
       toast.error('Please write something');
       return;
     }
 
-    createPost(content, imagePreview, customDate);
-    setContent('');
-    setImagePreview(undefined);
-    setCustomDate(undefined);
-    toast.success('Post created successfully');
+    const post = await createPost(content, imagePreview, customDate);
+    
+    if (post) {
+      setContent('');
+      setImagePreview(undefined);
+      setCustomDate(undefined);
+      toast.success('Post created successfully');
+      
+      // Trigger refresh
+      window.dispatchEvent(new Event('posts-updated'));
+    } else {
+      toast.error('Failed to create post');
+    }
   };
 
   return (
