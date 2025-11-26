@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { MessageCircle, Repeat2, Heart, BarChart3, Bookmark, Share, MoreHorizontal, Trash2 } from 'lucide-react';
+import { MessageCircle, Repeat2, Heart, BarChart3, Bookmark, Share, MoreHorizontal, Trash2, Send } from 'lucide-react';
 import { Post, deletePost, getDisplayDate } from '@/lib/postStorageDB';
 import { format } from 'date-fns';
 import { useAdmin } from '@/contexts/AdminContext';
@@ -9,6 +9,9 @@ import { toast } from 'sonner';
 import teamMemberImage from '@/assets/team-member.jpg';
 import ShareModal from './ShareModal';
 import { usePostInteractions } from '@/hooks/usePostInteractions';
+import { useComments } from '@/hooks/useComments';
+import { useViews } from '@/hooks/useViews';
+import { useFingerprint } from '@/hooks/useFingerprint';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +27,12 @@ const PostItem = ({ post }: PostItemProps) => {
   const { isAdmin } = useAdmin();
   const displayDate = getDisplayDate(post);
   const [showShareModal, setShowShareModal] = useState(false);
+  const [showComments, setShowComments] = useState(false);
+  const [commentText, setCommentText] = useState('');
+  const { fingerprintId } = useFingerprint();
   const { likeCount, userLiked, loading, toggleLike } = usePostInteractions(post.id);
+  const { comments, loading: commentsLoading, addComment, deleteComment } = useComments(post.id);
+  const { viewCount, loading: viewsLoading } = useViews(post.id);
 
   const handleDelete = async () => {
     const success = await deletePost(post.id);
@@ -38,6 +46,13 @@ const PostItem = ({ post }: PostItemProps) => {
 
   const handleLike = async () => {
     await toggleLike();
+  };
+
+  const handleAddComment = async () => {
+    if (!commentText.trim()) return;
+    await addComment(commentText);
+    setCommentText('');
+    toast.success('Comment added');
   };
 
   const renderContent = (text: string) => {
@@ -115,9 +130,11 @@ const PostItem = ({ post }: PostItemProps) => {
             <Button 
               variant="ghost" 
               size="sm" 
+              onClick={() => setShowComments(!showComments)}
               className="hover:text-primary hover:bg-primary/10 hover:scale-110 transition-all group/btn"
             >
               <MessageCircle className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
+              {commentsLoading ? '' : comments.length > 0 && <span className="text-xs ml-1">{comments.length}</span>}
             </Button>
             
             <Button 
@@ -151,7 +168,7 @@ const PostItem = ({ post }: PostItemProps) => {
               className="hover:text-primary hover:bg-primary/10 hover:scale-110 transition-all"
             >
               <BarChart3 className="w-4 h-4" />
-              <span className="text-xs ml-1">88</span>
+              {viewsLoading ? '' : viewCount > 0 && <span className="text-xs ml-1">{viewCount}</span>}
             </Button>
             
             <Button 
@@ -173,6 +190,58 @@ const PostItem = ({ post }: PostItemProps) => {
           </div>
         </div>
       </div>
+
+      {showComments && (
+        <div className="border-t border-border/30 pt-4 mt-4 px-4">
+          <div className="space-y-4 mb-4">
+            {comments.length === 0 ? (
+              <p className="text-sm text-muted-foreground text-center py-4">
+                No comments yet. Be the first to comment!
+              </p>
+            ) : (
+              comments.map((comment) => (
+                <div key={comment.id} className="bg-background/30 rounded-lg p-3">
+                  <div className="flex justify-between items-start">
+                    <p className="text-sm text-foreground">{comment.content}</p>
+                    {comment.fingerprint_id === fingerprintId && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => deleteComment(comment.id)}
+                        className="h-6 w-6 p-0 text-red-500 hover:text-red-600"
+                      >
+                        <Trash2 className="h-3 w-3" />
+                      </Button>
+                    )}
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {new Date(comment.created_at).toLocaleString()}
+                  </p>
+                </div>
+              ))
+            )}
+          </div>
+
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={commentText}
+              onChange={(e) => setCommentText(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleAddComment()}
+              placeholder="Write a comment..."
+              className="flex-1 px-3 py-2 bg-background/50 border border-border rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
+            />
+            <Button 
+              onClick={handleAddComment}
+              size="sm"
+              disabled={!commentText.trim()}
+              className="gap-2"
+            >
+              <Send className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
 
       <ShareModal

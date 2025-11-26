@@ -27,7 +27,7 @@ Deno.serve(async (req) => {
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    const { fingerprint, fingerprintHash } = await req.json();
+    const { fingerprint, fingerprintHash, isAdminLogin } = await req.json();
 
     console.log('Identifying user with hash:', fingerprintHash);
 
@@ -41,14 +41,43 @@ Deno.serve(async (req) => {
     if (exactMatch) {
       console.log('Found exact fingerprint match:', exactMatch.id);
       
-      // Update last_seen
+      // Get current login history
+      const { data: currentData } = await supabase
+        .from('fingerprints')
+        .select('login_count, login_history, is_admin')
+        .eq('id', exactMatch.id)
+        .single();
+      
+      const loginCount = (currentData?.login_count || 0) + 1;
+      const loginHistory = currentData?.login_history || [];
+      loginHistory.push({
+        timestamp: new Date().toISOString(),
+        fingerprint: fingerprint
+      });
+      
+      // Update last_seen, login_count, login_history, and is_admin if admin login
+      const updateData: any = {
+        last_seen: new Date().toISOString(),
+        login_count: loginCount,
+        login_history: loginHistory
+      };
+      
+      if (isAdminLogin) {
+        updateData.is_admin = true;
+      }
+      
       await supabase
         .from('fingerprints')
-        .update({ last_seen: new Date().toISOString() })
+        .update(updateData)
         .eq('id', exactMatch.id);
       
       return new Response(
-        JSON.stringify({ fingerprintId: exactMatch.id, matched: true }),
+        JSON.stringify({ 
+          fingerprintId: exactMatch.id, 
+          matched: true, 
+          isAdmin: isAdminLogin || currentData?.is_admin || false,
+          loginCount: loginCount
+        }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
@@ -83,22 +112,44 @@ Deno.serve(async (req) => {
         if (existing.platform === fingerprint.platform) matches++;
         if (existing.ip_address && fingerprint.ipAddress && existing.ip_address === fingerprint.ipAddress) matches++;
 
-        // If 4 or more core identifiers match, consider it the same user
-        if (matches >= 4) {
+        // Need at least 6 out of 10 methods to match (60%)
+        if (matches >= 6) {
           console.log(`Found fuzzy match with ${matches} matching identifiers:`, existing.id);
           
+          const loginCount = (existing.login_count || 0) + 1;
+          const loginHistory = existing.login_history || [];
+          loginHistory.push({
+            timestamp: new Date().toISOString(),
+            fingerprint: fingerprint,
+            matchScore: matches
+          });
+          
           // Update the fingerprint with new data
+          const updateData: any = {
+            ip_address: fingerprint.ipAddress,
+            user_agent: fingerprint.userAgent,
+            last_seen: new Date().toISOString(),
+            login_count: loginCount,
+            login_history: loginHistory
+          };
+          
+          if (isAdminLogin) {
+            updateData.is_admin = true;
+          }
+          
           await supabase
             .from('fingerprints')
-            .update({
-              ip_address: fingerprint.ipAddress,
-              user_agent: fingerprint.userAgent,
-              last_seen: new Date().toISOString()
-            })
+            .update(updateData)
             .eq('id', existing.id);
           
           return new Response(
-            JSON.stringify({ fingerprintId: existing.id, matched: true, fuzzyMatch: matches }),
+            JSON.stringify({ 
+              fingerprintId: existing.id, 
+              matched: true, 
+              fuzzyMatch: matches,
+              isAdmin: isAdminLogin || existing.is_admin || false,
+              loginCount: loginCount
+            }),
             { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
           );
         }
@@ -120,9 +171,15 @@ Deno.serve(async (req) => {
         canvas_hash: fingerprint.canvasHash,
         webgl_renderer: fingerprint.webglRenderer,
         user_agent: fingerprint.userAgent,
-        platform: fingerprint.platform
+        platform: fingerprint.platform,
+        is_admin: isAdminLogin || false,
+        login_count: 1,
+        login_history: [{
+          timestamp: new Date().toISOString(),
+          fingerprint: fingerprint
+        }]
       })
-      .select('id')
+      .select('id, is_admin')
       .single();
 
     if (insertError) {
@@ -133,7 +190,13 @@ Deno.serve(async (req) => {
     console.log('Created new fingerprint:', newFingerprint.id);
 
     return new Response(
-      JSON.stringify({ fingerprintId: newFingerprint.id, matched: false, newUser: true }),
+      JSON.stringify({ 
+        fingerprintId: newFingerprint.id, 
+        matched: false, 
+        newUser: true,
+        isAdmin: newFingerprint.is_admin || false,
+        loginCount: 1
+      }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
 
