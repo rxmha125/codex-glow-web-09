@@ -1,4 +1,5 @@
-import { supabase } from '@/integrations/supabase/client';
+import { supabase, checkSupabaseAvailable } from './supabaseClient';
+import { getPosts as getLocalPosts, createPost as createLocalPost, deletePost as deleteLocalPost, getPostCount as getLocalPostCount } from './postStorage';
 
 export interface Post {
   id: string;
@@ -11,6 +12,8 @@ export interface Post {
 
 // Migrate localStorage posts to database
 export const migrateLocalStoragePosts = async (): Promise<void> => {
+  if (!checkSupabaseAvailable() || !supabase) return;
+  
   const stored = localStorage.getItem('rxcodex_posts');
   if (!stored) return;
 
@@ -35,15 +38,18 @@ export const migrateLocalStoragePosts = async (): Promise<void> => {
     }
 
     console.log('Posts migrated successfully');
-    // Clear localStorage after successful migration
     localStorage.removeItem('rxcodex_posts');
   } catch (e) {
     console.error('Failed to migrate posts:', e);
   }
 };
 
-// Get all posts from database
+// Get all posts from database or fallback to localStorage
 export const getPosts = async (): Promise<Post[]> => {
+  if (!checkSupabaseAvailable() || !supabase) {
+    return getLocalPosts();
+  }
+
   const { data, error } = await supabase
     .from('posts')
     .select('*')
@@ -51,7 +57,7 @@ export const getPosts = async (): Promise<Post[]> => {
 
   if (error) {
     console.error('Error fetching posts:', error);
-    return [];
+    return getLocalPosts();
   }
 
   return (data || []).map((post: any) => ({
@@ -70,6 +76,10 @@ export const createPost = async (
   imageUrl?: string,
   customDate?: Date
 ): Promise<Post | null> => {
+  if (!checkSupabaseAvailable() || !supabase) {
+    return createLocalPost(content, imageUrl, customDate);
+  }
+
   const now = new Date();
   const displayDate = customDate || now;
   const dateOffset = Math.floor((displayDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
@@ -91,7 +101,7 @@ export const createPost = async (
 
   if (error) {
     console.error('Error creating post:', error);
-    return null;
+    return createLocalPost(content, imageUrl, customDate);
   }
 
   return {
@@ -106,6 +116,11 @@ export const createPost = async (
 
 // Delete a post
 export const deletePost = async (id: string): Promise<boolean> => {
+  if (!checkSupabaseAvailable() || !supabase) {
+    deleteLocalPost(id);
+    return true;
+  }
+
   const { error } = await supabase
     .from('posts')
     .delete()
@@ -113,6 +128,7 @@ export const deletePost = async (id: string): Promise<boolean> => {
 
   if (error) {
     console.error('Error deleting post:', error);
+    deleteLocalPost(id);
     return false;
   }
 
@@ -121,13 +137,17 @@ export const deletePost = async (id: string): Promise<boolean> => {
 
 // Get post count
 export const getPostCount = async (): Promise<number> => {
+  if (!checkSupabaseAvailable() || !supabase) {
+    return getLocalPostCount();
+  }
+
   const { count, error } = await supabase
     .from('posts')
     .select('id', { count: 'exact', head: true });
 
   if (error) {
     console.error('Error getting post count:', error);
-    return 0;
+    return getLocalPostCount();
   }
 
   return count || 0;
