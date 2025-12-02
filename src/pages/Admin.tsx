@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAdmin } from '@/contexts/AdminContext';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
-import { supabase } from '@/integrations/supabase/client';
+import { getSupabase } from '@/lib/supabaseWrapper';
 import { LogOut, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -35,7 +35,11 @@ const Admin = () => {
   }, [isAdmin, navigate]);
 
   const fetchUsers = async () => {
-    if (!supabase) return;
+    const supabase = getSupabase();
+    if (!supabase) {
+      setLoading(false);
+      return;
+    }
     
     const { data, error } = await supabase.functions.invoke('get-all-users');
     
@@ -49,6 +53,7 @@ const Admin = () => {
   };
 
   const deleteUser = async (userId: string) => {
+    const supabase = getSupabase();
     if (!supabase) return;
     
     const { error } = await supabase.functions.invoke('delete-user', {

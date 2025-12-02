@@ -1,4 +1,4 @@
-import { supabase } from '@/integrations/supabase/client';
+import { getSupabase } from '@/lib/supabaseWrapper';
 
 export interface DeviceFingerprint {
   ipAddress?: string;
@@ -112,6 +112,18 @@ export const getLocalFingerprint = (): string | null => {
 // Identify or create user based on fingerprint
 export const identifyUser = async (isAdminLogin: boolean = false): Promise<{ fingerprintId: string | null; isAdmin: boolean; loginCount: number }> => {
   try {
+    const supabase = getSupabase();
+    
+    if (!supabase) {
+      console.warn('Supabase not available, using local fingerprint');
+      const localHash = getLocalFingerprint();
+      return {
+        fingerprintId: localHash,
+        isAdmin: localStorage.getItem('is_admin') === 'true',
+        loginCount: 0
+      };
+    }
+    
     const fingerprint = await generateFingerprint();
     const fingerprintHash = createFingerprintHash(fingerprint);
     
