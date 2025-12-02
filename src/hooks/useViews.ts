@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { getSupabase } from '@/lib/supabaseWrapper';
 import { useFingerprint } from './useFingerprint';
 
 export const useViews = (postId: string) => {
@@ -15,6 +15,12 @@ export const useViews = (postId: string) => {
     }
 
     const trackView = async () => {
+      const supabase = getSupabase();
+      if (!supabase) {
+        setLoading(false);
+        return;
+      }
+      
       const { data, error } = await supabase.functions.invoke('track-view', {
         body: { postId, fingerprintId }
       });
