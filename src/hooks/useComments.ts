@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase, checkSupabaseAvailable } from '@/lib/supabaseClient';
+import { supabase } from '@/integrations/supabase/client';
 import { useFingerprint } from './useFingerprint';
 
 export interface Comment {
@@ -16,12 +16,6 @@ export const useComments = (postId: string) => {
   const [loading, setLoading] = useState(true);
 
   const fetchComments = async () => {
-    if (!checkSupabaseAvailable() || !supabase) {
-      setComments([]);
-      setLoading(false);
-      return;
-    }
-
     const { data, error } = await supabase.functions.invoke('get-comments', {
       body: { postId }
     });
@@ -39,7 +33,7 @@ export const useComments = (postId: string) => {
   }, [postId]);
 
   const addComment = async (content: string) => {
-    if (!checkSupabaseAvailable() || !supabase || !fingerprintId) return;
+    if (!fingerprintId) return;
 
     const { data, error } = await supabase.functions.invoke('comment-post', {
       body: { postId, fingerprintId, content, action: 'create' }
@@ -51,7 +45,7 @@ export const useComments = (postId: string) => {
   };
 
   const deleteComment = async (commentId: string) => {
-    if (!checkSupabaseAvailable() || !supabase || !fingerprintId) return;
+    if (!fingerprintId) return;
 
     const { error } = await supabase.functions.invoke('comment-post', {
       body: { postId, fingerprintId, commentId, action: 'delete' }

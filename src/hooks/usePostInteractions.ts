@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase, checkSupabaseAvailable } from '@/lib/supabaseClient';
+import { supabase } from '@/integrations/supabase/client';
 import { useFingerprint } from './useFingerprint';
 
 interface PostInteractions {
@@ -17,11 +17,6 @@ export const usePostInteractions = (postId: string) => {
   });
 
   useEffect(() => {
-    if (!checkSupabaseAvailable() || !supabase) {
-      setInteractions({ likeCount: 0, userLiked: false, loading: false });
-      return;
-    }
-
     if (!fingerprintId) return;
 
     const fetchInteractions = async () => {
@@ -46,8 +41,8 @@ export const usePostInteractions = (postId: string) => {
   }, [postId, fingerprintId]);
 
   const toggleLike = async () => {
-    if (!checkSupabaseAvailable() || !supabase || !fingerprintId) {
-      console.log('Supabase not ready or no fingerprint');
+    if (!fingerprintId) {
+      console.log('No fingerprint available');
       return;
     }
 
