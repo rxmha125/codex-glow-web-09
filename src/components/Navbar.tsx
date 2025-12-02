@@ -112,8 +112,8 @@ const Navbar = () => {
             </button>
             {isAdmin && (
               <button 
-                onClick={() => navigateToPage('/admin')} 
-                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/admin' ? 'active' : ''}`}
+                onClick={() => navigateToPage('/system/point/dashboard/admin/load')} 
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/system/point/dashboard/admin/load' ? 'active' : ''}`}
               >
                 ADMIN
               </button>
@@ -212,8 +212,8 @@ const Navbar = () => {
                 </button>
                 {isAdmin && (
                   <button 
-                    onClick={() => navigateToPage('/admin')} 
-                    className={`mobile-nav-button ${location.pathname === '/admin' ? 'active' : ''}`}
+                    onClick={() => navigateToPage('/system/point/dashboard/admin/load')} 
+                    className={`mobile-nav-button ${location.pathname === '/system/point/dashboard/admin/load' ? 'active' : ''}`}
                   >
                     ADMIN
                   </button>
