@@ -112,8 +112,8 @@ Deno.serve(async (req) => {
         if (existing.platform === fingerprint.platform) matches++;
         if (existing.ip_address && fingerprint.ipAddress && existing.ip_address === fingerprint.ipAddress) matches++;
 
-        // Need at least 6 out of 10 methods to match (60%)
-        if (matches >= 6) {
+        // Need at least 60% match (5 out of 8 identifiers)
+        if (matches >= 5) {
           console.log(`Found fuzzy match with ${matches} matching identifiers:`, existing.id);
           
           const loginCount = (existing.login_count || 0) + 1;

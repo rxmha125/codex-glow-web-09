@@ -33,8 +33,8 @@ const App = () => (
             <Route path="/models" element={<ModelsPage />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/company/teams/profiles/:username" element={<Profile />} />
-            <Route path="/admin-access" element={<AdminAccess />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/system/point/access/admin/load" element={<AdminAccess />} />
+            <Route path="/system/point/dashboard/admin/load" element={<Admin />} />
             <Route path="/news" element={<News />} />
             <Route path="/research/rx-codex-v1-tiny" element={<ResearchPaper />} />
             {/* Redirect old research URL to new structure */}

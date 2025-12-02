@@ -22,7 +22,7 @@ export const AdminProvider = ({ children }: { children: ReactNode }) => {
   const logout = () => {
     setIsAdmin(false);
     localStorage.removeItem('is_admin');
-    // Reload to reset fingerprint
+    // Redirect to home and reload to reset state
     window.location.href = '/';
   };
 

@@ -28,7 +28,7 @@ const Admin = () => {
 
   useEffect(() => {
     if (!isAdmin) {
-      navigate('/');
+      navigate('/system/point/access/admin/load');
       return;
     }
     fetchUsers();
