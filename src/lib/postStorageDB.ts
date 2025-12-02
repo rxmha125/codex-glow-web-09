@@ -1,4 +1,4 @@
-import { supabase, checkSupabaseAvailable } from './supabaseClient';
+import { supabase } from '@/integrations/supabase/client';
 import { getPosts as getLocalPosts, createPost as createLocalPost, deletePost as deleteLocalPost, getPostCount as getLocalPostCount } from './postStorage';
 
 export interface Post {
@@ -12,8 +12,6 @@ export interface Post {
 
 // Migrate localStorage posts to database
 export const migrateLocalStoragePosts = async (): Promise<void> => {
-  if (!checkSupabaseAvailable() || !supabase) return;
-  
   const stored = localStorage.getItem('rxcodex_posts');
   if (!stored) return;
 
@@ -46,10 +44,6 @@ export const migrateLocalStoragePosts = async (): Promise<void> => {
 
 // Get all posts from database or fallback to localStorage
 export const getPosts = async (): Promise<Post[]> => {
-  if (!checkSupabaseAvailable() || !supabase) {
-    return getLocalPosts();
-  }
-
   const { data, error } = await supabase
     .from('posts')
     .select('*')
@@ -76,10 +70,6 @@ export const createPost = async (
   imageUrl?: string,
   customDate?: Date
 ): Promise<Post | null> => {
-  if (!checkSupabaseAvailable() || !supabase) {
-    return createLocalPost(content, imageUrl, customDate);
-  }
-
   const now = new Date();
   const displayDate = customDate || now;
   const dateOffset = Math.floor((displayDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
@@ -116,11 +106,6 @@ export const createPost = async (
 
 // Delete a post
 export const deletePost = async (id: string): Promise<boolean> => {
-  if (!checkSupabaseAvailable() || !supabase) {
-    deleteLocalPost(id);
-    return true;
-  }
-
   const { error } = await supabase
     .from('posts')
     .delete()
@@ -137,10 +122,6 @@ export const deletePost = async (id: string): Promise<boolean> => {
 
 // Get post count
 export const getPostCount = async (): Promise<number> => {
-  if (!checkSupabaseAvailable() || !supabase) {
-    return getLocalPostCount();
-  }
-
   const { count, error } = await supabase
     .from('posts')
     .select('id', { count: 'exact', head: true });

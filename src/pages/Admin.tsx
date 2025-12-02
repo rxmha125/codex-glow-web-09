@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAdmin } from '@/contexts/AdminContext';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase } from '@/integrations/supabase/client';
 import { LogOut, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 

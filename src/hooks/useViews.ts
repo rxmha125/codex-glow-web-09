@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase, checkSupabaseAvailable } from '@/lib/supabaseClient';
+import { supabase } from '@/integrations/supabase/client';
 import { useFingerprint } from './useFingerprint';
 
 export const useViews = (postId: string) => {
@@ -8,7 +8,7 @@ export const useViews = (postId: string) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!checkSupabaseAvailable() || !supabase || !fingerprintId) {
+    if (!fingerprintId) {
       setViewCount(0);
       setLoading(false);
       return;
