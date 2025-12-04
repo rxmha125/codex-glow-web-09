@@ -3,7 +3,6 @@ import Navbar from '@/components/Navbar';
 import ProfileHeader from '@/components/profile/ProfileHeader';
 import ProfileBanner from '@/components/profile/ProfileBanner';
 import ProfileInfo from '@/components/profile/ProfileInfo';
-
 import PostComposer from '@/components/profile/PostComposer';
 import PostsList from '@/components/profile/PostsList';
 import { useAdmin } from '@/contexts/AdminContext';
@@ -32,14 +31,36 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-dark-gradient">
       <Navbar />
-      <div className="max-w-[600px] mx-auto border-x border-border/30 pt-20">
+      <main className="max-w-[600px] mx-auto border-x border-border/20 pt-20 min-h-screen bg-background/30 backdrop-blur-sm">
         <ProfileHeader />
         <ProfileBanner />
         <ProfileInfo />
         
-        {isAdmin && <PostComposer />}
+        {/* Tab navigation */}
+        <div className="border-b border-border/30">
+          <div className="flex">
+            <button className="flex-1 py-4 text-center font-semibold text-foreground border-b-2 border-primary">
+              Posts
+            </button>
+            <button className="flex-1 py-4 text-center text-muted-foreground hover:bg-muted/10 transition-colors">
+              Replies
+            </button>
+            <button className="flex-1 py-4 text-center text-muted-foreground hover:bg-muted/10 transition-colors">
+              Media
+            </button>
+            <button className="flex-1 py-4 text-center text-muted-foreground hover:bg-muted/10 transition-colors">
+              Likes
+            </button>
+          </div>
+        </div>
+        
+        {isAdmin && (
+          <div className="border-b border-border/30">
+            <PostComposer />
+          </div>
+        )}
         <PostsList />
-      </div>
+      </main>
     </div>
   );
 };
