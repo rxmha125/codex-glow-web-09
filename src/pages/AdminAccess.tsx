@@ -1,141 +1,98 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAdmin } from '@/contexts/AdminContext';
-import { identifyUser } from '@/lib/fingerprint';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
-import { Lock } from 'lucide-react';
+import { Lock, Loader2, Shield } from 'lucide-react';
+import { useAdmin } from '@/contexts/AdminContext';
 
 const AdminAccess = () => {
-  const { setIsAdmin, isAdmin } = useAdmin();
-  const navigate = useNavigate();
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [checkingExisting, setCheckingExisting] = useState(true);
+  const navigate = useNavigate();
+  const { setIsAdmin, isAdmin } = useAdmin();
 
   useEffect(() => {
-    // Check if already logged in as admin
-    const checkExistingAdmin = async () => {
-      const result = await identifyUser(false);
-      if (result.isAdmin) {
-        setIsAdmin(true);
-        toast.success('Admin access granted');
-        navigate('/system/point/dashboard/admin/load');
-      } else {
-        setCheckingExisting(false);
-      }
-    };
-
-    checkExistingAdmin();
-  }, [setIsAdmin, navigate]);
+    // Check if already admin
+    if (isAdmin) {
+      navigate('/system/point/dashboard/admin/load');
+    } else {
+      setCheckingExisting(false);
+    }
+  }, [isAdmin, navigate]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (password !== 'Mimi mithila') {
-      toast.error('Invalid credentials');
-      return;
-    }
-
     setLoading(true);
 
-    try {
-      const result = await identifyUser(true);
-      
-      if (result && result.fingerprintId) {
-        setIsAdmin(true);
-        localStorage.setItem('is_admin', 'true');
-        toast.success('Admin access granted');
-        navigate('/system/point/dashboard/admin/load');
-      } else {
-        console.error('No fingerprint ID returned:', result);
-        toast.error('Authentication system error. Please try again.');
-      }
-    } catch (error) {
-      console.error('Login error:', error);
-      toast.error(`Login failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    } finally {
-      setLoading(false);
+    // Simple password check
+    if (password === 'Mimi mithila') {
+      localStorage.setItem('is_admin', 'true');
+      setIsAdmin(true);
+      toast.success('Welcome back, Admin!');
+      navigate('/system/point/dashboard/admin/load');
+    } else {
+      toast.error('Invalid credentials');
     }
+    
+    setLoading(false);
   };
 
   if (checkingExisting) {
     return (
       <div className="min-h-screen bg-dark-gradient flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Verifying access...</p>
+          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="text-muted-foreground mt-4">Verifying access...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 flex items-center justify-center px-4 py-12">
-      <div className="max-w-md w-full">
-        <div className="relative">
-          {/* Decorative blur circles */}
-          <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-accent/20 rounded-full blur-3xl" />
-          
-          <div className="relative bg-card/80 backdrop-blur-xl rounded-2xl p-8 border border-border/50 shadow-2xl">
-            <div className="flex justify-center mb-6">
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse" />
-                <div className="relative h-20 w-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center border border-primary/30">
-                  <Lock className="h-10 w-10 text-primary" />
-                </div>
-              </div>
+    <div className="min-h-screen bg-dark-gradient flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
+        <div className="bg-card/50 backdrop-blur-xl border border-border/50 rounded-2xl p-8 shadow-2xl">
+          <div className="flex flex-col items-center mb-8">
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 ring-2 ring-primary/20">
+              <Shield className="w-8 h-8 text-primary" />
             </div>
-            
-            <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mb-2">
-              System Access
-            </h1>
-            <p className="text-center text-muted-foreground mb-8 text-sm">
-              Restricted area • Authentication required
-            </p>
+            <h1 className="text-2xl font-bold text-foreground">Admin Access</h1>
+            <p className="text-muted-foreground text-sm mt-2">Enter credentials to continue</p>
+          </div>
 
-            <form onSubmit={handleLogin} className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="password" className="text-sm font-medium text-foreground/80">
-                  Administrator Password
-                </label>
+          <form onSubmit={handleLogin} className="space-y-6">
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-foreground">Password</label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
-                  id="password"
                   type="password"
-                  placeholder="Enter your credentials"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full h-12 bg-background/50 border-border/50 focus:border-primary transition-colors"
-                  required
-                  autoFocus
+                  placeholder="Enter admin password"
+                  className="pl-10 h-12 bg-background/50 border-border/50 focus:border-primary transition-colors"
+                  disabled={loading}
                 />
               </div>
-
-              <Button
-                type="submit"
-                className="w-full h-12 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-semibold shadow-lg shadow-primary/20 transition-all"
-                disabled={loading || !password}
-              >
-                {loading ? (
-                  <span className="flex items-center gap-2">
-                    <div className="h-4 w-4 border-2 border-primary-foreground/20 border-t-primary-foreground rounded-full animate-spin" />
-                    Authenticating...
-                  </span>
-                ) : (
-                  'Access System'
-                )}
-              </Button>
-            </form>
-
-            <div className="mt-8 pt-6 border-t border-border/30">
-              <p className="text-xs text-muted-foreground text-center leading-relaxed">
-                This is a secure administrative area.<br />
-                Unauthorized access attempts are logged and monitored.
-              </p>
             </div>
-          </div>
+
+            <Button 
+              type="submit" 
+              className="w-full h-12 text-base font-semibold"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Authenticating...
+                </>
+              ) : (
+                'Access Dashboard'
+              )}
+            </Button>
+          </form>
         </div>
       </div>
     </div>
