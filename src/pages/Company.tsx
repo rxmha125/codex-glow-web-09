@@ -20,7 +20,7 @@ const Company = () => {
           "url": "https://rxcodexai.com",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png",
+            "url": "https://rxcodexai.com/og-logo.png",
             "width": 512,
             "height": 512
           },
