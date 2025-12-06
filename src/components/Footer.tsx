@@ -35,7 +35,7 @@ const Footer = () => {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-                <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex Logo" className="w-8 h-8 object-contain" />
+                <img src="/og-logo.png" alt="Rx Codex Logo" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-white font-semibold">Rx Codex AI</span>
             </div>

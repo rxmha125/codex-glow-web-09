@@ -88,7 +88,7 @@ const ModelsSection = () => {
           <div className="flex items-center text-white/60 text-xs">
             <span className="flex items-center">
               Model Card |
-              <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex Logo" className="w-5 h-5 object-contain mx-1" />
+              <img src="/og-logo.png" alt="Rx Codex Logo" className="w-5 h-5 object-contain mx-1" />
               Rx Codex AI
             </span>
           </div>
