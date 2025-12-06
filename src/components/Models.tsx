@@ -89,7 +89,7 @@ const Models = () => {
           <div className="flex items-center text-white/60 text-xs">
             <span className="flex items-center">
               Model Card |
-              <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex AI logo - Advanced artificial intelligence company from Bangladesh" className="w-5 h-5 object-contain mx-1" loading="lazy" />
+              <img src="/og-logo.png" alt="Rx Codex AI logo - Advanced artificial intelligence company from Bangladesh" className="w-5 h-5 object-contain mx-1" loading="lazy" />
               Rx Codex AI
             </span>
           </div>
@@ -200,7 +200,7 @@ const Models = () => {
             <div className="flex justify-center items-center mt-4 text-white/60 text-sm">
               <span className="flex items-center">
                 Model Table |
-                <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex AI logo - Advanced AI technology from Bangladesh" className="w-5 h-5 object-contain mx-1" loading="lazy" />
+                <img src="/og-logo.png" alt="Rx Codex AI logo - Advanced AI technology from Bangladesh" className="w-5 h-5 object-contain mx-1" loading="lazy" />
                 Rx Codex AI
               </span>
             </div>
