@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useAdmin } from '@/contexts/AdminContext';
+import rxCodexLogo from '@/assets/rx-codex-logo.png';
 const Navbar = () => {
   const { isAdmin } = useAdmin();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,11 +77,13 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Brand Name - Left Side */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-              <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex AI company logo" className="w-10 h-10 object-contain" loading="lazy" />
-            </div>
-            <span className="text-lg sm:text-xl font-semibold text-white">Rx Codex AI</span>
+          <div className="flex items-center">
+            <img 
+              src={rxCodexLogo} 
+              alt="Rx Codex AI" 
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain" 
+              loading="lazy" 
+            />
           </div>
 
           {/* Center Navigation Pill */}
@@ -179,9 +182,13 @@ const Navbar = () => {
               onMouseDown={(e) => e.stopPropagation()}
             >
               {/* Logo and Brand in Menu */}
-              <div className="flex items-center justify-center space-x-2 mb-8 pb-6 border-b border-white/20">
-                <img src="/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" alt="Rx Codex AI logo - Leading AI innovation from Bangladesh" className="w-10 h-10 object-contain" loading="lazy" />
-                <span className="text-xl font-semibold text-white">Rx Codex AI</span>
+              <div className="flex items-center justify-center mb-8 pb-6 border-b border-white/20">
+                <img 
+                  src={rxCodexLogo} 
+                  alt="Rx Codex AI" 
+                  className="h-10 w-auto object-contain" 
+                  loading="lazy" 
+                />
               </div>
 
               {/* Navigation Buttons */}
