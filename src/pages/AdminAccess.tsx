@@ -6,7 +6,21 @@ import { toast } from 'sonner';
 import { Lock, Loader2, Shield } from 'lucide-react';
 import { useAdmin } from '@/contexts/AdminContext';
 
+// Add noindex meta tag for admin pages
+const useNoIndex = () => {
+  useEffect(() => {
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex, nofollow';
+    document.head.appendChild(meta);
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+};
+
 const AdminAccess = () => {
+  useNoIndex();
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [checkingExisting, setCheckingExisting] = useState(true);

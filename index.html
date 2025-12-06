@@ -13,35 +13,81 @@
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Rx Codex AI - Advanced AI Models from Bangladesh" />
-    <meta property="og:description" content="Building the future of AI technology with cutting-edge models from Bangladesh" />
+    <meta property="og:description" content="Building the future of AI technology with cutting-edge models from Bangladesh. Founded by Rx MHA." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rxcodexai.com/" />
+    <meta property="og:image" content="https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Rx Codex AI Logo" />
     <meta property="og:site_name" content="Rx Codex AI" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Rx Codex AI - Advanced AI Models from Bangladesh" />
-    <meta name="twitter:description" content="Building the future of AI technology with cutting-edge models from Bangladesh" />
+    <meta name="twitter:description" content="Building the future of AI technology with cutting-edge models from Bangladesh. Founded by Rx MHA." />
+    <meta name="twitter:image" content="https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png" />
     <meta name="twitter:site" content="@rxcodexai" />
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Rx Codex AI",
-      "url": "https://rxcodexai.com",
-      "logo": "https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png",
-      "description": "Building the future of AI technology with cutting-edge models from Bangladesh",
-      "foundingDate": "2024",
-      "foundingLocation": {
-        "@type": "Place",
-        "name": "Bangladesh"
-      },
-      "sameAs": [
-        "https://github.com/rxcodexai",
-        "https://sorry-sepia-beta.vercel.app/rxcodex"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://rxcodexai.com/#organization",
+          "name": "Rx Codex AI",
+          "url": "https://rxcodexai.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png",
+            "width": 512,
+            "height": 512
+          },
+          "description": "Building the future of AI technology with cutting-edge models from Bangladesh",
+          "foundingDate": "2024",
+          "founder": {
+            "@type": "Person",
+            "@id": "https://rxcodexai.com/#founder"
+          },
+          "foundingLocation": {
+            "@type": "Place",
+            "name": "Bangladesh"
+          },
+          "sameAs": [
+            "https://github.com/rxcodexai"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://rxcodexai.com/#founder",
+          "name": "Rx MHA",
+          "image": "https://rxcodexai.com/team-member.jpg",
+          "jobTitle": ["Founder & CEO", "AI Architect", "Web Developer", "Researcher", "Designer"],
+          "description": "Rx MHA is the 15-year-old founder and CEO of Rx Codex AI, leading AI development and innovation from Bangladesh.",
+          "worksFor": {
+            "@type": "Organization",
+            "@id": "https://rxcodexai.com/#organization"
+          },
+          "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Deep Learning", "AI Architecture", "Web Development"],
+          "nationality": {
+            "@type": "Country",
+            "name": "Bangladesh"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://rxcodexai.com/#website",
+          "url": "https://rxcodexai.com",
+          "name": "Rx Codex AI",
+          "description": "Advanced AI Models from Bangladesh",
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://rxcodexai.com/#organization"
+          }
+        }
       ]
     }
     </script>

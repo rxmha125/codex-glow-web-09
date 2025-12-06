@@ -12,19 +12,40 @@ const Profile = () => {
 
   useSEO({
     title: "Rx MHA - Founder & CEO | Rx Codex AI",
-    description: "AI Developer and Founder of Rx Codex AI. Building the future of AI technology in Bangladesh.",
-    keywords: "Rx MHA, Founder, CEO, Rx Codex AI, AI Developer, Bangladesh",
+    description: "Rx MHA is the 15-year-old founder and CEO of Rx Codex AI, a pioneering AI company from Bangladesh. AI Architect, Web Developer, Researcher, and Designer building the future of AI technology.",
+    keywords: "Rx MHA, Founder of Rx Codex AI, CEO Rx Codex AI, AI Developer Bangladesh, Young AI Founder, AI Architect, Who is Rx MHA, The Founder of Rx Codex AI",
     canonicalUrl: "https://rxcodexai.com/company/teams/profiles/rxmha",
+    ogImage: "https://rxcodexai.com/team-member.jpg",
     structuredData: {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Rx MHA",
-      "jobTitle": "Founder & CEO",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Rx Codex AI"
-      },
-      "url": "https://rxcodexai.com/company/teams/profiles/rxmha"
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://rxcodexai.com/#founder",
+        "name": "Rx MHA",
+        "alternateName": "Rx MHA",
+        "image": "https://rxcodexai.com/team-member.jpg",
+        "jobTitle": ["Founder & CEO", "AI Architect", "Web Developer", "Researcher", "Designer"],
+        "description": "Rx MHA is the 15-year-old founder and CEO of Rx Codex AI, leading AI development and innovation from Bangladesh.",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Rx Codex AI",
+          "url": "https://rxcodexai.com"
+        },
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "Machine Learning",
+          "Deep Learning",
+          "AI Architecture",
+          "Web Development",
+          "AI Research"
+        ],
+        "nationality": {
+          "@type": "Country",
+          "name": "Bangladesh"
+        },
+        "url": "https://rxcodexai.com/company/teams/profiles/rxmha"
+      }
     }
   });
 

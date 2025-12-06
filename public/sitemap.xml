@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rxcodexai.com/</loc>
-    <lastmod>2025-10-25</lastmod>
+    <lastmod>2025-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -14,37 +14,74 @@
   </url>
   <url>
     <loc>https://rxcodexai.com/models</loc>
-    <lastmod>2025-10-25</lastmod>
+    <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png</image:loc>
+      <image:title>Rx Codex AI Models</image:title>
+      <image:caption>Advanced AI Models including Rx Codex V1-mini</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rxcodexai.com/research/rx-codex-v1-tiny</loc>
-    <lastmod>2025-10-25</lastmod>
+    <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rxcodexai.com/lovable-uploads/fcaa89e4-b053-4494-b20a-59ec70960870.png</image:loc>
+      <image:title>Rx Codex V1-Tiny Research Paper</image:title>
+      <image:caption>Research paper on the Rx Codex V1-Tiny AI Model</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rxcodexai.com/benchmarks</loc>
+    <lastmod>2025-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png</image:loc>
+      <image:title>Rx Codex Benchmarks</image:title>
+      <image:caption>Model and Tokenizer Benchmark Comparisons</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rxcodexai.com/company</loc>
-    <lastmod>2025-10-25</lastmod>
+    <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://rxcodexai.com/team-member.jpg</image:loc>
+      <image:title>Rx Codex AI Company</image:title>
+      <image:caption>About Rx Codex AI - Leading AI Innovation from Bangladesh</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rxcodexai.com/company/teams/profiles/rxmha</loc>
+    <lastmod>2025-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://rxcodexai.com/team-member.jpg</image:loc>
+      <image:title>Rx MHA - Founder of Rx Codex AI</image:title>
+      <image:caption>Rx MHA, the 15-year-old founder and CEO of Rx Codex AI from Bangladesh</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://rxcodexai.com/teams</loc>
-    <lastmod>2025-10-25</lastmod>
+    <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rxcodexai.com/news</loc>
-    <lastmod>2025-10-25</lastmod>
+    <lastmod>2025-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://rxcodexai.com/sitemap</loc>
-    <lastmod>2025-10-25</lastmod>
+    <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
