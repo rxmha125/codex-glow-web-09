@@ -9,7 +9,21 @@ import { Trash2, LogOut, FileText } from 'lucide-react';
 import { toast } from 'sonner';
 import { format } from 'date-fns';
 
+// Add noindex meta tag for admin pages
+const useNoIndex = () => {
+  useEffect(() => {
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex, nofollow';
+    document.head.appendChild(meta);
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+};
+
 const Admin = () => {
+  useNoIndex();
   const { isAdmin, logout } = useAdmin();
   const navigate = useNavigate();
   const [posts, setPosts] = useState<Post[]>([]);

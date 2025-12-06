@@ -63,8 +63,31 @@ const Benchmarks = () => {
   useSEO({
     title: "Models and Tokenizer Benchmarks - Rx Codex AI",
     description: "Comprehensive benchmark comparison of Rx Codex models and tokenizers against GPT2 and DeepSeek, showcasing superior performance in compression, speed, and efficiency.",
-    keywords: "AI Benchmarks, Tokenizer Comparison, Model Performance, Rx Codex Benchmarks, GPT2 Comparison, DeepSeek Comparison",
+    keywords: "AI Benchmarks, Tokenizer Comparison, Model Performance, Rx Codex Benchmarks, GPT2 Comparison, DeepSeek Comparison, AI Performance, Machine Learning Benchmarks",
     canonicalUrl: "https://rxcodexai.com/benchmarks",
+    ogImage: "https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Rx Codex Models and Tokenizer Benchmarks",
+      "description": "Comprehensive benchmark comparison of Rx Codex models and tokenizers against GPT2 and DeepSeek",
+      "url": "https://rxcodexai.com/benchmarks",
+      "datePublished": "2025-10-12",
+      "dateModified": "2025-12-06",
+      "author": {
+        "@type": "Organization",
+        "name": "Rx Codex AI",
+        "url": "https://rxcodexai.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rx Codex AI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rxcodexai.com/lovable-uploads/ecca2066-2f6c-41b4-b1d7-eddaafc991d2.png"
+        }
+      }
+    }
   });
 
   const benchmarkContent = (
