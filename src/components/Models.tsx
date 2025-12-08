@@ -44,9 +44,16 @@ const Models = () => {
     name: "Rx_Codex_V1_Tiny_V3",
     parameters: "70 Million",
     contextWindow: "4096",
-    published: "No, In development",
-    tokensTrained: "In development",
+    published: "No, Completed",
+    tokensTrained: "Completed",
     description: "This model is development we will make our own successful custom model class with this model for the first time."
+  }, {
+    name: "Txa 1",
+    parameters: "Unknown",
+    contextWindow: "Unknown",
+    published: "Unknown",
+    tokensTrained: "Unknown",
+    description: "Unknown"
   }];
 
   // Create model cards with individual data
@@ -187,11 +194,19 @@ const Models = () => {
                 </tr>
                 <tr className="bg-white/[0.02] hover:bg-white/5 transition-colors">
                   <td className="border border-white/20 px-4 py-3 text-white">Rx_Codex_V1_Tiny_V3</td>
-                  <td className="border border-white/20 px-4 py-3 text-white">In development</td>
-                  <td className="border border-white/20 px-4 py-3 text-white">In development</td>
+                  <td className="border border-white/20 px-4 py-3 text-white">Completed</td>
+                  <td className="border border-white/20 px-4 py-3 text-white">Completed</td>
                   <td className="border border-white/20 px-4 py-3 text-white">70Million</td>
                   <td className="border border-white/20 px-4 py-3 text-white">4096</td>
-                  <td className="border border-white/20 px-4 py-3 text-white">In development</td>
+                  <td className="border border-white/20 px-4 py-3 text-white">Completed</td>
+                </tr>
+                <tr className="bg-white/[0.02] hover:bg-white/5 transition-colors">
+                  <td className="border border-white/20 px-4 py-3 text-white">Txa 1</td>
+                  <td className="border border-white/20 px-4 py-3 text-white">In Development</td>
+                  <td className="border border-white/20 px-4 py-3 text-white">In Development</td>
+                  <td className="border border-white/20 px-4 py-3 text-white">Unknown</td>
+                  <td className="border border-white/20 px-4 py-3 text-white">Unknown</td>
+                  <td className="border border-white/20 px-4 py-3 text-white">Unknown</td>
                 </tr>
               </tbody>
             </table>
