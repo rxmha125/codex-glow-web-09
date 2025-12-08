@@ -42,9 +42,16 @@ const ModelsSection = () => {
     name: "Rx_Codex_V1_Tiny_V3",
     parameters: "70 Million",
     contextWindow: "4096",
-    published: "No, In development",
-    tokensTrained: "In development",
+    published: "No, Completed",
+    tokensTrained: "Completed",
     description: "This model is development we will make our own successful custom model class with this model for the first time."
+  }, {
+    name: "Txa 1",
+    parameters: "Unknown",
+    contextWindow: "Unknown",
+    published: "Unknown",
+    tokensTrained: "Unknown",
+    description: "Unknown"
   }];
 
   // Create model cards with individual data
