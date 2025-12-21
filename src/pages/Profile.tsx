@@ -1,8 +1,14 @@
 import { useSEO } from '@/hooks/useSEO';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import ProfileHeader from '@/components/profile/ProfileHeader';
 import ProfileBanner from '@/components/profile/ProfileBanner';
 import ProfileInfo from '@/components/profile/ProfileInfo';
+import ProfileAbout from '@/components/profile/ProfileAbout';
+import ProfileSkills from '@/components/profile/ProfileSkills';
+import ProfileHighlights from '@/components/profile/ProfileHighlights';
+import ProfileSocials from '@/components/profile/ProfileSocials';
+import ProfileConnect from '@/components/profile/ProfileConnect';
 import PostComposer from '@/components/profile/PostComposer';
 import PostsList from '@/components/profile/PostsList';
 import { useAdmin } from '@/contexts/AdminContext';
@@ -52,36 +58,59 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-dark-gradient">
       <Navbar />
-      <main className="max-w-[600px] mx-auto border-x border-border/20 pt-20 min-h-screen bg-background/30 backdrop-blur-sm">
-        <ProfileHeader />
-        <ProfileBanner />
-        <ProfileInfo />
-        
-        {/* Tab navigation */}
-        <div className="border-b border-border/30">
-          <div className="flex">
-            <button className="flex-1 py-4 text-center font-semibold text-foreground border-b-2 border-primary">
-              Posts
-            </button>
-            <button className="flex-1 py-4 text-center text-muted-foreground hover:bg-muted/10 transition-colors">
-              Replies
-            </button>
-            <button className="flex-1 py-4 text-center text-muted-foreground hover:bg-muted/10 transition-colors">
-              Media
-            </button>
-            <button className="flex-1 py-4 text-center text-muted-foreground hover:bg-muted/10 transition-colors">
-              Likes
-            </button>
-          </div>
+      
+      <main className="pt-20">
+        {/* Profile Header - Sticky navigation */}
+        <div className="max-w-4xl mx-auto">
+          <ProfileHeader />
         </div>
         
-        {isAdmin && (
-          <div className="border-b border-border/30">
-            <PostComposer />
+        {/* Banner Section */}
+        <div className="max-w-4xl mx-auto overflow-hidden">
+          <ProfileBanner />
+        </div>
+        
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+          {/* Profile Info Card */}
+          <div className="relative -mt-6 mb-8">
+            <div className="glass-card rounded-2xl border border-border/30 bg-card/30 backdrop-blur-xl overflow-hidden">
+              <ProfileInfo />
+            </div>
           </div>
-        )}
-        <PostsList />
+          
+          {/* Two Column Layout for About & Skills */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <ProfileAbout />
+            <ProfileSkills />
+          </div>
+          
+          {/* Highlights Section */}
+          <div className="mb-8">
+            <ProfileHighlights />
+          </div>
+          
+          {/* Social Links Section */}
+          <div className="mb-8">
+            <ProfileSocials />
+          </div>
+          
+          {/* Posts Section */}
+          <div className="mb-8">
+            {isAdmin && (
+              <div className="mb-4 p-4 rounded-xl glass-card border border-border/30 bg-card/30 backdrop-blur-xl">
+                <PostComposer />
+              </div>
+            )}
+            <PostsList />
+          </div>
+          
+          {/* Connect CTA Section */}
+          <ProfileConnect />
+        </div>
       </main>
+      
+      <Footer />
     </div>
   );
 };
