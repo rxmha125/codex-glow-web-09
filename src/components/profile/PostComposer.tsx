@@ -64,19 +64,19 @@ const PostComposer = () => {
 
   return (
     <>
-      <div className="p-4">
+      <div className="p-4 bg-card/20">
         <div className="flex gap-3">
-          <Avatar className="w-12 h-12 ring-2 ring-border/20">
+          <Avatar className="w-10 h-10 ring-2 ring-border/30 flex-shrink-0">
             <AvatarImage src={teamMemberImage} />
             <AvatarFallback>RM</AvatarFallback>
           </Avatar>
           
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <Textarea
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              placeholder="What's happening?"
-              className="min-h-[120px] resize-none border-0 p-0 focus-visible:ring-0 text-lg placeholder:text-muted-foreground/40 bg-transparent"
+              placeholder="Share an update..."
+              className="min-h-[100px] resize-none border border-border/30 rounded-xl p-3 focus-visible:ring-1 focus-visible:ring-primary/50 text-base placeholder:text-muted-foreground/50 bg-background/50"
             />
             
             {imagePreview && (
@@ -84,12 +84,12 @@ const PostComposer = () => {
                 <img
                   src={imagePreview}
                   alt="Upload preview"
-                  className="rounded-2xl max-h-[300px] w-full object-cover border border-border/30"
+                  className="rounded-xl max-h-[250px] w-full object-cover border border-border/30"
                 />
                 <Button
                   variant="secondary"
                   size="icon"
-                  className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-background/80 backdrop-blur-sm"
+                  className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-background/80 backdrop-blur-sm h-8 w-8"
                   onClick={() => setImagePreview(undefined)}
                 >
                   <X className="w-4 h-4" />
@@ -98,9 +98,9 @@ const PostComposer = () => {
             )}
 
             {customDate && (
-              <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground bg-primary/5 rounded-xl px-4 py-2.5 border border-primary/20">
+              <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground bg-muted/30 rounded-lg px-3 py-2 border border-border/30">
                 <Calendar className="w-4 h-4 text-primary" />
-                <span>Display date: <strong className="text-foreground">{format(customDate, 'PPP')}</strong></span>
+                <span>Display: <strong className="text-foreground">{format(customDate, 'MMM d, yyyy')}</strong></span>
                 <Button
                   variant="ghost"
                   size="icon"
@@ -112,7 +112,7 @@ const PostComposer = () => {
               </div>
             )}
             
-            <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/30">
+            <div className="flex items-center justify-between mt-3">
               <div className="flex gap-1">
                 <input
                   type="file"
@@ -123,32 +123,33 @@ const PostComposer = () => {
                 />
                 <Button
                   variant="ghost"
-                  size="icon"
+                  size="sm"
                   onClick={() => fileInputRef.current?.click()}
-                  className="hover:bg-primary/10 hover:text-primary transition-all rounded-full"
+                  className="hover:bg-muted/50 hover:text-primary transition-all rounded-lg h-8 px-2"
                 >
-                  <Image className="w-5 h-5" />
+                  <Image className="w-4 h-4" />
                 </Button>
                 <Button 
                   variant="ghost" 
-                  size="icon"
+                  size="sm"
                   onClick={() => setShowSettings(true)}
-                  className="hover:bg-primary/10 hover:text-primary transition-all rounded-full"
+                  className="hover:bg-muted/50 hover:text-primary transition-all rounded-lg h-8 px-2"
                 >
-                  <Settings className="w-5 h-5" />
+                  <Settings className="w-4 h-4" />
                 </Button>
               </div>
               
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 {content.length > 0 && (
-                  <span className={`text-sm ${isOverLimit ? 'text-destructive' : charsRemaining < 50 ? 'text-yellow-500' : 'text-muted-foreground'}`}>
+                  <span className={`text-xs font-medium ${isOverLimit ? 'text-destructive' : charsRemaining < 50 ? 'text-yellow-500' : 'text-muted-foreground'}`}>
                     {charsRemaining}
                   </span>
                 )}
                 <Button
                   onClick={handlePost}
                   disabled={!content.trim() || isOverLimit || isPosting}
-                  className="rounded-full px-6 font-semibold"
+                  size="sm"
+                  className="rounded-lg px-4 font-medium h-8"
                 >
                   {isPosting ? 'Posting...' : 'Post'}
                 </Button>

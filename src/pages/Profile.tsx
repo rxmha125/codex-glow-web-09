@@ -6,6 +6,7 @@ import ProfileInfo from '@/components/profile/ProfileInfo';
 import PostComposer from '@/components/profile/PostComposer';
 import PostsList from '@/components/profile/PostsList';
 import { useAdmin } from '@/contexts/AdminContext';
+import Footer from '@/components/Footer';
 
 const Profile = () => {
   const { isAdmin } = useAdmin();
@@ -52,36 +53,28 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-dark-gradient">
       <Navbar />
-      <main className="max-w-[600px] mx-auto border-x border-border/20 pt-20 min-h-screen bg-background/30 backdrop-blur-sm">
-        <ProfileHeader />
-        <ProfileBanner />
-        <ProfileInfo />
-        
-        {/* Tab navigation */}
-        <div className="border-b border-border/30">
-          <div className="flex">
-            <button className="flex-1 py-4 text-center font-semibold text-foreground border-b-2 border-primary">
-              Posts
-            </button>
-            <button className="flex-1 py-4 text-center text-muted-foreground hover:bg-muted/10 transition-colors">
-              Replies
-            </button>
-            <button className="flex-1 py-4 text-center text-muted-foreground hover:bg-muted/10 transition-colors">
-              Media
-            </button>
-            <button className="flex-1 py-4 text-center text-muted-foreground hover:bg-muted/10 transition-colors">
-              Likes
-            </button>
+      <main className="max-w-2xl mx-auto pt-20 pb-12 px-4">
+        <div className="bg-card/40 backdrop-blur-sm border border-border/30 rounded-2xl overflow-hidden">
+          <ProfileHeader />
+          <ProfileBanner />
+          <ProfileInfo />
+          
+          {/* Posts Section */}
+          <div className="border-t border-border/30">
+            <div className="px-4 py-3 border-b border-border/30">
+              <h2 className="font-semibold text-foreground">Posts</h2>
+            </div>
+            
+            {isAdmin && (
+              <div className="border-b border-border/30">
+                <PostComposer />
+              </div>
+            )}
+            <PostsList />
           </div>
         </div>
-        
-        {isAdmin && (
-          <div className="border-b border-border/30">
-            <PostComposer />
-          </div>
-        )}
-        <PostsList />
       </main>
+      <Footer />
     </div>
   );
 };
