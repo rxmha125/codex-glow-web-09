@@ -56,11 +56,11 @@ const PostItem = ({ post }: PostItemProps) => {
 
   return (
     <>
-      <article className="group p-4 sm:p-5 rounded-xl bg-card/30 backdrop-blur-sm border border-border/20 hover:bg-card/50 hover:border-primary/20 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-primary/5">
-        <div className="flex gap-3 sm:gap-4">
-          <Avatar className="w-11 h-11 sm:w-12 sm:h-12 ring-2 ring-primary/10 transition-all group-hover:ring-primary/30">
+      <article className="group border-b border-border/30 p-4 hover:bg-muted/5 transition-all duration-300">
+        <div className="flex gap-3">
+          <Avatar className="w-12 h-12 ring-2 ring-border/20">
             <AvatarImage src={teamMemberImage} />
-            <AvatarFallback className="bg-gradient-to-br from-primary to-purple-500 text-white">RM</AvatarFallback>
+            <AvatarFallback>RM</AvatarFallback>
           </Avatar>
           
           <div className="flex-1 min-w-0">
@@ -80,12 +80,12 @@ const PostItem = ({ post }: PostItemProps) => {
                     <Button 
                       variant="ghost" 
                       size="icon" 
-                      className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity rounded-full hover:bg-muted/50"
+                      className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
                     >
                       <MoreHorizontal className="w-4 h-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="bg-card/95 backdrop-blur-xl border-border/50">
+                  <DropdownMenuContent align="end">
                     <DropdownMenuItem onClick={handleDelete} className="text-destructive">
                       <Trash2 className="w-4 h-4 mr-2" />
                       Delete
@@ -100,22 +100,22 @@ const PostItem = ({ post }: PostItemProps) => {
             </p>
             
             {post.imageUrl && (
-              <div className="mt-3 rounded-xl overflow-hidden border border-border/30 shadow-lg group/img">
+              <div className="mt-3 rounded-2xl overflow-hidden border border-border/30 shadow-lg">
                 <img
                   src={post.imageUrl}
                   alt="Post image"
-                  className="w-full h-auto object-contain max-h-[500px] transition-transform duration-500 group-hover/img:scale-[1.02]"
+                  className="w-full h-auto object-contain max-h-[500px] transition-transform duration-300 hover:scale-[1.02]"
                 />
               </div>
             )}
             
-            {/* Interaction buttons - Enhanced styling */}
-            <div className="flex items-center justify-between mt-4 max-w-md text-muted-foreground/50">
+            {/* Interaction buttons - all disabled except Share */}
+            <div className="flex items-center justify-between mt-3 max-w-md text-muted-foreground/50">
               <Button 
                 variant="ghost" 
                 size="sm" 
                 disabled
-                className="cursor-not-allowed opacity-40 rounded-full"
+                className="cursor-not-allowed opacity-50"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span className="text-xs ml-1">0</span>
@@ -125,7 +125,7 @@ const PostItem = ({ post }: PostItemProps) => {
                 variant="ghost" 
                 size="sm" 
                 disabled
-                className="cursor-not-allowed opacity-40 rounded-full"
+                className="cursor-not-allowed opacity-50"
               >
                 <Repeat2 className="w-4 h-4" />
               </Button>
@@ -134,7 +134,7 @@ const PostItem = ({ post }: PostItemProps) => {
                 variant="ghost" 
                 size="sm" 
                 disabled
-                className="cursor-not-allowed opacity-40 rounded-full"
+                className="cursor-not-allowed opacity-50"
               >
                 <Heart className="w-4 h-4" />
                 <span className="text-xs ml-1">0</span>
@@ -144,7 +144,7 @@ const PostItem = ({ post }: PostItemProps) => {
                 variant="ghost" 
                 size="sm" 
                 disabled
-                className="cursor-not-allowed opacity-40 rounded-full"
+                className="cursor-not-allowed opacity-50"
               >
                 <BarChart3 className="w-4 h-4" />
                 <span className="text-xs ml-1">0</span>
@@ -154,7 +154,7 @@ const PostItem = ({ post }: PostItemProps) => {
                 variant="ghost" 
                 size="sm" 
                 disabled
-                className="cursor-not-allowed opacity-40 rounded-full"
+                className="cursor-not-allowed opacity-50"
               >
                 <Bookmark className="w-4 h-4" />
               </Button>
@@ -163,7 +163,7 @@ const PostItem = ({ post }: PostItemProps) => {
                 variant="ghost" 
                 size="sm" 
                 onClick={() => setShowShareModal(true)}
-                className="hover:text-primary hover:bg-primary/10 transition-all rounded-full"
+                className="hover:text-primary hover:bg-primary/10 transition-all"
               >
                 <Share className="w-4 h-4" />
               </Button>
