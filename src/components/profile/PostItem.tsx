@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { MessageCircle, Repeat2, Heart, BarChart3, Bookmark, Share, MoreHorizontal, Trash2 } from 'lucide-react';
+import { Share, MoreHorizontal, Trash2 } from 'lucide-react';
 import { Post, deletePost, getDisplayDate } from '@/lib/postStorageDB';
 import { format } from 'date-fns';
 import { useAdmin } from '@/contexts/AdminContext';
@@ -56,9 +56,9 @@ const PostItem = ({ post }: PostItemProps) => {
 
   return (
     <>
-      <article className="group border-b border-border/30 p-4 hover:bg-muted/5 transition-all duration-300">
+      <article className="group border-b border-border/20 p-4 hover:bg-muted/5 transition-colors">
         <div className="flex gap-3">
-          <Avatar className="w-12 h-12 ring-2 ring-border/20">
+          <Avatar className="w-10 h-10 ring-2 ring-border/20 flex-shrink-0">
             <AvatarImage src={teamMemberImage} />
             <AvatarFallback>RM</AvatarFallback>
           </Avatar>
@@ -66,10 +66,10 @@ const PostItem = ({ post }: PostItemProps) => {
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-1.5 text-sm">
-                <span className="font-bold text-foreground hover:underline cursor-pointer">Rx MHA</span>
-                <span className="text-muted-foreground">@rxmha_</span>
-                <span className="text-muted-foreground">·</span>
-                <time className="text-muted-foreground hover:underline cursor-pointer">
+                <span className="font-semibold text-foreground">Rx MHA</span>
+                <span className="text-muted-foreground text-xs">@rxmha_</span>
+                <span className="text-muted-foreground text-xs">·</span>
+                <time className="text-muted-foreground text-xs">
                   {format(displayDate, 'MMM d')}
                 </time>
               </div>
@@ -80,7 +80,7 @@ const PostItem = ({ post }: PostItemProps) => {
                     <Button 
                       variant="ghost" 
                       size="icon" 
-                      className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity"
                     >
                       <MoreHorizontal className="w-4 h-4" />
                     </Button>
@@ -95,77 +95,30 @@ const PostItem = ({ post }: PostItemProps) => {
               )}
             </div>
             
-            <p className="text-foreground mt-2 whitespace-pre-wrap break-words leading-relaxed">
+            <p className="text-foreground mt-1.5 whitespace-pre-wrap break-words text-sm leading-relaxed">
               {renderContent(post.content)}
             </p>
             
             {post.imageUrl && (
-              <div className="mt-3 rounded-2xl overflow-hidden border border-border/30 shadow-lg">
+              <div className="mt-3 rounded-xl overflow-hidden border border-border/30">
                 <img
                   src={post.imageUrl}
                   alt="Post image"
-                  className="w-full h-auto object-contain max-h-[500px] transition-transform duration-300 hover:scale-[1.02]"
+                  className="w-full h-auto object-contain max-h-[400px]"
                 />
               </div>
             )}
             
-            {/* Interaction buttons - all disabled except Share */}
-            <div className="flex items-center justify-between mt-3 max-w-md text-muted-foreground/50">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                disabled
-                className="cursor-not-allowed opacity-50"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span className="text-xs ml-1">0</span>
-              </Button>
-              
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                disabled
-                className="cursor-not-allowed opacity-50"
-              >
-                <Repeat2 className="w-4 h-4" />
-              </Button>
-              
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                disabled
-                className="cursor-not-allowed opacity-50"
-              >
-                <Heart className="w-4 h-4" />
-                <span className="text-xs ml-1">0</span>
-              </Button>
-              
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                disabled
-                className="cursor-not-allowed opacity-50"
-              >
-                <BarChart3 className="w-4 h-4" />
-                <span className="text-xs ml-1">0</span>
-              </Button>
-              
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                disabled
-                className="cursor-not-allowed opacity-50"
-              >
-                <Bookmark className="w-4 h-4" />
-              </Button>
-              
+            {/* Interaction buttons */}
+            <div className="flex items-center gap-1 mt-3 text-muted-foreground/60">
               <Button 
                 variant="ghost" 
                 size="sm" 
                 onClick={() => setShowShareModal(true)}
-                className="hover:text-primary hover:bg-primary/10 transition-all"
+                className="hover:text-primary hover:bg-primary/10 transition-all h-7 px-2 text-xs gap-1"
               >
-                <Share className="w-4 h-4" />
+                <Share className="w-3.5 h-3.5" />
+                Share
               </Button>
             </div>
           </div>
