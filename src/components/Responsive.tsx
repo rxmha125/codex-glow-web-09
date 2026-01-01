@@ -41,7 +41,7 @@ const Responsive = () => {
                 className="h-11 sm:h-12 px-6 sm:px-8 text-sm sm:text-base rounded-full font-medium"
               >
                 <Monitor className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span className="whitespace-nowrap">Rx Codex WEB</span>
+                <span className="whitespace-nowrap">Axtrio WEB</span>
               </Button>
 
               <Button

@@ -11,20 +11,20 @@ const Models = () => {
   }, []);
 
   useSEO({
-    title: "AI Models - Rx Codex AI | Advanced ML Models from Bangladesh",
-    description: "Explore Rx Codex AI's cutting-edge AI models including Rx Codex V1-mini. Advanced machine learning models developed in Bangladesh for global applications.",
-    keywords: "AI Models, Machine Learning Models, Rx Codex V1-mini, AI Bangladesh, Neural Networks, Deep Learning Models",
-    canonicalUrl: "https://rxcodexai.com/models",
+    title: "AI Models - Axtrio AI | Advanced ML Models from Bangladesh",
+    description: "Explore Axtrio AI's cutting-edge AI models including the Txa series. Advanced machine learning models developed in Bangladesh for global applications.",
+    keywords: "AI Models, Machine Learning Models, Txa Series, AI Bangladesh, Neural Networks, Deep Learning Models, Axtrio AI",
+    canonicalUrl: "https://axtrioai.com/models",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "AI Models - Rx Codex AI",
+      "name": "AI Models - Axtrio AI",
       "description": "Advanced AI models and machine learning solutions from Bangladesh",
-      "url": "https://rxcodexai.com/models",
+      "url": "https://axtrioai.com/models",
       "mainEntity": {
         "@type": "Product",
-        "name": "Rx Codex V1-mini",
-        "description": "Advanced AI model for various applications"
+        "name": "Txa Series",
+        "description": "Advanced AI model series for various applications"
       }
     }
   });

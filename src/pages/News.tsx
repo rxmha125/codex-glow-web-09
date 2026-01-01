@@ -4,16 +4,16 @@ import { useSEO } from '@/hooks/useSEO';
 
 const News = () => {
   useSEO({
-    title: "AI News & Updates - Rx Codex AI | Latest in AI Technology",
-    description: "Stay updated with the latest news and developments from Rx Codex AI. Get insights into AI research, model releases, and technology innovations from Bangladesh.",
-    keywords: "AI News, Machine Learning Updates, Rx Codex AI News, AI Research, Technology News, Bangladesh AI",
-    canonicalUrl: "https://rxcodexai.com/news",
+    title: "AI News & Updates - Axtrio AI | Latest in AI Technology",
+    description: "Stay updated with the latest news and developments from Axtrio AI. Get insights into AI research, model releases, and technology innovations from Bangladesh.",
+    keywords: "AI News, Machine Learning Updates, Axtrio AI News, AI Research, Technology News, Bangladesh AI, Txa Series",
+    canonicalUrl: "https://axtrioai.com/news",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "AI News & Updates - Rx Codex AI",
-      "description": "Latest news and updates from Rx Codex AI",
-      "url": "https://rxcodexai.com/news"
+      "name": "AI News & Updates - Axtrio AI",
+      "description": "Latest news and updates from Axtrio AI",
+      "url": "https://axtrioai.com/news"
     }
   });
 

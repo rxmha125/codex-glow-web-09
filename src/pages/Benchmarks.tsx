@@ -61,30 +61,30 @@ const Benchmarks = () => {
   }, [lightboxOpen, benchmarkImages.length]);
 
   useSEO({
-    title: "Models and Tokenizer Benchmarks - Rx Codex AI",
-    description: "Comprehensive benchmark comparison of Rx Codex models and tokenizers against GPT2 and DeepSeek, showcasing superior performance in compression, speed, and efficiency.",
-    keywords: "AI Benchmarks, Tokenizer Comparison, Model Performance, Rx Codex Benchmarks, GPT2 Comparison, DeepSeek Comparison, AI Performance, Machine Learning Benchmarks",
-    canonicalUrl: "https://rxcodexai.com/benchmarks",
-    ogImage: "https://rxcodexai.com/og-logo.png",
+    title: "Models and Tokenizer Benchmarks - Axtrio AI",
+    description: "Comprehensive benchmark comparison of Axtrio AI models and tokenizers against GPT2 and DeepSeek, showcasing superior performance in compression, speed, and efficiency.",
+    keywords: "AI Benchmarks, Tokenizer Comparison, Model Performance, Axtrio AI Benchmarks, GPT2 Comparison, DeepSeek Comparison, AI Performance, Machine Learning Benchmarks",
+    canonicalUrl: "https://axtrioai.com/benchmarks",
+    ogImage: "https://axtrioai.com/og-logo.png",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "Rx Codex Models and Tokenizer Benchmarks",
-      "description": "Comprehensive benchmark comparison of Rx Codex models and tokenizers against GPT2 and DeepSeek",
-      "url": "https://rxcodexai.com/benchmarks",
+      "headline": "Axtrio AI Models and Tokenizer Benchmarks",
+      "description": "Comprehensive benchmark comparison of Axtrio AI models and tokenizers against GPT2 and DeepSeek",
+      "url": "https://axtrioai.com/benchmarks",
       "datePublished": "2025-10-12",
-      "dateModified": "2025-12-06",
+      "dateModified": "2026-01-01",
       "author": {
         "@type": "Organization",
-        "name": "Rx Codex AI",
-        "url": "https://rxcodexai.com"
+        "name": "Axtrio AI",
+        "url": "https://axtrioai.com"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Rx Codex AI",
+        "name": "Axtrio AI",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://rxcodexai.com/og-logo.png"
+          "url": "https://axtrioai.com/og-logo.png"
         }
       }
     }
@@ -96,7 +96,7 @@ const Benchmarks = () => {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Benchmark Overview</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Our comprehensive benchmark analysis demonstrates the superior performance of the Rx Codex tokenizer 
+          Our comprehensive benchmark analysis demonstrates the superior performance of the Axtrio AI tokenizer 
           compared to industry-standard tokenizers like GPT2 and DeepSeek. The evaluation covers multiple critical 
           dimensions including compression efficiency, processing speed, token accuracy, and specialized capabilities.
         </p>
@@ -106,10 +106,10 @@ const Benchmarks = () => {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Tokenizer Capabilities Analysis</h2>
         <p className="text-muted-foreground leading-relaxed">
-          The radar chart visualization reveals Rx Codex's dominance across five key capability areas:
+          The radar chart visualization reveals Axtrio AI's dominance across five key capability areas:
         </p>
         <ul className="list-disc list-inside text-muted-foreground space-y-3">
-          <li><strong className="text-foreground">Compression:</strong> Rx Codex achieves exceptional compression ratios, significantly outperforming both GPT2 and DeepSeek, resulting in more efficient token utilization.</li>
+          <li><strong className="text-foreground">Compression:</strong> Axtrio AI achieves exceptional compression ratios, significantly outperforming both GPT2 and DeepSeek, resulting in more efficient token utilization.</li>
           <li><strong className="text-foreground">Speed:</strong> Processing speeds are competitive with DeepSeek while maintaining superior accuracy and compression.</li>
           <li><strong className="text-foreground">Special Tokens:</strong> Industry-leading support for special tokens enables better handling of structured data and code.</li>
           <li><strong className="text-foreground">Chat Support:</strong> Optimized for conversational AI applications with specialized chat tokens and formatting.</li>
@@ -121,10 +121,10 @@ const Benchmarks = () => {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Overall Performance Score</h2>
         <p className="text-muted-foreground leading-relaxed">
-          The Tokenizer Battle final scores clearly demonstrate Rx Codex's superiority:
+          The Tokenizer Battle final scores clearly demonstrate Axtrio AI's superiority:
         </p>
         <ul className="list-disc list-inside text-muted-foreground space-y-3">
-          <li><strong className="text-primary">Rx Codex: 84.39/100</strong> - Leading performance across all metrics</li>
+          <li><strong className="text-primary">Axtrio AI: 84.39/100</strong> - Leading performance across all metrics</li>
           <li>GPT2: 67.74/100 - Strong baseline performance</li>
           <li>DeepSeek: 67.70/100 - Competitive but lacks optimization</li>
         </ul>
@@ -138,7 +138,7 @@ const Benchmarks = () => {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Compression Ratio Comparison</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Across diverse test categories, Rx Codex consistently achieves superior compression ratios:
+          Across diverse test categories, Axtrio AI consistently achieves superior compression ratios:
         </p>
         <ul className="list-disc list-inside text-muted-foreground space-y-3">
           <li><strong className="text-foreground">English Complex:</strong> Peak compression performance at 7.0+ chars/token ratio</li>
@@ -156,7 +156,7 @@ const Benchmarks = () => {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Tokenization Speed Performance</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Processing speed measurements across test cases show Rx Codex maintains competitive performance while 
+          Processing speed measurements across test cases show Axtrio AI maintains competitive performance while 
           delivering superior compression:
         </p>
         <ul className="list-disc list-inside text-muted-foreground space-y-3">
@@ -166,7 +166,7 @@ const Benchmarks = () => {
           <li><strong className="text-foreground">Long Text:</strong> 4.2ms - Excellent performance on extended content</li>
         </ul>
         <p className="text-muted-foreground leading-relaxed">
-          The balanced speed-compression profile makes Rx Codex ideal for real-time applications where both 
+          The balanced speed-compression profile makes Axtrio AI ideal for real-time applications where both 
           latency and cost efficiency matter.
         </p>
       </section>
@@ -178,7 +178,7 @@ const Benchmarks = () => {
           Token count comparisons reveal significant efficiency gains:
         </p>
         <ul className="list-disc list-inside text-muted-foreground space-y-3">
-          <li><strong className="text-foreground">Lower Token Counts:</strong> Rx Codex consistently uses fewer tokens across all test categories</li>
+          <li><strong className="text-foreground">Lower Token Counts:</strong> Axtrio AI consistently uses fewer tokens across all test categories</li>
           <li><strong className="text-foreground">Cost Reduction:</strong> 15-25% fewer tokens means proportional savings in API costs</li>
           <li><strong className="text-foreground">Memory Efficiency:</strong> Reduced token counts enable larger context windows with the same memory footprint</li>
           <li><strong className="text-foreground">Normalized Performance:</strong> Maintains advantages even when normalized for text length</li>
@@ -189,9 +189,9 @@ const Benchmarks = () => {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Conclusion</h2>
         <p className="text-muted-foreground leading-relaxed">
-          The benchmark results conclusively demonstrate that Rx Codex tokenizer represents a significant advancement 
+          The benchmark results conclusively demonstrate that Axtrio AI tokenizer represents a significant advancement 
           in tokenization technology. With an overall score of 84.39/100 and superior performance across compression, 
-          speed, and accuracy metrics, Rx Codex is positioned as the optimal choice for cost-efficient, high-performance 
+          speed, and accuracy metrics, Axtrio AI is positioned as the optimal choice for cost-efficient, high-performance 
           AI applications.
         </p>
         <p className="text-muted-foreground leading-relaxed">

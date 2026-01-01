@@ -8,12 +8,12 @@ const TeamsSection = () => {
     { 
       position: "Founder & CEO", 
       name: "Rx MHA", 
-      description: "I'm Rx, the Founder & CEO of Rx Codex AI. We're dedicated to advancing AI development right here in Bangladesh—pushing boundaries and making waves in the tech scene." 
+      description: "I'm Rx, the Founder & CEO of Axtrio AI. We're dedicated to advancing AI development right here in Bangladesh—pushing boundaries and making waves in the tech scene." 
     },
     { 
       position: "Web Development", 
       name: "Rx MHA", 
-      description: "I'm also the web developer, crafting and refining the interfaces for all Rx Codex AI sites. Yep, including this one you're on right now—making sure it's smooth and user-friendly." 
+      description: "I'm also the web developer, crafting and refining the interfaces for all Axtrio AI sites. Yep, including this one you're on right now—making sure it's smooth and user-friendly." 
     },
     { 
       position: "Management", 
@@ -52,7 +52,7 @@ const TeamsSection = () => {
           <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-white/20 mb-3">
             <img 
               src={teamMemberImage} 
-              alt={`Rx MHA - ${member.position} at Rx Codex AI`}
+              alt={`Rx MHA - ${member.position} at Axtrio AI`}
               className="w-full h-full object-cover"
               itemProp="image"
             />
@@ -65,7 +65,7 @@ const TeamsSection = () => {
           <p className="text-white/70 text-xs text-center leading-relaxed mb-3" itemProp="description">
             {member.description}
           </p>
-          <meta itemProp="worksFor" content="Rx Codex AI" />
+          <meta itemProp="worksFor" content="Axtrio AI" />
         </CardContent>
         
         <CardFooter className="absolute bottom-4 left-6 right-6">
@@ -73,8 +73,8 @@ const TeamsSection = () => {
             <div className="flex items-center text-white/60 text-xs">
               <span className="flex items-center">
                 Team Card |
-                <img src="/og-logo.png" alt="Rx Codex Logo" className="w-5 h-5 object-contain mx-1" />
-                Rx Codex AI
+                <img src="/og-logo.png" alt="Axtrio AI Logo" className="w-5 h-5 object-contain mx-1" />
+                Axtrio AI
               </span>
             </div>
           </div>
