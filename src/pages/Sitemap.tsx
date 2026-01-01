@@ -10,16 +10,16 @@ const Sitemap = () => {
   }, []);
 
   useSEO({
-    title: "Site Map - Rx Codex AI | Navigate Our Website",
-    description: "Complete site map of Rx Codex AI website. Find all pages, AI models, research papers, and company information easily.",
-    keywords: "Sitemap, Site Navigation, Rx Codex AI Pages, Website Map",
-    canonicalUrl: "https://rxcodexai.com/sitemap",
+    title: "Site Map - Axtrio AI | Navigate Our Website",
+    description: "Complete site map of Axtrio AI website. Find all pages, AI models, research papers, and company information easily.",
+    keywords: "Sitemap, Site Navigation, Axtrio AI Pages, Website Map",
+    canonicalUrl: "https://axtrioai.com/sitemap",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Sitemap - Rx Codex AI",
-      "description": "Complete navigation map of Rx Codex AI website",
-      "url": "https://rxcodexai.com/sitemap"
+      "name": "Sitemap - Axtrio AI",
+      "description": "Complete navigation map of Axtrio AI website",
+      "url": "https://axtrioai.com/sitemap"
     }
   });
 
@@ -33,7 +33,7 @@ const Sitemap = () => {
               Site Map
             </h1>
             <p className="text-xl text-white/70 max-w-2xl mx-auto">
-              Navigate through all pages and sections of Rx Codex AI website
+              Navigate through all pages and sections of Axtrio AI website
             </p>
           </header>
 
@@ -117,17 +117,17 @@ const Sitemap = () => {
                 <ul className="space-y-3">
                   <li>
                     <a 
-                      href="https://www.chat.rxcodexai.com" 
+                      href="https://www.chat.axtrioai.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-white/80 hover:text-white transition-colors duration-200 block py-1"
                     >
-                      💬 Try Rx Codex AI Chat
+                      💬 Try Axtrio AI Chat
                     </a>
                   </li>
                   <li>
                     <a 
-                      href="https://github.com/rxcodexai" 
+                      href="https://github.com/axtrioai" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-white/80 hover:text-white transition-colors duration-200 block py-1"
@@ -189,7 +189,10 @@ const Sitemap = () => {
                     🚀 Rx Codex V1 Tiny V2
                   </li>
                   <li className="text-white/80 block py-1">
-                    🔬 Rx Codex V1 Tiny V3 (In Dev)
+                    🔬 Rx Codex V1 Tiny V3
+                  </li>
+                  <li className="text-white/80 block py-1">
+                    🆕 Txa 1 (In Development)
                   </li>
                 </ul>
               </nav>
@@ -198,17 +201,17 @@ const Sitemap = () => {
             {/* Company Info */}
             <section className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
               <h2 className="text-2xl font-semibold text-white mb-4 border-b border-white/20 pb-2">
-                About Rx Codex AI
+                About Axtrio AI
               </h2>
               <div className="space-y-3">
                 <p className="text-white/80 text-sm">
                   🇧🇩 Based in Bangladesh
                 </p>
                 <p className="text-white/80 text-sm">
-                  🧠 Advanced AI Models
+                  🧠 Txa Series AI Models
                 </p>
                 <p className="text-white/80 text-sm">
-                  👨‍💻 Founded by Rx MHA (15 years old)
+                  👨‍💻 Founded by Rx MHA
                 </p>
                 <p className="text-white/80 text-sm">
                   🔬 Cutting-edge AI Research
@@ -220,7 +223,7 @@ const Sitemap = () => {
           {/* Footer note */}
           <footer className="text-center mt-16 pt-8 border-t border-white/20">
             <p className="text-white/60 text-sm">
-              Last updated: December 24, 2024 | 
+              Last updated: January 1, 2026 | 
               <Link to="/" className="text-white/80 hover:text-white ml-2">
                 Return to Home
               </Link>

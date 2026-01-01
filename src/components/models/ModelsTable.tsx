@@ -87,8 +87,8 @@ const ModelsTable = () => {
             <div className="flex justify-center items-center mt-4 text-white/60 text-sm">
               <span className="flex items-center">
                 Model Table |
-                <img src="/og-logo.png" alt="Rx Codex Logo" className="w-5 h-5 object-contain mx-1" />
-                Rx Codex AI
+                <img src="/og-logo.png" alt="Axtrio AI Logo" className="w-5 h-5 object-contain mx-1" />
+                Axtrio AI
               </span>
             </div>
           </div>

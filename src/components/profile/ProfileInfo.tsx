@@ -36,14 +36,14 @@ const ProfileInfo = () => {
       
       {/* Bio */}
       <p className="text-foreground leading-relaxed">
-        AI Developer | Founder of Rx Codex AI |{' '}
+        AI Developer | Founder of Axtrio AI |{' '}
         <a 
-          href="https://rxcodexai.com" 
+          href="https://axtrioai.com" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-primary hover:underline transition-all"
         >
-          https://www.rxcodexai.com
+          https://www.axtrioai.com
         </a>
         {' '}| The future is gonna be awesome.
       </p>
@@ -51,13 +51,13 @@ const ProfileInfo = () => {
       {/* Info Row */}
       <div className="flex flex-wrap gap-x-4 gap-y-2 mt-4 text-sm text-muted-foreground">
         <a 
-          href="https://rxcodexai.com" 
+          href="https://axtrioai.com" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 hover:text-primary transition-colors"
         >
           <Link2 className="w-4 h-4" />
-          <span className="text-primary">rxcodexai.com</span>
+          <span className="text-primary">axtrioai.com</span>
         </a>
         <span className="flex items-center gap-1.5">
           <Cake className="w-4 h-4" />

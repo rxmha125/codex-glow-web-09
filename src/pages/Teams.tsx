@@ -4,16 +4,16 @@ import { useSEO } from '@/hooks/useSEO';
 
 const Teams = () => {
   useSEO({
-    title: "Our Team - Rx Codex AI | Meet the AI Experts from Bangladesh",
-    description: "Meet the talented team behind Rx Codex AI. Our experts in artificial intelligence and machine learning are building the future of AI technology.",
-    keywords: "Rx Codex AI Team, AI Experts, Machine Learning Team, Bangladesh AI Developers, Tech Team",
-    canonicalUrl: "https://rxcodexai.com/teams",
+    title: "Our Team - Axtrio AI | Meet the AI Experts from Bangladesh",
+    description: "Meet the talented team behind Axtrio AI. Our experts in artificial intelligence and machine learning are building the future of AI technology.",
+    keywords: "Axtrio AI Team, AI Experts, Machine Learning Team, Bangladesh AI Developers, Tech Team",
+    canonicalUrl: "https://axtrioai.com/teams",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Rx Codex AI Team",
+      "name": "Axtrio AI Team",
       "description": "Meet our team of AI experts and developers",
-      "url": "https://rxcodexai.com/teams"
+      "url": "https://axtrioai.com/teams"
     }
   });
 

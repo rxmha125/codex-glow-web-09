@@ -80,7 +80,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <img 
               src={rxCodexLogo} 
-              alt="Rx Codex AI" 
+              alt="Axtrio AI" 
               className="h-8 sm:h-9 md:h-10 w-auto object-contain" 
               loading="lazy" 
             />
@@ -93,7 +93,7 @@ const Navbar = () => {
               onClick={() => navigateToPage('/home')} 
               className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/home' || location.pathname === '/' ? 'active' : ''}`}
             >
-              RX CODEX
+              AXTRIO
             </button>
             <button 
               onClick={() => navigateToPage('/company')} 
@@ -127,11 +127,11 @@ const Navbar = () => {
           {/* Desktop Button */}
           {!isMobile && (
             <Button 
-              onClick={() => window.open('https://www.chat.rxcodexai.com', '_blank')} 
+              onClick={() => window.open('https://www.chat.axtrioai.com', '_blank')} 
               variant="glass"
               className="px-4 md:px-4 lg:px-6 py-3 rounded-full font-medium"
             >
-              Try Rx Codex
+              Try Axtrio
             </Button>
           )}
 
@@ -146,7 +146,7 @@ const Navbar = () => {
                 }`}
               >
                 <span className={`transition-all duration-500 ${showChevron ? 'opacity-0 scale-75' : 'opacity-100 scale-100'}`}>
-                  Try Rx Codex
+                  Try Axtrio
                 </span>
                 <ChevronDown 
                   className={`absolute inset-0 m-auto transition-all duration-500 ${
@@ -185,7 +185,7 @@ const Navbar = () => {
               <div className="flex items-center justify-center mb-8 pb-6 border-b border-white/20">
                 <img 
                   src={rxCodexLogo} 
-                  alt="Rx Codex AI" 
+                  alt="Axtrio AI" 
                   className="h-10 w-auto object-contain" 
                   loading="lazy" 
                 />
@@ -197,7 +197,7 @@ const Navbar = () => {
                   onClick={() => navigateToPage('/home')} 
                   className={`mobile-nav-button ${location.pathname === '/home' || location.pathname === '/' ? 'active' : ''}`}
                 >
-                  RX CODEX
+                  AXTRIO
                 </button>
                 <button 
                   onClick={() => navigateToPage('/company')} 
@@ -229,15 +229,15 @@ const Navbar = () => {
                 {/* Separator */}
                 <div className="border-t border-white/20 my-6"></div>
                 
-                {/* Try Rx Codex Link */}
+                {/* Try Axtrio Link */}
                 <button 
                   onClick={() => {
-                    window.open('https://www.chat.rxcodexai.com', '_blank');
+                    window.open('https://www.chat.axtrioai.com', '_blank');
                     setDropdownOpen(false);
                   }} 
                   className="mobile-nav-button try-codex-button"
                 >
-                  Try Rx Codex →
+                  Try Axtrio →
                 </button>
               </div>
             </div>

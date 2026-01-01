@@ -12,26 +12,26 @@ const Profile = () => {
   const { isAdmin } = useAdmin();
 
   useSEO({
-    title: "Rx MHA - Founder & CEO | Rx Codex AI",
-    description: "Rx MHA is the 15-year-old founder and CEO of Rx Codex AI, a pioneering AI company from Bangladesh. AI Architect, Web Developer, Researcher, and Designer building the future of AI technology.",
-    keywords: "Rx MHA, Founder of Rx Codex AI, CEO Rx Codex AI, AI Developer Bangladesh, Young AI Founder, AI Architect, Who is Rx MHA, The Founder of Rx Codex AI",
-    canonicalUrl: "https://rxcodexai.com/company/teams/profiles/rxmha",
-    ogImage: "https://rxcodexai.com/team-member.jpg",
+    title: "Rx MHA - Founder & CEO | Axtrio AI",
+    description: "Rx MHA is the founder and CEO of Axtrio AI, a pioneering AI company from Bangladesh. AI Architect, Web Developer, Researcher, and Designer building cutting-edge AI models.",
+    keywords: "Rx MHA, Founder of Axtrio AI, CEO Axtrio AI, AI Developer Bangladesh, AI Founder, AI Architect, Who is Rx MHA, The Founder of Axtrio AI",
+    canonicalUrl: "https://axtrioai.com/company/teams/profiles/rxmha",
+    ogImage: "https://axtrioai.com/team-member.jpg",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "ProfilePage",
       "mainEntity": {
         "@type": "Person",
-        "@id": "https://rxcodexai.com/#founder",
+        "@id": "https://axtrioai.com/#founder",
         "name": "Rx MHA",
         "alternateName": "Rx MHA",
-        "image": "https://rxcodexai.com/team-member.jpg",
+        "image": "https://axtrioai.com/team-member.jpg",
         "jobTitle": ["Founder & CEO", "AI Architect", "Web Developer", "Researcher", "Designer"],
-        "description": "Rx MHA is the 15-year-old founder and CEO of Rx Codex AI, leading AI development and innovation from Bangladesh.",
+        "description": "Rx MHA is the founder and CEO of Axtrio AI, leading AI development and innovation from Bangladesh.",
         "worksFor": {
           "@type": "Organization",
-          "name": "Rx Codex AI",
-          "url": "https://rxcodexai.com"
+          "name": "Axtrio AI",
+          "url": "https://axtrioai.com"
         },
         "knowsAbout": [
           "Artificial Intelligence",
@@ -45,7 +45,7 @@ const Profile = () => {
           "@type": "Country",
           "name": "Bangladesh"
         },
-        "url": "https://rxcodexai.com/company/teams/profiles/rxmha"
+        "url": "https://axtrioai.com/company/teams/profiles/rxmha"
       }
     }
   });

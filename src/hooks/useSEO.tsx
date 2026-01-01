@@ -11,10 +11,10 @@ interface SEOProps {
 }
 
 export const useSEO = ({
-  title = "Rx Codex AI - Advanced AI Models from Bangladesh",
-  description = "Building the future of AI technology with cutting-edge models from Bangladesh. Discover Rx Codex V1-mini and our innovative AI solutions.",
-  keywords = "AI, Artificial Intelligence, Bangladesh, AI Models, Machine Learning, Deep Learning, Rx Codex, AI Technology, AI Innovation",
-  ogImage = "https://rxcodexai.com/og-logo.png",
+  title = "Welcome | Axtrio AI",
+  description = "Axtrio AI pioneers cutting-edge AI models from Bangladesh, delivering powerful, scalable intelligence through the Txa series.",
+  keywords = "AI, Artificial Intelligence, Bangladesh, AI Models, Machine Learning, Deep Learning, Axtrio AI, Txa Series, AI Technology, AI Innovation",
+  ogImage = "https://axtrioai.com/og-logo.png",
   ogType = "website",
   canonicalUrl,
   structuredData

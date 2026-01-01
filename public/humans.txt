@@ -1,8 +1,8 @@
 # Team
 
-Founder & AI Architect: Rx MHA (15 years old)
+Founder & AI Architect: Rx MHA
 Location: Bangladesh
-Contact: contact@rxcodexai.com
+Contact: contact@axtrioai.com
 
 # Technology
 
@@ -15,11 +15,11 @@ Design: Custom AI-focused design system
 # Special Thanks
 
 To the open source community for the amazing tools and libraries
-To all early users and testers of Rx Codex AI models
+To all early users and testers of Axtrio AI models
 To everyone supporting AI innovation in Bangladesh
 
 # Last Updated
 
-December 24, 2024
+January 1, 2026
 
-/* This file is part of Rx Codex AI - Building the future of AI technology from Bangladesh */
+/* This file is part of Axtrio AI - Pioneering cutting-edge AI models from Bangladesh */
