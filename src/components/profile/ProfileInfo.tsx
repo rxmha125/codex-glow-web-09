@@ -1,12 +1,8 @@
 import { Link2, Cake, CalendarDays, BadgeCheck } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import { useAdmin } from '@/contexts/AdminContext';
 import teamMemberImage from '@/assets/team-member.jpg';
 
 const ProfileInfo = () => {
-  const { isAdmin } = useAdmin();
-
   return (
     <div className="px-4 pb-6">
       {/* Profile photo - overlapping banner */}
@@ -17,12 +13,6 @@ const ProfileInfo = () => {
             <AvatarFallback className="text-3xl">RM</AvatarFallback>
           </Avatar>
         </div>
-        
-        {isAdmin && (
-          <Button variant="outline" className="rounded-full font-semibold px-5 border-border/50 hover:bg-muted/50">
-            Edit profile
-          </Button>
-        )}
       </div>
       
       {/* Name & Username */}

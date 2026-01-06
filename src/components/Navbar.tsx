@@ -4,10 +4,9 @@ import { Button } from '@/components/ui/button';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useAdmin } from '@/contexts/AdminContext';
 import rxCodexLogo from '@/assets/rx-codex-logo.png';
+
 const Navbar = () => {
-  const { isAdmin } = useAdmin();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showChevron, setShowChevron] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -73,7 +72,9 @@ const Navbar = () => {
     // Always open the menu when clicked, regardless of chevron state
     setDropdownOpen(!dropdownOpen);
   };
-  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-navbar-scrolled' : ''}`}>
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-navbar-scrolled' : ''}`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Brand Name - Left Side */}
@@ -88,40 +89,32 @@ const Navbar = () => {
 
           {/* Center Navigation Pill */}
           <div className="hidden md:flex items-center justify-center flex-1">
-          <div className="nav-pill">
-            <button 
-              onClick={() => navigateToPage('/home')} 
-              className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/home' || location.pathname === '/' ? 'active' : ''}`}
-            >
-              AXTRIO
-            </button>
-            <button 
-              onClick={() => navigateToPage('/company')} 
-              className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/company' ? 'active' : ''}`}
-            >
-              COMPANY
-            </button>
-            <button 
-              onClick={() => navigateToPage('/models')} 
-              className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/models' ? 'active' : ''}`}
-            >
-              MODELS
-            </button>
-            <button 
-              onClick={() => navigateToPage('/news')} 
-              className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/news' ? 'active' : ''}`}
-            >
-              NEWS
-            </button>
-            {isAdmin && (
+            <div className="nav-pill">
               <button 
-                onClick={() => navigateToPage('/system/point/dashboard/admin/load')} 
-                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/system/point/dashboard/admin/load' ? 'active' : ''}`}
+                onClick={() => navigateToPage('/home')} 
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/home' || location.pathname === '/' ? 'active' : ''}`}
               >
-                ADMIN
+                AXTRIO
               </button>
-            )}
-          </div>
+              <button 
+                onClick={() => navigateToPage('/company')} 
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/company' ? 'active' : ''}`}
+              >
+                COMPANY
+              </button>
+              <button 
+                onClick={() => navigateToPage('/models')} 
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/models' ? 'active' : ''}`}
+              >
+                MODELS
+              </button>
+              <button 
+                onClick={() => navigateToPage('/news')} 
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/news' ? 'active' : ''}`}
+              >
+                NEWS
+              </button>
+            </div>
           </div>
 
           {/* Desktop Button */}
@@ -157,7 +150,6 @@ const Navbar = () => {
               </Button>
             </div>
           )}
-
         </div>
       </div>
       
@@ -217,14 +209,6 @@ const Navbar = () => {
                 >
                   NEWS
                 </button>
-                {isAdmin && (
-                  <button 
-                    onClick={() => navigateToPage('/system/point/dashboard/admin/load')} 
-                    className={`mobile-nav-button ${location.pathname === '/system/point/dashboard/admin/load' ? 'active' : ''}`}
-                  >
-                    ADMIN
-                  </button>
-                )}
                 
                 {/* Separator */}
                 <div className="border-t border-white/20 my-6"></div>
@@ -245,6 +229,8 @@ const Navbar = () => {
         </>,
         document.body
       )}
-    </nav>;
+    </nav>
+  );
 };
+
 export default Navbar;
