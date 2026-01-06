@@ -1,38 +1,19 @@
 import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Share, MoreHorizontal, Trash2 } from 'lucide-react';
-import { Post, deletePost, getDisplayDate } from '@/lib/postStorageDB';
+import { Share } from 'lucide-react';
+import { Post, getDisplayDate } from '@/lib/postStorageDB';
 import { format } from 'date-fns';
-import { useAdmin } from '@/contexts/AdminContext';
-import { toast } from 'sonner';
 import teamMemberImage from '@/assets/team-member.jpg';
 import ShareModal from './ShareModal';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 
 interface PostItemProps {
   post: Post;
 }
 
 const PostItem = ({ post }: PostItemProps) => {
-  const { isAdmin } = useAdmin();
   const displayDate = getDisplayDate(post);
   const [showShareModal, setShowShareModal] = useState(false);
-
-  const handleDelete = async () => {
-    const success = await deletePost(post.id);
-    if (success) {
-      toast.success('Post deleted');
-      window.dispatchEvent(new Event('posts-updated'));
-    } else {
-      toast.error('Failed to delete post');
-    }
-  };
 
   const renderContent = (text: string) => {
     const urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -73,26 +54,6 @@ const PostItem = ({ post }: PostItemProps) => {
                   {format(displayDate, 'MMM d')}
                 </time>
               </div>
-              
-              {isAdmin && (
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button 
-                      variant="ghost" 
-                      size="icon" 
-                      className="h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity"
-                    >
-                      <MoreHorizontal className="w-4 h-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem onClick={handleDelete} className="text-destructive">
-                      <Trash2 className="w-4 h-4 mr-2" />
-                      Delete
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              )}
             </div>
             
             <p className="text-foreground mt-1.5 whitespace-pre-wrap break-words text-sm leading-relaxed">
