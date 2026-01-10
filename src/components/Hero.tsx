@@ -151,7 +151,7 @@ const Hero = () => {
           size="lg"
           className="px-8 py-6 text-lg rounded-full font-medium pointer-events-auto cursor-pointer"
         >
-          Try Axtrio
+          Try Txa 1
         </Button>
       </div>
     </section>;

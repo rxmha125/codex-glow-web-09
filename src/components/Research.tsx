@@ -66,8 +66,8 @@ Rx Codex V1 Tiny represents a major breakthrough in our AI model development. Th
     navigate('/research/rx-codex-v1-tiny');
   };
 
-  const handleViewModels = () => {
-    navigate('/models');
+  const handleViewMore = () => {
+    navigate('/research');
   };
 
   return (
@@ -102,7 +102,7 @@ Rx Codex V1 Tiny represents a major breakthrough in our AI model development. Th
               className="hidden sm:block relative -mt-28 md:-mt-32 lg:-mt-36 z-0 -mx-2 md:-mx-4 lg:-mx-6 cursor-pointer"
               onMouseEnter={() => setIsSecondaryCardHovered(true)}
               onMouseLeave={() => setIsSecondaryCardHovered(false)}
-              onClick={handleViewModels}
+              onClick={handleViewMore}
             >
               <div className={`
                 transition-all duration-500 ease-out transform

@@ -9,6 +9,7 @@ import Teams from "./pages/Teams";
 import ModelsPage from "./pages/Models";
 import News from "./pages/News";
 import ResearchPaper from "./pages/ResearchPaper";
+import ResearchPage from "./pages/Research";
 import Benchmarks from "./pages/Benchmarks";
 import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
@@ -30,9 +31,8 @@ const App = () => (
           <Route path="/teams" element={<Teams />} />
           <Route path="/company/teams/profiles/:username" element={<Profile />} />
           <Route path="/news" element={<News />} />
+          <Route path="/research" element={<ResearchPage />} />
           <Route path="/research/rx-codex-v1-tiny" element={<ResearchPaper />} />
-          {/* Redirect old research URL to new structure */}
-          <Route path="/research-rx-codex-v1-tiny" element={<Navigate to="/research/rx-codex-v1-tiny" replace />} />
           <Route path="/benchmarks" element={<Benchmarks />} />
           <Route path="/sitemap" element={<Sitemap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

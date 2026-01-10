@@ -98,6 +98,14 @@ const Sitemap = () => {
                 <ul className="space-y-3">
                   <li>
                     <Link 
+                      to="/research" 
+                      className="text-white/80 hover:text-white transition-colors duration-200 block py-1"
+                    >
+                      📚 Research Hub
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
                       to="/research/rx-codex-v1-tiny" 
                       className="text-white/80 hover:text-white transition-colors duration-200 block py-1"
                     >
@@ -122,7 +130,7 @@ const Sitemap = () => {
                       rel="noopener noreferrer"
                       className="text-white/80 hover:text-white transition-colors duration-200 block py-1"
                     >
-                      💬 Try Axtrio AI Chat
+                      💬 Try Txa 1
                     </a>
                   </li>
                   <li>
