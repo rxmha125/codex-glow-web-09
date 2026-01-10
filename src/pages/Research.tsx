@@ -72,7 +72,7 @@ const Research = () => {
           </div>
 
           {/* Separator Line */}
-          <div className="w-full h-px bg-border/40 mb-10 lg:mb-12"></div>
+          <div className="w-full h-px bg-white/20 mb-10 lg:mb-12"></div>
 
           {/* Featured Research Card */}
           <div className="mb-12 lg:mb-16">
