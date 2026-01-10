@@ -101,7 +101,7 @@ const Research = () => {
                 <Button 
                   onClick={() => handleReadMore(featuredResearch.slug)}
                   variant="ghost" 
-                  className="bg-transparent border border-border/40 text-foreground hover:bg-white/10 hover:border-border px-5 py-1.5 rounded-full transition-all duration-300 text-sm"
+                  className="bg-transparent border border-white/30 text-foreground hover:bg-white/10 hover:border-white/50 hover:text-foreground px-5 py-1.5 rounded-full transition-all duration-300 text-sm"
                 >
                   READ
                 </Button>
@@ -128,7 +128,7 @@ const Research = () => {
                   <Button 
                     onClick={() => handleReadMore(featuredResearch.slug)}
                     variant="ghost" 
-                    className="bg-transparent border border-border/40 text-foreground hover:bg-white/10 hover:border-border px-6 py-1.5 rounded-full transition-all duration-300 text-sm"
+                    className="bg-transparent border border-white/30 text-foreground hover:bg-white/10 hover:border-white/50 hover:text-foreground px-6 py-1.5 rounded-full transition-all duration-300 text-sm"
                   >
                     READ
                   </Button>
