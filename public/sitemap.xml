@@ -24,6 +24,17 @@
     </image:image>
   </url>
   <url>
+    <loc>https://axtrioai.com/research</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://axtrioai.com/og-logo.png</image:loc>
+      <image:title>Axtrio AI Research</image:title>
+      <image:caption>Latest research and papers from Axtrio AI</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://axtrioai.com/research/rx-codex-v1-tiny</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>

@@ -16,10 +16,10 @@ const ResearchPaper = () => {
   }, []);
 
   useSEO({
-    title: "Rx Codex V1-Tiny Research Paper | AI Model Development from Bangladesh",
+    title: "Rx Codex V1-Tiny Research Paper | Axtrio AI",
     description: "Read the comprehensive research paper on Rx Codex V1-Tiny, a foundational AI model developed in Bangladesh. Technical details, methodology, and results.",
-    keywords: "Rx Codex V1-Tiny, AI Research Paper, Machine Learning Research, Foundational AI Model, Bangladesh AI Research, Neural Networks",
-    canonicalUrl: "https://rxcodexai.com/research/rx-codex-v1-tiny",
+    keywords: "Rx Codex V1-Tiny, AI Research Paper, Machine Learning Research, Foundational AI Model, Bangladesh AI Research, Neural Networks, Axtrio AI",
+    canonicalUrl: "https://axtrioai.com/research/rx-codex-v1-tiny",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "ScholarlyArticle",
@@ -30,12 +30,12 @@ const ResearchPaper = () => {
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Rx Codex AI"
+        "name": "Axtrio AI"
       },
       "datePublished": "2024-12-24",
       "description": "Research paper on the development of Rx Codex V1-Tiny foundational AI model",
-      "url": "https://rxcodexai.com/research/rx-codex-v1-tiny",
-      "mainEntityOfPage": "https://rxcodexai.com/research/rx-codex-v1-tiny"
+      "url": "https://axtrioai.com/research/rx-codex-v1-tiny",
+      "mainEntityOfPage": "https://axtrioai.com/research/rx-codex-v1-tiny"
     }
   });
 
@@ -225,7 +225,7 @@ const ResearchPaper = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => navigate('/home')}
+              onClick={() => navigate('/research')}
               className="text-muted-foreground hover:bg-transparent mb-8 group"
             >
               <ArrowLeft className="w-5 h-5 group-hover:text-foreground transition-colors" />
