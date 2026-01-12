@@ -82,8 +82,9 @@ const Navbar = () => {
             <img 
               src={rxCodexLogo} 
               alt="Axtrio AI" 
-              className="h-8 sm:h-9 md:h-10 w-auto object-contain" 
-              loading="lazy" 
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain cursor-pointer" 
+              loading="lazy"
+              onClick={() => navigateToPage('/')}
             />
           </div>
 
@@ -92,25 +93,25 @@ const Navbar = () => {
             <div className="nav-pill">
               <button 
                 onClick={() => navigateToPage('/home')} 
-                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/home' || location.pathname === '/' ? 'active' : ''}`}
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base tracking-[0.15em] ${location.pathname === '/home' || location.pathname === '/' ? 'active' : ''}`}
               >
-                AXTRIO
+                HOME
               </button>
               <button 
                 onClick={() => navigateToPage('/company')} 
-                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/company' ? 'active' : ''}`}
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base tracking-[0.15em] ${location.pathname === '/company' ? 'active' : ''}`}
               >
                 COMPANY
               </button>
               <button 
                 onClick={() => navigateToPage('/models')} 
-                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/models' ? 'active' : ''}`}
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base tracking-[0.15em] ${location.pathname === '/models' ? 'active' : ''}`}
               >
                 MODELS
               </button>
               <button 
                 onClick={() => navigateToPage('/news')} 
-                className={`nav-pill-button text-xs sm:text-sm lg:text-base ${location.pathname === '/news' ? 'active' : ''}`}
+                className={`nav-pill-button text-xs sm:text-sm lg:text-base tracking-[0.15em] ${location.pathname === '/news' ? 'active' : ''}`}
               >
                 NEWS
               </button>
@@ -124,7 +125,7 @@ const Navbar = () => {
               variant="glass"
               className="px-4 md:px-4 lg:px-6 py-3 rounded-full font-medium"
             >
-              Try Axtrio
+              Try Txa 1
             </Button>
           )}
 
@@ -139,7 +140,7 @@ const Navbar = () => {
                 }`}
               >
                 <span className={`transition-all duration-500 ${showChevron ? 'opacity-0 scale-75' : 'opacity-100 scale-100'}`}>
-                  Try Axtrio
+                  Try Txa 1
                 </span>
                 <ChevronDown 
                   className={`absolute inset-0 m-auto transition-all duration-500 ${
@@ -187,25 +188,25 @@ const Navbar = () => {
               <div className="space-y-4">
                 <button 
                   onClick={() => navigateToPage('/home')} 
-                  className={`mobile-nav-button ${location.pathname === '/home' || location.pathname === '/' ? 'active' : ''}`}
+                  className={`mobile-nav-button tracking-[0.15em] ${location.pathname === '/home' || location.pathname === '/' ? 'active' : ''}`}
                 >
-                  AXTRIO
+                  HOME
                 </button>
                 <button 
                   onClick={() => navigateToPage('/company')} 
-                  className={`mobile-nav-button ${location.pathname === '/company' ? 'active' : ''}`}
+                  className={`mobile-nav-button tracking-[0.15em] ${location.pathname === '/company' ? 'active' : ''}`}
                 >
                   COMPANY
                 </button>
                 <button 
                   onClick={() => navigateToPage('/models')} 
-                  className={`mobile-nav-button ${location.pathname === '/models' ? 'active' : ''}`}
+                  className={`mobile-nav-button tracking-[0.15em] ${location.pathname === '/models' ? 'active' : ''}`}
                 >
                   MODELS
                 </button>
                 <button 
                   onClick={() => navigateToPage('/news')} 
-                  className={`mobile-nav-button ${location.pathname === '/news' ? 'active' : ''}`}
+                  className={`mobile-nav-button tracking-[0.15em] ${location.pathname === '/news' ? 'active' : ''}`}
                 >
                   NEWS
                 </button>
@@ -219,9 +220,9 @@ const Navbar = () => {
                     window.open('https://www.chat.axtrioai.com', '_blank');
                     setDropdownOpen(false);
                   }} 
-                  className="mobile-nav-button try-codex-button"
+                  className="mobile-nav-button try-codex-button tracking-[0.15em]"
                 >
-                  Try Axtrio →
+                  Try Txa 1 →
                 </button>
               </div>
             </div>
