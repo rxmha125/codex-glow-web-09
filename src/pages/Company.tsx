@@ -9,6 +9,7 @@ const Company = () => {
     title: "About Axtrio AI - Leading AI Innovation from Bangladesh",
     description: "Learn about Axtrio AI, a pioneering AI company from Bangladesh developing cutting-edge artificial intelligence solutions and the Txa series models. Founded by Rx MHA.",
     keywords: "Axtrio AI Company, AI Bangladesh, About Us, AI Innovation, Machine Learning Company, Tech Startup, Rx MHA, Txa Series",
+    ogImage: "https://axtrioai.com/og-company.png",
     canonicalUrl: "https://axtrioai.com/company",
     structuredData: {
       "@context": "https://schema.org",

@@ -7,6 +7,7 @@ const News = () => {
     title: "AI News & Updates - Axtrio AI | Latest in AI Technology",
     description: "Stay updated with the latest news and developments from Axtrio AI. Get insights into AI research, model releases, and technology innovations from Bangladesh.",
     keywords: "AI News, Machine Learning Updates, Axtrio AI News, AI Research, Technology News, Bangladesh AI, Txa Series",
+    ogImage: "https://axtrioai.com/og-news.png",
     canonicalUrl: "https://axtrioai.com/news",
     structuredData: {
       "@context": "https://schema.org",

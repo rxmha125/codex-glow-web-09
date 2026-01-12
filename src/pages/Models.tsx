@@ -14,6 +14,7 @@ const Models = () => {
     title: "AI Models - Axtrio AI | Advanced ML Models from Bangladesh",
     description: "Explore Axtrio AI's cutting-edge AI models including the Txa series. Advanced machine learning models developed in Bangladesh for global applications.",
     keywords: "AI Models, Machine Learning Models, Txa Series, AI Bangladesh, Neural Networks, Deep Learning Models, Axtrio AI",
+    ogImage: "https://axtrioai.com/og-models.png",
     canonicalUrl: "https://axtrioai.com/models",
     structuredData: {
       "@context": "https://schema.org",
