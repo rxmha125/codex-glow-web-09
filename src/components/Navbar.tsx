@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import rxCodexLogo from '@/assets/rx-codex-logo.png';
+import axtrioLogo from '/og-logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,7 +80,7 @@ const Navbar = () => {
           {/* Logo and Brand Name - Left Side */}
           <div className="flex items-center">
             <img 
-              src={rxCodexLogo} 
+              src={axtrioLogo} 
               alt="Axtrio AI" 
               className="h-8 sm:h-9 md:h-10 w-auto object-contain cursor-pointer" 
               loading="lazy"
@@ -177,7 +177,7 @@ const Navbar = () => {
               {/* Logo and Brand in Menu */}
               <div className="flex items-center justify-center mb-8 pb-6 border-b border-white/20">
                 <img 
-                  src={rxCodexLogo} 
+                  src={axtrioLogo} 
                   alt="Axtrio AI" 
                   className="h-10 w-auto object-contain" 
                   loading="lazy" 
