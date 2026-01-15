@@ -11,23 +11,23 @@ const Profile = () => {
     title: "Rx MHA - Founder & CEO | Axtrio AI",
     description: "Rx MHA is the founder and CEO of Axtrio AI, a pioneering AI company from Bangladesh. AI Architect, Web Developer, Researcher, and Designer building cutting-edge AI models.",
     keywords: "Rx MHA, Founder of Axtrio AI, CEO Axtrio AI, AI Developer Bangladesh, AI Founder, AI Architect, Who is Rx MHA, The Founder of Axtrio AI",
-    canonicalUrl: "https://axtrioai.com/company/teams/profiles/rxmha",
-    ogImage: "https://axtrioai.com/team-member.jpg",
+    canonicalUrl: "https://www.axtrioai.com/company/teams/profiles/rxmha",
+    ogImage: "https://www.axtrioai.com/team-member.jpg",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "ProfilePage",
       "mainEntity": {
         "@type": "Person",
-        "@id": "https://axtrioai.com/#founder",
+        "@id": "https://www.axtrioai.com/#founder",
         "name": "Rx MHA",
         "alternateName": "Rx MHA",
-        "image": "https://axtrioai.com/team-member.jpg",
+        "image": "https://www.axtrioai.com/team-member.jpg",
         "jobTitle": ["Founder & CEO", "AI Architect", "Web Developer", "Researcher", "Designer"],
         "description": "Rx MHA is the founder and CEO of Axtrio AI, leading AI development and innovation from Bangladesh.",
         "worksFor": {
           "@type": "Organization",
           "name": "Axtrio AI",
-          "url": "https://axtrioai.com"
+          "url": "https://www.axtrioai.com"
         },
         "knowsAbout": [
           "Artificial Intelligence",
@@ -41,7 +41,7 @@ const Profile = () => {
           "@type": "Country",
           "name": "Bangladesh"
         },
-        "url": "https://axtrioai.com/company/teams/profiles/rxmha"
+        "url": "https://www.axtrioai.com/company/teams/profiles/rxmha"
       }
     }
   });

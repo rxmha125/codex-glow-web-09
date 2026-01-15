@@ -28,7 +28,7 @@ const ProfileInfo = () => {
       <p className="text-foreground leading-relaxed">
         AI Developer | Founder of Axtrio AI |{' '}
         <a 
-          href="https://axtrioai.com" 
+          href="https://www.axtrioai.com" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-primary hover:underline transition-all"
@@ -41,7 +41,7 @@ const ProfileInfo = () => {
       {/* Info Row */}
       <div className="flex flex-wrap gap-x-4 gap-y-2 mt-4 text-sm text-muted-foreground">
         <a 
-          href="https://axtrioai.com" 
+          href="https://www.axtrioai.com" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 hover:text-primary transition-colors"

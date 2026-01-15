@@ -19,7 +19,7 @@ const ResearchPaper = () => {
     title: "Rx Codex V1-Tiny Research Paper | Axtrio AI",
     description: "Read the comprehensive research paper on Rx Codex V1-Tiny, a foundational AI model developed in Bangladesh. Technical details, methodology, and results.",
     keywords: "Rx Codex V1-Tiny, AI Research Paper, Machine Learning Research, Foundational AI Model, Bangladesh AI Research, Neural Networks, Axtrio AI",
-    canonicalUrl: "https://axtrioai.com/research/rx-codex-v1-tiny",
+    canonicalUrl: "https://www.axtrioai.com/research/rx-codex-v1-tiny",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "ScholarlyArticle",
@@ -34,8 +34,8 @@ const ResearchPaper = () => {
       },
       "datePublished": "2024-12-24",
       "description": "Research paper on the development of Rx Codex V1-Tiny foundational AI model",
-      "url": "https://axtrioai.com/research/rx-codex-v1-tiny",
-      "mainEntityOfPage": "https://axtrioai.com/research/rx-codex-v1-tiny"
+      "url": "https://www.axtrioai.com/research/rx-codex-v1-tiny",
+      "mainEntityOfPage": "https://www.axtrioai.com/research/rx-codex-v1-tiny"
     }
   });
 

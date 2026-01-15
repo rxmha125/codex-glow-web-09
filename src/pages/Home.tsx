@@ -12,18 +12,18 @@ const Home = () => {
     title: "Welcome | Axtrio AI",
     description: "Axtrio AI pioneers cutting-edge AI models from Bangladesh, delivering powerful, scalable intelligence through the Txa series.",
     keywords: "AI, Artificial Intelligence, Bangladesh, AI Models, Machine Learning, Deep Learning, Axtrio AI, Txa Series, AI Technology",
-    ogImage: "https://axtrioai.com/og-home.png",
-    canonicalUrl: "https://axtrioai.com/",
+    ogImage: "https://www.axtrioai.com/og-home.png",
+    canonicalUrl: "https://www.axtrioai.com/",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Axtrio AI - Home",
       "description": "Axtrio AI pioneers cutting-edge AI models from Bangladesh, delivering powerful, scalable intelligence through the Txa series.",
-      "url": "https://axtrioai.com/",
+      "url": "https://www.axtrioai.com/",
       "mainEntity": {
         "@type": "Organization",
         "name": "Axtrio AI",
-        "url": "https://axtrioai.com"
+        "url": "https://www.axtrioai.com"
       }
     }
   });

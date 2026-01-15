@@ -7,13 +7,13 @@ const Teams = () => {
     title: "Our Team - Axtrio AI | Meet the AI Experts from Bangladesh",
     description: "Meet the talented team behind Axtrio AI. Our experts in artificial intelligence and machine learning are building the future of AI technology.",
     keywords: "Axtrio AI Team, AI Experts, Machine Learning Team, Bangladesh AI Developers, Tech Team",
-    canonicalUrl: "https://axtrioai.com/teams",
+    canonicalUrl: "https://www.axtrioai.com/teams",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Axtrio AI Team",
       "description": "Meet our team of AI experts and developers",
-      "url": "https://axtrioai.com/teams"
+      "url": "https://www.axtrioai.com/teams"
     }
   });
 

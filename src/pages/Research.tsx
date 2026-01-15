@@ -25,7 +25,7 @@ const Research = () => {
     title: "Research | Axtrio AI",
     description: "Explore our latest AI research and model development papers. Discover innovations from Axtrio AI's Txa series.",
     keywords: "Axtrio AI Research, Txa Series, AI Research Papers, Machine Learning, Bangladesh AI",
-    canonicalUrl: "https://axtrioai.com/research",
+    canonicalUrl: "https://www.axtrioai.com/research",
   });
 
   // Featured research (latest/most important)

@@ -2,96 +2,96 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://axtrioai.com/</loc>
+    <loc>https://www.axtrioai.com/</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://axtrioai.com/og-logo.png</image:loc>
+      <image:loc>https://www.axtrioai.com/og-logo.png</image:loc>
       <image:title>Axtrio AI Logo</image:title>
       <image:caption>Axtrio AI - Cutting-edge AI Models from Bangladesh</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://axtrioai.com/models</loc>
+    <loc>https://www.axtrioai.com/models</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://axtrioai.com/og-logo.png</image:loc>
+      <image:loc>https://www.axtrioai.com/og-logo.png</image:loc>
       <image:title>Axtrio AI Models</image:title>
       <image:caption>Advanced AI Models including the Txa series</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://axtrioai.com/research</loc>
+    <loc>https://www.axtrioai.com/research</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://axtrioai.com/og-logo.png</image:loc>
+      <image:loc>https://www.axtrioai.com/og-logo.png</image:loc>
       <image:title>Axtrio AI Research</image:title>
       <image:caption>Latest research and papers from Axtrio AI</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://axtrioai.com/research/rx-codex-v1-tiny</loc>
+    <loc>https://www.axtrioai.com/research/rx-codex-v1-tiny</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://axtrioai.com/lovable-uploads/fcaa89e4-b053-4494-b20a-59ec70960870.png</image:loc>
+      <image:loc>https://www.axtrioai.com/lovable-uploads/fcaa89e4-b053-4494-b20a-59ec70960870.png</image:loc>
       <image:title>Rx Codex V1-Tiny Research Paper</image:title>
       <image:caption>Research paper on the Rx Codex V1-Tiny AI Model</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://axtrioai.com/benchmarks</loc>
+    <loc>https://www.axtrioai.com/benchmarks</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://axtrioai.com/og-logo.png</image:loc>
+      <image:loc>https://www.axtrioai.com/og-logo.png</image:loc>
       <image:title>Axtrio AI Benchmarks</image:title>
       <image:caption>Model and Tokenizer Benchmark Comparisons</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://axtrioai.com/company</loc>
+    <loc>https://www.axtrioai.com/company</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://axtrioai.com/team-member.jpg</image:loc>
+      <image:loc>https://www.axtrioai.com/team-member.jpg</image:loc>
       <image:title>Axtrio AI Company</image:title>
       <image:caption>About Axtrio AI - Leading AI Innovation from Bangladesh</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://axtrioai.com/company/teams/profiles/rxmha</loc>
+    <loc>https://www.axtrioai.com/company/teams/profiles/rxmha</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://axtrioai.com/team-member.jpg</image:loc>
+      <image:loc>https://www.axtrioai.com/team-member.jpg</image:loc>
       <image:title>Rx MHA - Founder of Axtrio AI</image:title>
       <image:caption>Rx MHA, the founder and CEO of Axtrio AI from Bangladesh</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://axtrioai.com/teams</loc>
+    <loc>https://www.axtrioai.com/teams</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://axtrioai.com/news</loc>
+    <loc>https://www.axtrioai.com/news</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://axtrioai.com/sitemap</loc>
+    <loc>https://www.axtrioai.com/sitemap</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
