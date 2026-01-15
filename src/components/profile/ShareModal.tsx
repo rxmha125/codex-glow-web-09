@@ -15,7 +15,7 @@ interface ShareModalProps {
 
 const ShareModal = ({ open, onClose, postId }: ShareModalProps) => {
   const [copied, setCopied] = useState(false);
-  const shareUrl = `https://www.rxcodexai.com/company/share/rxmha/post/${postId}`;
+  const shareUrl = `https://www.axtrioai.com/company/share/rxmha/post/${postId}`;
 
   const handleCopy = async () => {
     try {

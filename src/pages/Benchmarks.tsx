@@ -64,27 +64,27 @@ const Benchmarks = () => {
     title: "Models and Tokenizer Benchmarks - Axtrio AI",
     description: "Comprehensive benchmark comparison of Axtrio AI models and tokenizers against GPT2 and DeepSeek, showcasing superior performance in compression, speed, and efficiency.",
     keywords: "AI Benchmarks, Tokenizer Comparison, Model Performance, Axtrio AI Benchmarks, GPT2 Comparison, DeepSeek Comparison, AI Performance, Machine Learning Benchmarks",
-    canonicalUrl: "https://axtrioai.com/benchmarks",
-    ogImage: "https://axtrioai.com/og-logo.png",
+    canonicalUrl: "https://www.axtrioai.com/benchmarks",
+    ogImage: "https://www.axtrioai.com/og-logo.png",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "Axtrio AI Models and Tokenizer Benchmarks",
       "description": "Comprehensive benchmark comparison of Axtrio AI models and tokenizers against GPT2 and DeepSeek",
-      "url": "https://axtrioai.com/benchmarks",
+      "url": "https://www.axtrioai.com/benchmarks",
       "datePublished": "2025-10-12",
       "dateModified": "2026-01-01",
       "author": {
         "@type": "Organization",
         "name": "Axtrio AI",
-        "url": "https://axtrioai.com"
+        "url": "https://www.axtrioai.com"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Axtrio AI",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://axtrioai.com/og-logo.png"
+          "url": "https://www.axtrioai.com/og-logo.png"
         }
       }
     }

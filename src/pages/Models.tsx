@@ -14,14 +14,14 @@ const Models = () => {
     title: "AI Models - Axtrio AI | Advanced ML Models from Bangladesh",
     description: "Explore Axtrio AI's cutting-edge AI models including the Txa series. Advanced machine learning models developed in Bangladesh for global applications.",
     keywords: "AI Models, Machine Learning Models, Txa Series, AI Bangladesh, Neural Networks, Deep Learning Models, Axtrio AI",
-    ogImage: "https://axtrioai.com/og-models.png",
-    canonicalUrl: "https://axtrioai.com/models",
+    ogImage: "https://www.axtrioai.com/og-models.png",
+    canonicalUrl: "https://www.axtrioai.com/models",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "AI Models - Axtrio AI",
       "description": "Advanced AI models and machine learning solutions from Bangladesh",
-      "url": "https://axtrioai.com/models",
+      "url": "https://www.axtrioai.com/models",
       "mainEntity": {
         "@type": "Product",
         "name": "Txa Series",

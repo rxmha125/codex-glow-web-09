@@ -13,13 +13,13 @@ const Sitemap = () => {
     title: "Site Map - Axtrio AI | Navigate Our Website",
     description: "Complete site map of Axtrio AI website. Find all pages, AI models, research papers, and company information easily.",
     keywords: "Sitemap, Site Navigation, Axtrio AI Pages, Website Map",
-    canonicalUrl: "https://axtrioai.com/sitemap",
+    canonicalUrl: "https://www.axtrioai.com/sitemap",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Sitemap - Axtrio AI",
       "description": "Complete navigation map of Axtrio AI website",
-      "url": "https://axtrioai.com/sitemap"
+      "url": "https://www.axtrioai.com/sitemap"
     }
   });
 

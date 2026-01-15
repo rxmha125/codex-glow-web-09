@@ -10,10 +10,10 @@ const NotFound = () => {
   const location = useLocation();
 
   useSEO({
-    title: "Page Not Found - Rx Codex AI",
-    description: "The page you're looking for doesn't exist. Return to Rx Codex AI homepage to explore our AI models and research.",
-    keywords: "404, Page Not Found, Rx Codex AI",
-    canonicalUrl: "https://rxcodexai.com/404",
+    title: "Page Not Found - Axtrio AI",
+    description: "The page you're looking for doesn't exist. Return to Axtrio AI homepage to explore our AI models and research.",
+    keywords: "404, Page Not Found, Axtrio AI",
+    canonicalUrl: "https://www.axtrioai.com/404",
   });
 
   useEffect(() => {
