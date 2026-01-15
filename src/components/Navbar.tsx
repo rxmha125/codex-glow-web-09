@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import axtrioLogo from '/og-logo.png';
+import axtrioLogo from '@/assets/axtrio-navbar-logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
